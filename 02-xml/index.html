@@ -581,36 +581,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#definicio-dtd-interna" class="md-nav__link">
+  <a href="#2491-definicio-dtd-interna" class="md-nav__link">
     <span class="md-ellipsis">
-      Definició DTD interna
+      2.4.9.1. Definició DTD interna
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#definicio-dtd-externa" class="md-nav__link">
+  <a href="#2492-definicio-dtd-externa" class="md-nav__link">
     <span class="md-ellipsis">
-      Definició DTD externa
+      2.4.9.2. Definició DTD externa
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#definicio-delements-amb-dtd" class="md-nav__link">
+  <a href="#2493-definicio-delements-amb-dtd" class="md-nav__link">
     <span class="md-ellipsis">
-      Definició d'elements amb DTD
+      2.4.9.3. Definició d'elements amb DTD
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#definicio-datributs-amb-dtd" class="md-nav__link">
+  <a href="#2494-definicio-datributs-amb-dtd" class="md-nav__link">
     <span class="md-ellipsis">
-      Definició d'atributs amb DTD
+      2.4.9.4. Definició d'atributs amb DTD
     </span>
   </a>
   
@@ -1042,7 +1042,7 @@ comprensió del document XML, ja que és on explicarem per a que serveix cadascu
 <p>DTD no pot comprovar que es una data:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;data&gt;</span>.<span class="nt">&lt;/data&gt;</span>
 </code></pre></div>
-<h3 id="definicio-dtd-interna">Definició DTD interna</h3>
+<h3 id="2491-definicio-dtd-interna">2.4.9.1. Definició DTD interna</h3>
 <p>Es poden incorporar DTD dintre del propi document DTD</p>
 <div class="highlight"><pre><span></span><code><span class="err">&lt;</span><span class="o">?</span><span class="err">xml</span> <span class="err">version=</span><span class="s2">&quot;1.0&quot;</span> <span class="err">encoding=</span><span class="s2">&quot;UTF-8&quot;</span> <span class="o">?</span><span class="k">&gt;</span>
 <span class="k">&lt;!DOCTYPE</span> <span class="nt">process</span> <span class="k">[</span>
@@ -1054,14 +1054,14 @@ comprensió del document XML, ja que és on explicarem per a que serveix cadascu
 <span class="err">&lt;/process</span><span class="k">&gt;</span>
 </code></pre></div>
 <p>És millor fer-los externs, doncs podem compartir-los i separar les dades de la estructura.</p>
-<h3 id="definicio-dtd-externa">Definició DTD externa</h3>
+<h3 id="2492-definicio-dtd-externa">2.4.9.2. Definició DTD externa</h3>
 <p>Per definir un DTD extern utilitzem l'etiqueta <code>&lt;!DOCTYPE &gt;</code> seguit del nom de l'arrel, la paraula clau <code>SYSTEM</code> i el recurs on es troba la definició DTD, que pot ser un fitxer local de la màquina o doctypes a internet</p>
 <div class="highlight"><pre><span></span><code><span class="err">&lt;</span><span class="o">?</span><span class="err">xml</span> <span class="err">version=</span><span class="s2">&quot;1.0&quot;</span> <span class="err">encoding=</span><span class="s2">&quot;UTF-8&quot;</span> <span class="o">?</span><span class="k">&gt;</span>
 <span class="k">&lt;!DOCTYPE</span> <span class="nt">alumnes</span> <span class="kc">SYSTEM</span> <span class="s2">&quot;alumnes.dtd&quot;</span><span class="k">&gt;</span>
 
 <span class="k">&lt;!DOCTYPE</span> <span class="nt">alumnes</span> <span class="kc">SYSTEM</span> <span class="s2">&quot;http://www.example.com/alumnes.dtd&quot;</span>
 </code></pre></div>
-<h3 id="definicio-delements-amb-dtd">Definició d'elements amb DTD</h3>
+<h3 id="2493-definicio-delements-amb-dtd">2.4.9.3. Definició d'elements amb DTD</h3>
 <p>Per definir un element utilitzem la següent definició:</p>
 <div class="highlight"><pre><span></span><code><span class="k">&lt;!ELEMENT</span> <span class="nt">nom_element</span> <span class="nt">contingut</span><span class="k">&gt;</span>
 </code></pre></div>
@@ -1132,7 +1132,7 @@ comprensió del document XML, ja que és on explicarem per a que serveix cadascu
   <span class="err">&lt;cognom</span><span class="k">&gt;</span><span class="err">Pujolar&lt;/cognom</span><span class="k">&gt;</span>
 <span class="err">&lt;/persona</span><span class="k">&gt;</span>
 </code></pre></div>
-<h3 id="definicio-datributs-amb-dtd">Definició d'atributs amb DTD</h3>
+<h3 id="2494-definicio-datributs-amb-dtd">2.4.9.4. Definició d'atributs amb DTD</h3>
 <p>Els atributs es defineixen mitjantçant l'etiqueta <code>&lt;!ATTLIST&gt;</code>. Per exemple:</p>
 <p>Sintaxi:</p>
 <p><code>&lt;!ATTLIST nom_element nom_atribut tipus_dades modificador&gt;</code></p>

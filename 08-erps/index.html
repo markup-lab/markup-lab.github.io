@@ -1,0 +1,706 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Tema 8. Sistemes de planificació empresarial (ERPs) - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-8-sistemes-de-planificacio-empresarial-erps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 8. Sistemes de planificació empresarial (ERPs)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Introducció
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-moduls-dun-erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Mòduls d'un ERP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 Mòduls d'un ERP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#821-finances" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.1. Finances
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#822-controlling" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.2. Controlling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#823-vendes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.3. Vendes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#824-compres" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.4. Compres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#825-logistica" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.5. Logística
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#826-produccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.6. Producció
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#827-recursos-humans" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.7. Recursos Humans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#828-qualitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2.8. Qualitat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-crm" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 CRM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-bussiness-intelligence-bi" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Bussiness Intelligence (BI)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="tema-8-sistemes-de-planificacio-empresarial-erps">Tema 8. Sistemes de planificació empresarial (ERPs)</h1>
+<h2 id="81-introduccio">8.1 Introducció</h2>
+<p>Un sistema de planificació empresarial o Enterprise Resource Planning (ERP) són un tipus de software dissenyat per ajudar a les empreses a gestionar els seus processos de negoci i integrar tots els sistemes i dades en un sol sistema centralitzat.</p>
+<p>Té les següents característiques:</p>
+<ul>
+<li>
+<p>A nivell organitzatiu, resol processos de negoci. És a dir, per a cada procés empresarial, per exemple un procés de venda, l'ERP indica quins passos i documents s'han de generar en cada moment. En un procés de venda primer es genera una comanda de vendes, després un document d'entrega i un albarà i després una factura.</p>
+</li>
+<li>
+<p>A nivell organitzatiu, permet controlar grans organitzacions, tenint en compte que aquestes poden ser:</p>
+<ul>
+<li>Multi-idioma</li>
+<li>Multi-divisa</li>
+<li>Multi-societat</li>
+<li>Multi-pla de comptes</li>
+</ul>
+</li>
+<li>
+<p>A nivell tècnic:</p>
+<ul>
+<li>
+<p>És un sistema integrat. Això vol dir que té totes les funcions necessàries per l'empresa en un únic sistema i aquestes funcions (vendes, compres, finances) estan relacionades entre si.</p>
+</li>
+<li>
+<p>És un sistema modular. Cadascun dels processos organitzatius està dividit en mòduls o seccions, de forma que es poden instal.lar individualment. Aluns dels mòduls que hi poden haver són: producció, compres, vendes, finances, controlling, logística (magatzem), etc.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>El sistema ERP més utilitzat a nivell empresarial és SAP. SAP és una empresa alemanya creada el 1972 per varis ex-enginyers de IBM. </p>
+<p>Respecte els ERPs opensource més coneguts tenim <a href="https://www.odoo.com/es_ES">Odoo</a> i <a href="https://www.openbravo.com/es">Openbravo</a> <a href="http://wiki.openbravo.com/wiki/Installation/Ubuntu">Wiki</a></p>
+<h2 id="82-moduls-dun-erp">8.2 Mòduls d'un ERP</h2>
+<p>Tal com hem comentat, un ERP controla diversos processos de negoci, modelant cadascuna de les fases de cada departament de l'empresa. Els principals mòduls són els següents. Els mòduls es poden dividir en dos tipus, mòduls financers i mòduls logístics.</p>
+<p><img alt="Mòduls d'un ERP" src="../assets/img/8-2-SAP-R3-modules.jpg" /></p>
+<h3 id="821-finances">8.2.1. Finances</h3>
+<p>Aquest és el mòdul principal i permet tenir un llibre de contabilitat elèctronic (deure, haver, moviments). És el nucli del ERP doncs tota la resta de mòduls fan apunts contables automàticament en algunes de les operacions que duun a terme.</p>
+<p>Té altres submoduls com Tesoreria (gestió de l'efectiu), amortitzacions, etc.</p>
+<h3 id="822-controlling">8.2.2. Controlling</h3>
+<p>Aquest és un mòdul financer amb el propòsit d'analitzar els gastos e ingresos dintre de l'empresa. Per exemple, s'encarrega de calcular el cost d'un producte tenint en compte els costos de fabricació: materia prima, mà d'obra directa e indirecta. S'encarrega de l'anàlisi de la rentabilidad per segments de mercat, productes, zones geográfiques, canals vendes. Rentabilitat: ingresos - despeses.</p>
+<h3 id="823-vendes">8.2.3. Vendes</h3>
+<p>Permet dur a terme tot el procés des de que el client fa la comanda fins que el producte arriba a la seva casa. Inclou la gestió de documents com ofertes, gestió del crèdi, comanda de venda, document d'entrega, albarà i factura. A continuació s'adjunta el fluxe general per al procés de vendes a un ERP.</p>
+<p><img alt="Fluxe de vendes" src="../assets/img/8-3-Flujo%20de%20ventas.png" /></p>
+<h3 id="824-compres">8.2.4. Compres</h3>
+<p>S'encarrega de l'aprovisionament de les matèries primes per poder fabricar el producte a vendre, màquines, consumibles, etc. També permet fer una gestió automàtica de les compres segons l'stock, el temps de reaprovisionament i el volum de vendes (MRP automàtic). A continuació s'adjunta el fluxe general per al procés de compres a un ERP.</p>
+<p><img alt="Fluxe de compres" src="../assets/img/8-4-Flujo%20de%20compras.png" /></p>
+<h3 id="825-logistica">8.2.5. Logística</h3>
+<p>S'encarrega de les gestions relacionades amb els matgatzem. Permet gestionar l'stock, moviments entre magatzems inventaris, etc.</p>
+<h3 id="826-produccio">8.2.6. Producció</h3>
+<p>És un dels mòduls més importants, doncs s'encarrega de gestionar el procés productiu. Té documents com el full de ruta (passos per a fabricar un producte determinat a la cadena de producció), el BOM (bill of materials), cost del producte, gestió dels materials...</p>
+<h3 id="827-recursos-humans">8.2.7. Recursos Humans</h3>
+<p>Tracta amb tots els processos relacionats amb els empleats: contratació, formació, control del temps (horaris), despeses de viatge, remuneracions (càlcul de la nòmina), gestió del talent, etc.</p>
+<h3 id="828-qualitat">8.2.8. Qualitat</h3>
+<p>Molt relacionat amb el mòdul de producció. S'encarrega de gestionar els lots de producció, fer anàlisis del productes per verificar que compleixen una sèrie d'estàndars o normes, que tenen les característiques físiques o químiques necessàries, etc.</p>
+<h2 id="83-crm">8.3 CRM</h2>
+<p>Un CRM (Customer relationship management) o gestor de relacions amb els clients és un sistema de gestió d'informació que permet centralitzar en una única base de dades totes les interaccions entre una empresa i els seus clients, principalment en tres àrees:</p>
+<ul>
+<li>
+<p>La <strong>gestió comercial</strong>:</p>
+<p>El CRM recopila tota la informació de les gestions comercials mantenint un històric detallat, d'aquesta manera permet compartir i maximitzar el coneixement d'un client donat entenen les seves necessitats i anticipant-se a elles.</p>
+<p>Els CRM generen pressupostos actualitzats en temps real i processos de vendes optimitzats, fent que les empreses generin més oportunitats de venda i agilitzin la seva gestió.</p>
+</li>
+<li>
+<p>El <strong>màrqueting</strong>: Gràcies al CRM es pot controlar el conjunt d'accions realitzades sobre els clients o clients potencials, d'aquesta manera permet dirigir i gestionar de forma més senzilla les campanyes de captació de clients i de fidelització.</p>
+</li>
+<li>
+<p>El <strong>servei postvenda</strong> o d'atenció al client: Els CRM proporcionen a l'empresa la informació necessària permetent que aquesta ofereixi un servei d'atenció al client i postvenda de nivell superior.</p>
+</li>
+</ul>
+<p><img alt="Gestió de processos amb CRM" src="../assets/img/8-1-CRM.jpg" /></p>
+<p>Un dels sistemes CRM més coneguts és Siebel, una empresa nordamericana fundada el 1993. El 2005 va ser adquirida per Oracle, el gran rival de SAP.</p>
+<p>Un altre sistema CRM basat en el núvol es Salesforce, creat per un antic executiu d'Oracle.</p>
+<h2 id="83-bussiness-intelligence-bi">8.3 Bussiness Intelligence (BI)</h2>
+<p>Un altre software molt relacionat amb els ERPs són les eines de Bussiness Intelligence (BI). Els ERPs generalment funcionen sobre un sistema de base de dades relacionals (Oracle, Microsoft SQL Server) i s'encarreguen de les transaccions OLTP. Els sistemes OLTP (Online Transaction Processing) són sistemes que tenen una resposta immediata al usuari. Per exemple, els sistemes que impliquen processos de producció, de vendes, logística no poden trigar més d'uns segons perquè hi ha altres processos que depenen d'ells.</p>
+<p>Per altra banda tenim els sistemes OLAP (Online Analytical Processing) com els sistemes BI. Aquests sistemes s'encarreguen de l'anàlisi de dades. Generalment estan connectats als sistemes OLTP i carreguen dades periòdicament per al seu processament. Aquests sistemes serveixen per entendre tendencies (quins productes es venen més o menys), treure conclusions i ajudar als directius de l'empresa a prendre decisions de negoci.</p>
+<p>Alguns dels productes més coneguts de BI són:</p>
+<ul>
+<li>SAP Bussiness Intelligence (SAP BI).</li>
+<li>Tableau</li>
+<li>QlikView</li>
+</ul>
+<p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

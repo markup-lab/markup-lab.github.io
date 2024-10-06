@@ -1,0 +1,1400 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Tema 2. Emmagatzemament de dades (XML) - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-2-emmagatzemament-de-dades-xml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 2. Emmagatzemament de dades (XML)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-conceptes-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Conceptes bàsics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Conceptes bàsics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-etiquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.1. Etiquetes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-documents-proleg" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.2. Documents: pròleg.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-declaracio-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.3. Declaració XML.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-declaracio-de-tipus-de-document-document-type-declaration-dtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.4. Declaració de tipus de document. Document Type Declaration (DTD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.5. Elements.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2151-element-arrel" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.5.1. Element arrel.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2152-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.5.2. Elements.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2153-elements-buits" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.5.3. Elements buits.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2154-atributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.5.4. Atributs.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2155-texte" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.5.5. Texte.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2156-estructura-dun-document-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.5.6. Estructura d'un document XML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-comentaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.6. Comentaris.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-entitats-predefinides" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.7. Entitats predefinides.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-seccions-cdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.8. Seccions CDATA.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#249-definicio-de-tipus-de-document-dtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.9. Definició de tipus de document (DTD).
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definicio-dtd-interna" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició DTD interna
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definicio-dtd-externa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició DTD externa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definicio-delements-amb-dtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició d'elements amb DTD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definicio-datributs-amb-dtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició d'atributs amb DTD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-elements-regles-i-consideracions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Elements. Regles i consideracions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-correcio-sintactica-a-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6. Correció sintàctica a XML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-espai-de-noms" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7. Espai de noms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-recomanacions-de-disseny" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8. Recomanacions de disseny
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.8. Recomanacions de disseny">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#281-elements-vs-atributs-on-emmagatzemar-linformacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8.1. Elements vs Atributs: on emmagatzemar l'informació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#282-nivell-desglossament-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8.2. Nivell desglossament dades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-software-edicio-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9. Software edició XML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.9. Software edició XML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#291-editors-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9.1. Editors XML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#292-analitzadors-xml-xml-parser-validadors-xml-i-xsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9.2. Analitzadors XML (XML Parser). Validadors XML i XSD.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="tema-2-emmagatzemament-de-dades-xml">Tema 2. Emmagatzemament de dades (XML)</h1>
+<div class="admonition quote">
+<p class="admonition-title">Elliotte Rusty Harold, autor y experto en XML</p>
+<p>"XML es como el cartón. No está diseñado para ser bonito, pero es muy útil para envolver cosas."</p>
+<p>"La verdadera belleza de XML radica en su simplicidad. Un formato de texto que cualquier ser humano puede leer, pero que también puede ser procesado por una máquina."</p>
+</div>
+<h2 id="21-conceptes-basics">2.1. Conceptes bàsics</h2>
+<p>En aquest capítol es descriuen els blocs de construcció del llenguatge de marcatge XML: elements, atributs i declaracions, entre d'altres. Els elements i els atributs són els elements més utilitzats.</p>
+<h3 id="211-etiquetes">2.1.1. Etiquetes</h3>
+<p>Les etiquetes delimiten els elements. També permeten insertar comentaris i instruccions especials. La següent taula resumeix els tipus d'objectes XML juntament amb el símbol utilitzat per representar-lo.</p>
+<table>
+<thead>
+<tr>
+<th>Tipus d'etiquetes XML</th>
+<th>Objectiu</th>
+<th>Etiqueta</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element</td>
+<td>Agrupar elements i dades de caràcter.</td>
+<td><n_element></td>
+<td><strong><code>&lt;p&gt;</code></strong><code>Això és un paràgraf.</code><strong><code>&lt;/p&gt;</code></strong></td>
+</tr>
+<tr>
+<td>element buit</td>
+<td>Representar informació en un punt específic del document.</td>
+<td><n_element /></td>
+<td><strong><code>&lt;xref</code></strong><code>linkend="abc"</code><strong><code>/&gt;</code></strong></td>
+</tr>
+<tr>
+<td>declaració</td>
+<td>Afegir un nou paràmetre, entitat o definició de gramàtica a l'entorn d'anàlisi.</td>
+<td>&lt;!&gt;</td>
+<td><strong><code>&lt;!</code></strong><code>ENTITY author "Salva J."&gt;</code></td>
+</tr>
+<tr>
+<td>instrucció de processament</td>
+<td>Enviar una instrucció especial a un tipus particular de programari.</td>
+<td>&lt;?xml&gt;</td>
+<td><strong><code>&lt;?</code></strong><code>xml version="1.0" ?&gt;</code></td>
+</tr>
+<tr>
+<td>comentari</td>
+<td>Inserir una anotació que serà ignorada pel processador XML.</td>
+<td>&lt;!--&gt;</td>
+<td><strong><code>&lt;!</code></strong><code>-- ultima revisio: juny 2023 --&gt;</code></td>
+</tr>
+<tr>
+<td>secció CDATA</td>
+<td>Crear una secció de dades de caràcter que no s'ha de parsejar, preservant qualsevol caràcter especial a dins.</td>
+<td>&lt;!&gt;</td>
+<td><strong><code>&lt;![CDATA[</code></strong><code>Ampersands a dojo! &amp;&amp;&amp;&amp;&amp;&amp;]]&gt;</code></td>
+</tr>
+<tr>
+<td>referència d'entitat</td>
+<td>Ordenar al parser que inserteixi un text emmagatzemat en un altre lloc.</td>
+<td><code>&amp;author;</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Els elements són els objectes més comuns. Els elements permeten dividir i estructurar el document en parts cada vegada més petites que s'encaixen com una matrioska.</p>
+<h3 id="212-documents-proleg">2.1.2. Documents: pròleg.</h3>
+<p>Els documents XML consten de dues parts: el pròleg i l'element del document, també anomenat element arrel.
+El pròleg conté metadades, és a dir informació adicional sobre les dades del document xml. El pròleg és opcional, en aquest cas el programa que processi el document agafarà valors per defecte com el joc de caracters UTF-16 o UTF-8. Nosaltres sempre utilitzarem un <strong>pròleg mínim que conté una instrucció de processament</strong> <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>. </p>
+<p>Exemple d'un pròleg d'XML </p>
+<div class="highlight"><pre><span></span><code>    <span class="err">&lt;</span><span class="o">?</span><span class="err">xml</span> <span class="err">version=</span><span class="s2">&quot;1.0&quot;</span> <span class="err">standalone=</span><span class="s2">&quot;no&quot;</span> <span class="o">?</span><span class="k">&gt;</span> 
+    <span class="k">&lt;!DOCTYPE</span> 
+    <span class="nt">reminder</span>                          
+    <span class="kc">SYSTEM</span> <span class="s2">&quot;/home/eray/reminder.dtd&quot;</span>  
+    <span class="k">[</span> 
+    <span class="k">&lt;!ENTITY</span> <span class="ni">smile</span> <span class="s2">&quot;&lt;graphic file=&quot;</span><span class="ni">smile.png&quot;/</span><span class="k">&gt;</span><span class="err">&quot;</span><span class="k">&gt;</span> 
+    <span class="k">]&gt;</span> 
+    <span class="err">&lt;reminder</span><span class="k">&gt;</span> 
+        <span class="ni">&amp;smile;</span> 
+        <span class="err">&lt;msg</span><span class="k">&gt;</span><span class="err">Smile!</span> <span class="err">It</span> <span class="err">can</span> <span class="err">always</span> <span class="err">get</span> <span class="err">worse.&lt;/msg</span><span class="k">&gt;</span>
+    <span class="err">&lt;/reminder</span><span class="k">&gt;</span> 
+</code></pre></div>
+<h3 id="213-declaracio-xml">2.1.3. Declaració XML.</h3>
+<p>La declaració xml o instruccio de processament és la primera línea del document.</p>
+<ol>
+<li>
+<p>Aquesta instrucció <strong>ha de ser la primera línea del document</strong> per a què el document s'interpreti correctament. Comença per &lt;? i termina
+per ?&gt;. </p>
+</li>
+<li>
+<p>La farem servir sempre per evitar problemes de compatibilitat. És a dir, <strong>és obligatòria</strong>.</p>
+</li>
+<li>
+<p>La declaració es processada pel programa que analitza els documents XML, per exemple el navegador web. Aquestes instruccions són independents del document XML i no formen part del document XML. </p>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code>      <span class="err">&lt;</span><span class="o">?</span><span class="err">xml</span> <span class="err">version=</span><span class="s2">&quot;1.0&quot;</span> <span class="err">encoding=</span><span class="s2">&quot;utf-8&quot;</span> <span class="err">standalone=</span><span class="s2">&quot;yes&quot;</span> <span class="o">?</span><span class="k">&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>L'etiqueta <code>&lt;?xml ... ?&gt;</code> té els següents paràmetres o <em>atributs</em>:</p>
+<p>4.1. <strong><em>version</em></strong>:  és obligatori, indica les característiques XML que fa servir el document. </p>
+<p>4.2. <strong><em>encoding</em></strong>: indica la codificació (el joc de caràcters) que podem utilitzar en el document XML. UTF-8 és el més estàndar i admet els caràcters latins. Opcional</p>
+<p>4.3. <strong><em>standalone</em></strong>: El farem servir a temes posteriors. Indica si un document XML está enllaçat amb altre document. De moment posarem sempre <strong><em>yes</em></strong>. Opcional.</p>
+</li>
+</ol>
+<h3 id="214-declaracio-de-tipus-de-document-document-type-declaration-dtd">2.1.4. Declaració de tipus de document. Document Type Declaration (DTD)</h3>
+<p>La secció DTD està delimitada pels caràcters <strong><code>&lt;!DOCTYPE</code></strong> i pel tancament <strong><code>]&gt;</code></strong>. Aquesta secció permet fer vàries coses:</p>
+<ul>
+<li>
+<p>Definir un arxiu extern de validació DTD. Aquest arxiu extern permet validar l'arxiu XML, indicant el nom dels elements, el tipus de dades, l'ordre d'aparició, etc., tal com veurem al <a href="../03-xsd/">tema 3 (XSD)</a>)</p>
+</li>
+<li>
+<p>Declarar variables i valors per defecte (constants).</p>
+</li>
+</ul>
+<p>A continuació tenim un exemple de DTD:</p>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!DOCTYPE</span> <span class="nt">reminder</span>                          
+  <span class="kc">SYSTEM</span> <span class="s2">&quot;/home/eray/reminder.dtd&quot;</span>  
+  <span class="k">[</span> 
+    <span class="k">&lt;!ENTITY</span> <span class="ni">smile</span> <span class="s2">&quot;&lt;graphic file=&quot;</span><span class="ni">smile.png&quot;/</span><span class="k">&gt;</span><span class="err">&quot;</span><span class="k">&gt;</span> 
+  <span class="k">]&gt;</span> 
+</code></pre></div>
+<ul>
+<li>
+<p><strong>reminder</strong> és el nom de l'element arrel, el tipus de document.</p>
+</li>
+<li>
+<p>La paraula clau <strong>SYSTEM seguit d'una ruta</strong> indica un arxiu local que conté les declaracions DTD.</p>
+</li>
+<li>
+<p>Entre els claudàtors tenim les <strong>definicions de variables (ENTITY)</strong>. En aquest cas es tracta d'una entitat externa que serveix per incorporar a l'arxiu XML altres arxius no parseables directament per XML (per exemple, imatges o altres arxius). També es poden definir variables amb la mateixa sintaxi:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!DOCTYPE</span> <span class="nt">reminder</span>                          
+  <span class="k">[</span> 
+    <span class="k">&lt;!ENTITY</span> <span class="ni">nom-variable</span> <span class="ni">valor-variable</span><span class="k">&gt;</span> 
+  <span class="k">]&gt;</span> 
+</code></pre></div>
+<h3 id="215-elements">2.1.5. Elements.</h3>
+<h3 id="2151-element-arrel">2.1.5.1. Element arrel.</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;reminder&gt;</span><span class="w">                                </span>Element<span class="w"> </span>arrel
+<span class="w">    </span><span class="ni">&amp;smile;</span><span class="w">                               </span>Referencia<span class="w"> </span>a<span class="w"> </span>l&#39;entitat<span class="w"> </span>anterior
+<span class="w">    </span><span class="nt">&lt;msg&gt;</span>Be<span class="w"> </span>water<span class="w"> </span>my<span class="w"> </span>friend.<span class="nt">&lt;/msg&gt;</span>
+<span class="nt">&lt;/reminder&gt;</span><span class="w">                               </span>Fi<span class="w"> </span>del<span class="w"> </span>element<span class="w"> </span>arrel.
+</code></pre></div>
+<p>L'arrel és el primer element que trobem després del pròleg. Es fa servir principalment per recòrrer l'arbre XML i per processar la resta de nodes.
+Només hi pot haver-hi un. No té ni ascendents ni germans, només descendents.</p>
+<h3 id="2152-elements">2.1.5.2. Elements.</h3>
+<p>Dintre de l'arrel normalment hi ha altres elements. L'element és la unitat bàsica dels documents XML i contenen la informació del document. Delimiten la informació fent servir una <strong>etiqueta d'obertura</strong> i una <strong>altra de tancament</strong>. Entre aquestes etiquetes es troba el contingut de l'element, que pot ser una dada, altres elements o estar buit. L'etiqueta de tancament és obligatòria.</p>
+<p><img alt="Elements XML" src="../assets/img/2-41-xml-element.drawio.png" title="Elements XML" /></p>
+<h3 id="2153-elements-buits">2.1.5.3. Elements buits.</h3>
+<p>No tenen contingut, normalment utilitzen atributs i s'obre i es tanca amb una sola etiqueta. Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;location</span> <span class="err">lat=</span><span class="s2">&quot;40.7128&quot;</span> <span class="err">lon=</span><span class="s2">&quot;-74.0060&quot;</span> <span class="err">/</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>Els elements buits poden o no tenir atributs i la seva sintaxi es pot expressar com:</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;element</span><span class="k">&gt;</span><span class="err">&lt;/element</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>encara que normalment s'especifiqui així amb una sola etiqueta:</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;element</span> <span class="err">/</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>Alguns elements buits poden no tenir atributs. Per exemple, a HTML l'element <code>&lt;hr&gt;</code> dibuixa una linea horizontal al la pàgina web.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Sortida:</p>
+<hr>
+
+<h3 id="2154-atributs">2.1.5.4. Atributs.</h3>
+<p>A l'etiqueta d'obertura d'un element podem afegir dades adicionals mitjantçant l'ús d'atributs. Són parells nom-valor amb la següent sintaxi:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">atribut=</span><span class="s">&quot;valor&quot;</span><span class="nt">&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/element&gt;</span>
+</code></pre></div>
+<p>Es fan servir per emmagatzemar informació adicional sobre el contingut. Per exemple, per especificar les unitats de mesura:</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;pes</span><span class="w"> </span><span class="na">unitats=</span><span class="s">&quot;Kg&quot;</span><span class="nt">&gt;</span><span class="w"> </span>80<span class="w"> </span><span class="nt">&lt;/pes&gt;</span>
+</code></pre></div>
+També es poden fer servir per indentificar un element per distingir-lo d'un altre:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;capitulo</span><span class="w"> </span><span class="na">materia=</span><span class="s">&quot;Lenguaje Marcas&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;tema&gt;</span><span class="w"> </span>Introducción<span class="w"> </span><span class="nt">&lt;/tema&gt;</span>
+<span class="w">      </span><span class="nt">&lt;capitulo_1</span><span class="w"> </span><span class="na">subapartado=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span><span class="w"> </span>Conceptos<span class="w"> </span>y<span class="w"> </span>ventajas<span class="w"> </span><span class="nt">&lt;/capitulo_1&gt;</span>
+<span class="w">      </span><span class="nt">&lt;capitulo_1</span><span class="w"> </span><span class="na">subapartado=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span><span class="w"> </span>SGML<span class="w"> </span>el<span class="w"> </span>origen<span class="w"> </span><span class="nt">&lt;/capitulo_1&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/capitulo&gt;</span>
+</code></pre></div>
+<p>Un element pot tenir un nombre il·limitat d'atributs, en funció de la memòria RAM disponible. </p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;product</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12345&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Smartphone&quot;</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;Electronics&quot;</span><span class="w"> </span><span class="na">price=</span><span class="s">&quot;699.99&quot;</span><span class="w"> </span><span class="na">currency=</span><span class="s">&quot;USD&quot;</span><span class="w"> </span><span class="na">inStock=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>El nom dels atributs no es pot repetir, per tant el següent fragment és incorrecte.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="cm">&lt;!-- atributs incorrectes --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;product</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12345&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Smartphone&quot;</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;Electronics&quot;</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;GPS&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Per resoldre aquest problema tenim vàries solucions. Podem crear una llista de categories dintre d'un únic atribut:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;product</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12345&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Smartphone&quot;</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;Electronics GPS&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>o utilitzar elements:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;product</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;12345&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Smartphone&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;category&gt;</span>Electronics<span class="nt">&lt;/category&gt;</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">&lt;category&gt;</span>GPS<span class="nt">&lt;/category&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/product&gt;</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="2155-texte">2.1.5.5. Texte.</h3>
+<p>El texte representa les dades d'un document XML. Pot aparèixer com a contingut d'un element o com a valor d'un atribut, i no pot aparèixer en cap altre lloc. Per a representar els espais en blanc tenim quatre tipus de caràcters a XML:</p>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Simbol</th>
+<th>Codi</th>
+<th>Abreviatura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tabulador</td>
+<td>\t</td>
+<td>\&#9;</td>
+<td>TAB</td>
+</tr>
+<tr>
+<td>Nova línea</td>
+<td>\n</td>
+<td>\&#10;</td>
+<td>LF</td>
+</tr>
+<tr>
+<td>Retorn de carro</td>
+<td>\r</td>
+<td>\&#13;</td>
+<td>CR</td>
+</tr>
+<tr>
+<td>Espai</td>
+<td>\s</td>
+<td>\&#32;</td>
+<td>SPACE</td>
+</tr>
+</tbody>
+</table>
+<p>És possible mesclar texte i elements dintre d'un element, anomenat <strong>contingut mixte</strong>.</p>
+<h3 id="2156-estructura-dun-document-xml">2.1.5.6. Estructura d'un document XML</h3>
+<p>La informació a un document XML s'organitza en forma <strong>jeràrquica</strong>. Els elements es relacionen entre ells com en un arbre genealògic, mitjançant relacions: pares, fills, germans, nets...</p>
+<p><img alt="Estructura document XML" src="../assets/img/2-3-XML-estructura.drawio.png" title="Estructura document XML" /></p>
+<p>Aquesta estructura jeràrquica es denomina <strong>arbre</strong>. En informàtica, un arbre és una estructura de dades que té forma d'arbre invertit, comença amb un element arrel i cada element o node està connectat amb altre/s node/s. Als nodes que no tenen fills se'ls anomena <strong>nodes finals o fulles</strong> i a la resta <strong>nodes intermitgos o branques</strong>.</p>
+<p>Per exemple, si volem tenir una agenda, crearem l'element &lt;persona&gt; que conté els elements &lt;nom&gt;, &lt;cognoms&gt; i telèfons que a la seva vegada pot contenir múltiples numeros.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;persona&gt;</span>
+<span class="w">      </span><span class="nt">&lt;nom&gt;</span>Joan<span class="nt">&lt;/nom&gt;</span>
+<span class="w">      </span><span class="nt">&lt;cognoms&gt;</span>Pérez<span class="w"> </span>Garcia<span class="nt">&lt;/cognoms&gt;</span>
+<span class="w">      </span><span class="nt">&lt;telefons&gt;</span>
+<span class="w">        </span><span class="nt">&lt;movil&gt;</span>6658654523<span class="nt">&lt;movil&gt;</span>
+<span class="w">        </span><span class="nt">&lt;fixe&gt;</span>9375856554<span class="nt">&lt;/fixe&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/telefons&gt;</span>
+<span class="w">    </span><span class="nt">&lt;persona&gt;</span>
+</code></pre></div>
+<p>Els espais en blanc entre elements són ignorats.</p>
+<h3 id="216-comentaris">2.1.6. Comentaris.</h3>
+<p>Els comentaris comencen pels caràcters <code>&lt;!--</code> i es tanquen amb els caràcters <code>--&gt;</code>. Dintre dels comentaris es pot escriure qualsevol caràcter excepte el doble guió (--) que confon l'analitzador amb una etiqueta de tancament. Els comentaris, com en el cas de la programació, són fonamentals per a la
+comprensió del document XML, ja que és on explicarem per a que serveix cadascun dels elements. Els comentaris són molt últils quan tornem al nostre document al cap d'un temps o quan l'utilitzen altres programadors. Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="cm">&lt;!-- això és un comentari.  --&gt;</span>
+</code></pre></div>
+<h3 id="217-entitats-predefinides">2.1.7. Entitats predefinides.</h3>
+<p>Són entitats que permeten escriure alguns caràcters especials de marcatge, i per tant són interpretades. A la següent taula podem veure les entitats predefinides a XML.</p>
+<table>
+<thead>
+<tr>
+<th>Entitat</th>
+<th>Caràcter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\&amp;</td>
+<td>&amp;</td>
+</tr>
+<tr>
+<td>\&lt;</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td>\&gt;</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td>\&apos;</td>
+<td>'</td>
+</tr>
+<tr>
+<td>\&quot;</td>
+<td>"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="218-seccions-cdata">2.1.8. Seccions CDATA.</h3>
+<p>Són equivalents als comentaris, donat que l'analitzador (parser) XML no els processarà. No poden aparèixer ni abans de l'element arrel ni després del seu tancament. Fa servir l'etiqueta <strong>&lt;![CDATA[</strong> per l'inici i <strong>]]&gt;</strong> per indicar la fi. El següent exemple mostra l'ús de la secció CDATA en un arxiu XML que guarda correus electrònics:</p>
+<div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;note&gt;
+    &lt;to&gt;John&lt;/to&gt;
+    &lt;from&gt;Jane&lt;/from&gt;
+    &lt;subject&gt;Reminder&lt;/subject&gt;
+    &lt;body&gt;
+        &lt;![CDATA[
+        Here is a reminder for your meeting:
+        &lt;b&gt;Meeting with the development team&lt;/b&gt; at &lt;i&gt;3:00 PM&lt;/i&gt;.
+        Please review the &lt;a href=&quot;http://example.com/agenda&quot;&gt;agenda&lt;/a&gt;.
+        ]]&gt;
+    &lt;/body&gt;
+&lt;/note&gt;
+</code></pre></div>
+<h3 id="249-definicio-de-tipus-de-document-dtd">2.4.9. Definició de tipus de document (DTD).</h3>
+<p>Els arxius DTD permeten definir regles de creació del document XML. La seva existència no és obligatoria per tal que el document estigui ben format, però si hem d'afegir aquesta línea si volem tenir un document vàlid.</p>
+<p>El DTD és la forma de definició de l'esquema d'un document més antigua. Encara hi ha molts documents XML que es validen amb DTD, encara que té les seves limitacions. </p>
+<p>DTD no és un llenguatge XML. No pot fertot el que volem, per exemple comprobar el contingut de les dades.</p>
+<p>DTD no pot comprovar que es una data:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;data&gt;</span>.<span class="nt">&lt;/data&gt;</span>
+</code></pre></div>
+<h3 id="definicio-dtd-interna">Definició DTD interna</h3>
+<p>Es poden incorporar DTD dintre del propi document DTD</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;</span><span class="o">?</span><span class="err">xml</span> <span class="err">version=</span><span class="s2">&quot;1.0&quot;</span> <span class="err">encoding=</span><span class="s2">&quot;UTF-8&quot;</span> <span class="o">?</span><span class="k">&gt;</span>
+<span class="k">&lt;!DOCTYPE</span> <span class="nt">process</span> <span class="k">[</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">process</span> <span class="o">(</span><span class="nt">adress</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">adress</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">]&gt;</span>
+<span class="err">&lt;process</span><span class="k">&gt;</span>
+  <span class="err">&lt;adress</span><span class="k">&gt;</span><span class="err">http://www.example.com&lt;/adress</span><span class="k">&gt;</span>
+<span class="err">&lt;/process</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>És millor fer-los externs, doncs podem compartir-los i separar les dades de la estructura.</p>
+<h3 id="definicio-dtd-externa">Definició DTD externa</h3>
+<p>Per definir un DTD extern utilitzem l'etiqueta <code>&lt;!DOCTYPE &gt;</code> seguit del nom de l'arrel, la paraula clau <code>SYSTEM</code> i el recurs on es troba la definició DTD, que pot ser un fitxer local de la màquina o doctypes a internet</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;</span><span class="o">?</span><span class="err">xml</span> <span class="err">version=</span><span class="s2">&quot;1.0&quot;</span> <span class="err">encoding=</span><span class="s2">&quot;UTF-8&quot;</span> <span class="o">?</span><span class="k">&gt;</span>
+<span class="k">&lt;!DOCTYPE</span> <span class="nt">alumnes</span> <span class="kc">SYSTEM</span> <span class="s2">&quot;alumnes.dtd&quot;</span><span class="k">&gt;</span>
+
+<span class="k">&lt;!DOCTYPE</span> <span class="nt">alumnes</span> <span class="kc">SYSTEM</span> <span class="s2">&quot;http://www.example.com/alumnes.dtd&quot;</span>
+</code></pre></div>
+<h3 id="definicio-delements-amb-dtd">Definició d'elements amb DTD</h3>
+<p>Per definir un element utilitzem la següent definició:</p>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!ELEMENT</span> <span class="nt">nom_element</span> <span class="nt">contingut</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>Exemples:</p>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!ELEMENT</span> <span class="nt">nom</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">cognom</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">cognom</span> <span class="o">(</span><span class="nt">nom</span><span class="o">,</span> <span class="nt">cognom</span><span class="o">)</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>Un <code>#PCDATA</code> indica que l'element només pot tenir dades a dins (no altres elements).</p>
+<p>Els elements buits s'especifiquen amb la paraula clau <code>EMPTY</code></p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;element_buit</span> <span class="err">/</span><span class="k">&gt;</span>
+
+<span class="k">&lt;!ELEMENT</span> <span class="nt">element_buit</span> <span class="kc">EMPTY</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>Els elements que contenen altres elements s'indiquen separats per comes. Això vol dir que han d'aparèixer tots els elements obligatòriament. Tenim l'operador '|' que permet tenir alternatives. Per exemple la següent definició: </p>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!ELEMENT</span> <span class="nt">titol</span> <span class="o">(</span><span class="nt">president</span><span class="o">|</span><span class="nt">treballador</span><span class="o">)</span><span class="k">&gt;</span>
+</code></pre></div>
+<p>Ens permet definir només un títol dels dos, però no els dos a la vegada</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;titol&gt;</span>
+<span class="w">  </span><span class="nt">&lt;president&gt;</span>John<span class="w"> </span>Wood<span class="nt">&lt;/president&gt;</span>
+<span class="nt">&lt;/titol&gt;</span>
+
+<span class="cm">&lt;!-- o --&gt;</span>
+
+<span class="nt">&lt;titol&gt;</span>
+<span class="w">  </span><span class="nt">&lt;treballador&gt;</span>John<span class="w"> </span>Wood<span class="nt">&lt;/treballador&gt;</span>
+<span class="nt">&lt;/titol&gt;</span>
+</code></pre></div>
+<p>Podem agrupar els elements de forma flexible, per tant les següents definicions són vàlides:</p>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!ELEMENT</span> <span class="nt">cercle</span> <span class="o">(</span><span class="nt">centre</span><span class="o">,</span> <span class="o">(</span><span class="nt">radi</span> <span class="o">|</span> <span class="nt">diametre</span><span class="o">))</span><span class="k">&gt;</span>
+
+<span class="k">&lt;!ELEMENT</span> <span class="nt">comic</span> <span class="o">(</span><span class="nt">cognom</span> <span class="o">|</span> <span class="o">(</span> <span class="nt">nom</span><span class="o">,</span>
+<span class="o">((</span><span class="nt">inicials</span><span class="o">,</span> <span class="nt">cognom</span><span class="o">)</span> <span class="o">|</span> <span class="nt">cognom</span> <span class="o">)))</span><span class="k">&gt;</span>
+
+<span class="k">&lt;!ELEMENT</span> <span class="nt">paragraf</span> <span class="o">(</span><span class="kc">#PCDATA</span> <span class="o">|</span> <span class="nt">nom</span> <span class="o">|</span> <span class="nt">professio</span> <span class="o">|</span>
+<span class="nt">marca</span> <span class="o">|</span> <span class="nt">data</span> <span class="o">)*</span> <span class="k">&gt;</span>
+</code></pre></div>
+<p>També podem especificar quantes instàncies de cada element fill pot aparèixer. Això es controla mitjantçat els modificadors de repetició:</p>
+<table>
+<thead>
+<tr>
+<th>Simbol</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>?</td>
+<td>Indica que l'element pot ser-hi o no</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Indica que l'element pot ser-hi qualsevol número de vegades o no existir</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Indica que l'element pot ser-hi mínim ún número de vegades</td>
+</tr>
+</tbody>
+</table>
+<p>Per exemple:</p>
+<p>El següent DTD valida que hi pugui haver més d'un cognom:</p>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!ELEMENT</span> <span class="nt">persona</span> <span class="o">(</span><span class="nt">nom</span><span class="o">,</span><span class="nt">cognom</span><span class="o">+)</span><span class="k">&gt;</span>
+
+<span class="err">&lt;persona</span><span class="k">&gt;</span>
+  <span class="err">&lt;nom</span><span class="k">&gt;</span><span class="err">Xavier&lt;/nom</span><span class="k">&gt;</span>
+  <span class="err">&lt;cognom</span><span class="k">&gt;</span><span class="err">Sala&lt;/cognom</span><span class="k">&gt;</span>
+  <span class="err">&lt;cognom</span><span class="k">&gt;</span><span class="err">Pujolar&lt;/cognom</span><span class="k">&gt;</span>
+<span class="err">&lt;/persona</span><span class="k">&gt;</span>
+</code></pre></div>
+<h3 id="definicio-datributs-amb-dtd">Definició d'atributs amb DTD</h3>
+<p>Els atributs es defineixen mitjantçant l'etiqueta <code>&lt;!ATTLIST&gt;</code>. Per exemple:</p>
+<p>Sintaxi:</p>
+<p><code>&lt;!ATTLIST nom_element nom_atribut tipus_dades modificador&gt;</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;!ATTLIST</span> <span class="nt">equip</span> <span class="na">posicio</span> <span class="kc">ID</span> <span class="kc">#REQUIRED</span><span class="k">&gt;</span>
+<span class="k">&lt;!ATTLIST</span> <span class="nt">nom</span> <span class="na">dni</span> <span class="kc">NMTOKEN</span> <span class="kc">#IMPLIED</span><span class="k">&gt;</span>
+<span class="err">&lt;!ATTRLIST</span> <span class="err">document</span> <span class="err">versio</span> <span class="err">CDATA</span> <span class="err">#FIXED</span> <span class="s2">&quot;1.0&quot;</span><span class="k">&gt;</span>
+</code></pre></div>
+<ul>
+<li><code>#REQUIRED</code> indica que l'atribut és obligatori.</li>
+<li><code>#IMPLIED</code> indica que el dni és un atribut opcional.</li>
+<li><code>#FIXED</code> indica que l'atribut és "1.0" i no es pot canviar (és una constant).</li>
+</ul>
+<h2 id="25-elements-regles-i-consideracions">2.5. Elements. Regles i consideracions</h2>
+<p>Per definir els noms dels elements.S'han definit una sèrie de regles molt bàsiques:</p>
+<ul>
+<li>Els <strong>elements</strong> poden començar amb una <strong>lletra</strong> (de l'alfabet de qualsevol idioma), <strong>subratllat</strong> o dos <strong>punts</strong> (estan desaconsellats perquè es fan servir pels espais de noms, que veurem a continuació).</li>
+<li>Els següents caràcters poden ser lletres, dígits, subratllats, guió baix, coma o dos punts (<strong>a-zA-Z / 0-9 / _ / , / ;</strong>).</li>
+<li>Els <strong>noms que comencen per XML estan reservats</strong> per a l'estandar.</li>
+<li><strong>No pot haver-hi espais en blanc</strong>, <strong>ni cap altre caràcter</strong> no mencionat anteriorment: $, @, etc..</li>
+</ul>
+<p>Exemples d'elements correctes:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;nom&gt;</span>
+<span class="nt">&lt;Producte1&gt;</span>
+<span class="nt">&lt;nom_client&gt;</span><span class="w"> </span>
+<span class="nt">&lt;xMLData&gt;</span>
+<span class="nt">&lt;_data_item&gt;</span>
+</code></pre></div>
+<p>Exemples d'elements incorrectes:</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;</span>@element&gt;
+<span class="nt">&lt;1producte&gt;</span>
+<span class="nt">&lt;xmlversion&gt;</span>
+<span class="nt">&lt;nom</span><span class="w"> </span><span class="err">cognoms</span><span class="nt">&gt;</span>
+</code></pre></div>
+<h2 id="26-correcio-sintactica-a-xml">2.6. Correció sintàctica a XML</h2>
+<p>L'especificació XML defineix la sintaxi que el llenguatge ha de seguir:</p>
+<ul>
+<li>Com es delimiten els elements amb etiquetes</li>
+<li>Que format pot tenir una etiqueta</li>
+<li>Que noms són acceptables per a elements</li>
+<li>On es col.loquen els atributs</li>
+</ul>
+<p>Un document XML es diu que està ben format quan segueix les regles establertes per W3C per a les especificacions. Algunes ja les hem vistes:</p>
+<ul>
+<li>Només pot haver-hi un element arrel.</li>
+<li>Els elements que no són buits han de tenir una etiqueta d'obertura i una de tancament.</li>
+<li>Els element han d'aparèixer correctament eniuats, quant a la seva obertura i tancament. No poden encavalcar-se.</li>
+<li>Els noms dels elements i atributs són sensibles a majúscules i minúscules (case sensitive).</li>
+<li>Els valors dels atributs han d'aparèixer entre cometes simples o dobles pero no s'han de mesclar.</li>
+<li>No pot haver-hi dos atrinuts amb el mateix nom associat al mateix element.</li>
+<li>No es poden introduir instruccions de procesament ni comentaris en cap lloc de l'interior de les etiquetes d'obertura o tancament dels elements.</li>
+<li>No pot haver res abans de l'instrucció de procesament.</li>
+</ul>
+<h2 id="27-espai-de-noms">2.7. Espai de noms</h2>
+<p>A un document XML els noms dels elements XML els escull el desenvolupador. Podem tenir diferents aplicacions que generin elements amb idèntic nom però diferent significat. Aquí tenim un codi XML que fa servir l’element title per descriure el títol d’una entrada bibliogràfica:</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;book&gt;</span>
+<span class="w">      </span><span class="nt">&lt;title&gt;</span>A<span class="w"> </span>true<span class="w"> </span>story<span class="nt">&lt;/title&gt;</span>
+<span class="w">      </span><span class="nt">&lt;description&gt;</span>A<span class="w"> </span>real<span class="w"> </span>cool<span class="w"> </span>publication<span class="nt">&lt;/description&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/book&gt;</span>
+</code></pre></div>
+A continuació tenim un segon fragment de XML on l’element title descriu el títol d’una persona.
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;record&gt;</span>
+<span class="w">      </span><span class="nt">&lt;name&gt;</span>Miller<span class="nt">&lt;/name&gt;</span>
+<span class="w">      </span><span class="nt">&lt;title&gt;</span>Dr.<span class="w"> </span><span class="nt">&lt;/title&gt;</span>
+<span class="w">      </span><span class="nt">&lt;publications&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/publications&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/record&gt;</span>
+</code></pre></div>
+Si unim aquests dos fragments, hauria un conflicte de noms perquè els dos fragments contenen l’element &lt;title&gt; amb un significat diferent (títol d’un llibre I títol d’una persona). Per resoldre aquest problema XML fa servir els espais de noms o namespaces.</p>
+<p>Per utilitzar els espais de noms primer hem de definir-los. Per declarar un espai de noms podem afegir l’atribut xmlns a l’element d’obertura, amb la següent sintaxi:
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">xmlns:prefix=</span><span class="s">&quot;URI&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+Per exemple:
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;b:book</span><span class="w"> </span><span class="na">xmlns:b=</span><span class="s">&quot;https://martinfowler.com/articles/writingInXml.html&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;b:title&gt;</span>A<span class="w"> </span>true<span class="w"> </span>story<span class="nt">&lt;/b:title&gt;</span>
+<span class="w">      </span><span class="nt">&lt;b:description&gt;</span>A<span class="w"> </span>real<span class="w"> </span>cool<span class="w"> </span>publication<span class="nt">&lt;/b:description&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/b:book&gt;</span>
+</code></pre></div>
+A tenir en compte:</p>
+<ul>
+<li>
+<p>La URI no ha d’apuntar a cap web que estigui on-line, és només un identificador únic. Si volguèssim desenvolupar un llenguatge XML per un àmbit, hauriem de tenir una web on hi hagués un índex de tots els elements que es poden fer servir.</p>
+</li>
+<li>
+<p>Quan fem servir un element d’aquell espai de noms, afegim el prefix seguit del nom de l’element, separat per dos punts.
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nt">&lt;prefix:element&gt;</span>data<span class="nt">&lt;/prefix:element&gt;</span>
+</code></pre></div>
+L’inconvenient d’aquest sistema és que hem d’afegir el prefixe per a cada element. Si fem servir majoritàriament un espai de noms, podem definir-ho com a
+espai de noms per defecte. Simplement treiem el prefix:
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;URI&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+En aquest cas, ja no haurem d’afegir el prefix a cada element. Per exemple, per escriure un document en XHTML:
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="w">      </span><span class="cm">&lt;!-- elements are in the HTML namespace by default --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;html</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&#39;http://www.w3.org/1999/xhtml&#39;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;head&gt;</span>
+<span class="w">          </span><span class="nt">&lt;title&gt;</span>Frobnostication<span class="nt">&lt;/title&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/head&gt;</span>
+<span class="w">        </span><span class="nt">&lt;body&gt;</span>
+<span class="w">          </span><span class="nt">&lt;p&gt;</span>Moved<span class="w"> </span>to<span class="w"> </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">href=</span><span class="s">&#39;http://frob.example.com&#39;</span><span class="nt">&gt;</span>here<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/body&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/html&gt;</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>Els espais de noms s’utilitzen en la validació de documents XML (XML Schema / XSD).</p>
+<p>Referències:</p>
+<p><a href="https://edutechwiki.unige.ch/en/XML_namespace#Namespaces">Edutech Wiki XML namespace</a></p>
+<h2 id="28-recomanacions-de-disseny">2.8. Recomanacions de disseny</h2>
+<h3 id="281-elements-vs-atributs-on-emmagatzemar-linformacio">2.8.1. Elements vs Atributs: on emmagatzemar l'informació</h3>
+<p>Les dades poden ser emmagatzemades tant als elements com als atributs. Els següents exemples contenen la mateixa informació:</p>
+<p>Atributs:
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;person</span><span class="w"> </span><span class="na">sex=</span><span class="s">&quot;female&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;firstname&gt;</span>Anna<span class="nt">&lt;/firstname&gt;</span>
+<span class="w">      </span><span class="nt">&lt;lastname&gt;</span>Smith<span class="nt">&lt;/lastname&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
+</code></pre></div>
+Elements
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;person&gt;</span>
+<span class="w">      </span><span class="nt">&lt;sex&gt;</span>female<span class="nt">&lt;/sex&gt;</span>
+<span class="w">      </span><span class="nt">&lt;firstname&gt;</span>Anna<span class="nt">&lt;/firstname&gt;</span>
+<span class="w">      </span><span class="nt">&lt;lastname&gt;</span>Smith<span class="nt">&lt;/lastname&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/person&gt;</span>
+</code></pre></div>
+No hi ha regles per definir quan s'ha d'utilitzar un element o un atribut. No obstant, hi ha algunes pautes generals.</p>
+<p><strong>Elements</strong>:</p>
+<ul>
+<li>Representen jerarquíes o continguts uns dintre dels altres.</li>
+<li>Hi poden haver altres elements dintre d'un element.</li>
+<li>L'ordre dels elements es representatiu.</li>
+<li>Poden tenir atributs.</li>
+<li>Poden haver múltiples ocurrències del mateix element dintre del document.</li>
+</ul>
+<p>És a dir, poden haver diversos elements amb el mateix nom.</p>
+<p><strong>Atributs</strong>:</p>
+<ul>
+<li>Van associats als elements. Pot haver-hi més d'un per a cada element.</li>
+<li>Són modificadors de la informació.</li>
+<li>Es solen fer servir per a registrar metadades.</li>
+<li>L'ordre dels atributs dintre de l'element no és rellevant.</li>
+<li>No es poden extendre amb altres elements al seu interior.</li>
+<li>Un atribut no pot tenir diferents valors dintre d'un mateix element.</li>
+</ul>
+<p>Els atributs es fan servir sovint a HTML, però a XML en general s'ha d'intentar evitar-los.</p>
+<h3 id="282-nivell-desglossament-dades">2.8.2. Nivell desglossament dades</h3>
+<p>Fins a quan hem de desglossar les nostres dades, partint-les en unitats més petites? </p>
+<p>Els valors de les dades s'han de desglossar al nivell més baix possible. Això els permet ser processats de diverses formes per diferents usos, com a visualització, operacions matemàtiques i validació de les dades. És molt més fàcil concatenar dos valors de dades de nou que no pas dividir-los. A més, les dades més granulars són molt més fàcils de validar.</p>
+<p>És una pràctica força habitual posar un valor de dades i les seves unitats en el mateix element, per exemple &lt;length&gt;3cm&lt;/length&gt;. Tanmateix, l'enfocament preferit és tenir un atribut per a les unitats, per exemple &lt;length units="cm"&gt;3&lt;/length&gt;.</p>
+<p>L'ús d'un únic valor concatenat (per exemple "3 cm") és limitant perquè:</p>
+<ul>
+<li>
+<p>És extremadament complicat de validar. S'ha d'aplicar un patró que hauria de canviar cada vegada que s'afegeix un tipus d'unitat.</p>
+</li>
+<li>
+<p>No es poden realitzar comparacions, conversions ni operacions matemàtiques amb les dades sense dividir-les.</p>
+</li>
+<li>
+<p>Si es vol mostrar l'element de dades de manera diferent -per exemple, com "3 centímetres" o "3 cm" o només "3"-, l'heu de dividir. Això complica els fulls d'estil i les aplicacions que processen el document d'instància.</p>
+</li>
+</ul>
+<p>També és possible anar massa lluny. Per exemple, podeu desglossar una data de la manera següent:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;dataComanda&gt;</span>
+<span class="w">      </span><span class="nt">&lt;any&gt;</span>2001<span class="nt">&lt;/any&gt;</span>
+<span class="w">      </span><span class="nt">&lt;mes&gt;</span>06<span class="nt">&lt;/mes&gt;</span>
+<span class="w">      </span><span class="nt">&lt;dia&gt;</span>15<span class="nt">&lt;/dia&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dataComanda&gt;</span>
+</code></pre></div>
+<p>Probablement això sigui excessiu, tret que tingueu una necessitat especial de processar aquests elements per separat.</p>
+<h2 id="29-software-edicio-xml">2.9. Software edició XML</h2>
+<h3 id="291-editors-xml">2.9.1. Editors XML</h3>
+<p>Existeixen moltes eines per a la gestió d'XML i les seves tecnologies associades. Algunes són molt sofisticades i en general amb llicències propietàries, però també tenim més senzilles, de codi obert i gratuïtes. </p>
+<p>Alguns exemples d'<strong>aplicacions comercials</strong>:</p>
+<ul>
+<li>
+<p><a href="https://www.altova.com/es/xmlspy-xml-editor">XML Spy</a></p>
+</li>
+<li>
+<p><a href="https://www.oxygenxml.com/">OXygen</a></p>
+</li>
+</ul>
+<p>Per altra banda tenim el següent <strong>software de codi obert</strong> (FOSS):</p>
+<ul>
+<li>
+<p><a href="https://xml-copy-editor.sourceforge.io/">XML Copy Editor (multiplataforma)</a></p>
+</li>
+<li>
+<p><a href="https://microsoft.github.io/XmlNotepad/">XML Notepad</a></p>
+</li>
+</ul>
+<p>Aquestes eines estan enfocades en el tractament de llenguatges de marques. Alguns <strong>IDE (Entorns de desenvolupament)</strong> també poden configurar-se per poder analitzar arxius XML. Alguns dels més coneguts són:</p>
+<ul>
+<li>
+<p><a href="https://vscodium.com/">VSCodium (multiplataforma) (RECOMENDACIÓ)</a></p>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+</li>
+</ul>
+<h3 id="292-analitzadors-xml-xml-parser-validadors-xml-i-xsd">2.9.2. Analitzadors XML (XML Parser). Validadors XML i XSD.</h3>
+<p>Els parser analitzen els documents XML i determinen l'estructura i propietats de les dades. Alguns parsers generen l'arbre asociat a l'arxiu i ens ho mostren pel navegador. Els parsers verifiquen la sintaxi del document.</p>
+<p>Si l'analitzador també es verificador, aleshores és un analitzador verificador. Aquests analitzador també comproben la semàntica del document e informen
+dels error existents. </p>
+<p>Alguns validadors online:</p>
+<ul>
+<li>
+<p><a href="https://validator.w3.org">W3C Markup Validation Service (recomanat)</a></p>
+</li>
+<li>
+<p><a href="https://www.freeformatter.com/xml-validator-xsd.html">XML Validator - XSD (XML Schema)</a></p>
+</li>
+</ul>
+<p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

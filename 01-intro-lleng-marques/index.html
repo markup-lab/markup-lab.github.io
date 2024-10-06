@@ -1,0 +1,762 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Tema 1. Introducció als llenguatges de marques - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-1-introduccio-als-llenguatges-de-marques" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 1. Introducció als llenguatges de marques
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-que-es-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Què és XML?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-que-es-i-que-no-es-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Què és i què no és XML.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Què és i què no és XML.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-no-es-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Què NO és XML?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-origen-i-evolucio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Origen i evolució
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Origen i evolució">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-cronologia-dels-llenguatges-de-marques" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1. Cronologia dels llenguatges de marques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline-llenguatges-de-marques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline llenguatges de marques
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-caracteristiques-dels-llenguatges-de-marques" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. Característiques dels llenguatges de marques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-classificacio-dels-llenguatges-de-marques" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. Classificació dels llenguatges de marques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-importancia-en-el-context-actual" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6. Importància en el context actual
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="tema-1-introduccio-als-llenguatges-de-marques">Tema 1. Introducció als llenguatges de marques</h1>
+<div class="admonition quote">
+<p class="admonition-title">Tim Bray, XML spec. coauthor</p>
+<p>"The core idea of XML is to provide a standard, flexible way to create information formats and share both the format and the data on the World Wide Web, intranets, and elsewhere."</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Jon Bosak led the creation of the XML specification at the W3C.</p>
+<p>"No se necesita ser un genio para diseñar un sistema basado en XML, pero se necesita ser un genio para hacer que funcione de manera eficiente." </p>
+</div>
+<h2 id="11-que-es-xml">1.1. Què és XML?</h2>
+<p><strong>XML (eXtended Markup Language)</strong> és un sistema de emmagatzemament d'informació basat en marques o etiquetes definides per l'usuari. XML es va dissenyar amb dos propòsits:</p>
+<ul>
+<li>
+<p><strong>Emmagatzemar dades i presentar-les</strong> de forma estructurada. Podem veure XML com una base de dades lleugera on l'informació està en format de texte. Les bases de dades estandar contenen informació binària no llegible amb un editor de texte.</p>
+</li>
+<li>
+<p><strong>Enviar informació per la xarxa</strong>. Els servidors web disposen d'interfícies de comunicació (APIs) per comunicar-se amb altres servidors mitjançat l'enviament de fitxers. Aquí es fan servir tecnologies com SOAP (basat en XML) o JSON (té una sintaxi més senzilla que XML, basada en parells clau-valor). </p>
+</li>
+</ul>
+<p>A continuació es descriu el procés general de creació d'un document XML:</p>
+<ol>
+<li>
+<p>A XML les <strong>etiquetes no estan predefinides</strong> com a HTML. Per tant, cada usuari ha de definir les seves etiquetes depenent de l'àmbit al que pertany el document. En aquesta part és important saber posar nom a l'informació, és a dir 'etiquetar'. Hem d'aprendre a definir conceptes que es transformaran en <strong>etiquetes</strong>.</p>
+</li>
+<li>
+<p>Els llenguatges de marques han de complir una sèrie de regles. Aquestes regles faran que el <strong>document XML sigui correcte sintàcticament o estigui ben format</strong>. Per exemples, les etiquetes s'han d'obrir i tancar en ordre invers, els valors dels atributs han d’anar entre cometes, etc.</p>
+</li>
+<li>
+<p>Una vegada tenim el document ben format, hem de <strong>validar el document XML</strong>, és a dir verificar que la informació que surt en el document XML s'ajusta a una sèrie de regles definides en el document de validació. Per exemple, indicant quins elements i atributs poden aparèixer, quins elements son optatius i quins no. Per exemple, podem definir un document XML per guardar els llibres d'una biblioteca, i definir que per a cada llibre i ha d'haver un element pel titol i un altre pel autor del llibre. En aquest cas parlariem d'un document vàlid. Hi ha dues <strong>tècniques de validació de documents XML</strong>: DTD i els esquemes XML (XSD). </p>
+<ul>
+<li><strong>DTD</strong> és heratada de SGML, molt popular al anys 2000. </li>
+<li><strong>XSD</strong> és una tecnologia més potent i actual.És el que veurem principalment en aquest mòdul. XSD és un llenguatge XML.</li>
+</ul>
+</li>
+</ol>
+<h2 id="12-que-es-i-que-no-es-xml">1.2. Què és i què no és XML.</h2>
+<p><strong>XML és un estandar</strong> o norma, no una implementació concreta d'un llenguatge. És un <strong>metallenguatge de marques</strong>, és a dir no defineix cap conjunt d'etiquetes fixe, sino que els desenvolupadors poden crear els elements que necessitin amb l'estructura específica.</p>
+<p>És un format flexible que permet adaptar-se a l'aplicació que desitgem. Per exemple:</p>
+<ul>
+<li>Si volguèssim fer un document per a la banca tindrem etiquetes com &lt;interes&gt;,
+&lt;plaç&gt;, &lt;compte&gt; o &lt;desfalc&gt;.</li>
+<li>Si volem fer un document per a League of Legends, tindrem etiquetes com
+&lt;campio&gt;, &lt;habilitat&gt;, &lt;objecte&gt; o &lt;encis&gt;.</li>
+</ul>
+<h3 id="que-no-es-xml">Què NO és XML?</h3>
+<ul>
+<li>
+<p><strong>XML no és un llenguatge de programació</strong>, de forma que no existeixen compiladors de XML que generin programes executables. Els documents XML es poden generar o llegir des de les aplicaciones que creem. Per exemple, una aplicació d'escriptori pot guardar la seva configuració en format XML. Un compilador genera un arxiu executable pel S.O. mentre que un parser analitza un document i en genera un altre.</p>
+</li>
+<li>
+<p><strong>No és un protocol de comunicacions</strong>, de forma que no enviarà dades per nosaltres a Internet, com tampoc ho fa HTML. Alguns  protocols de comunicacions són HTTP, FTP. Alguns protocols de comunicacions com <a href="https://en.wikipedia.org/wiki/SOAP">SOAP</a> estan basats en XML.</p>
+</li>
+<li>
+<p><strong>No és un gestor de BBDD (SGDB)</strong>. Una BBDD relacional pot contenir camps de tipus XML. Existeixen inclús BBDD natives en XML, és a dir que guarden i recuperen la informació en format XML, però aquests sistemes en sí mateixos no són una BBDD. XML és pot considerar una base de dades jeràrquica en format texte. Juntament amb altres llenguatges com XQuery permet fer consultes directament sobre les dades en format XML. </p>
+</li>
+</ul>
+<p>XML té format de texte pla, i es pot transmetre per Internet doncs els arxius són relativament lleugers. L'<strong>extensió dels arxius és .xml</strong>. Són arxius de texte normals però per a que els navegadors i altres aplicacions el tractin con a XML utilitzem aquesta extensió.</p>
+<h2 id="13-origen-i-evolucio">1.3. Origen i evolució</h2>
+<p>Els llenguatges de marques són fonamentals en la informàtica i les telecomunicacions modernes, ja que permeten definir la manera en què es presenta i estructura la informació, tant per a la visualització humana com per al processament automatitzat per màquines. La idea de marcatge té arrels en la necessitat de donar més significat o informació addicional a certs elements dins d'un text, tal com fem en l'escriptura amb l'ús de majúscules, negretes, cursives i altres.</p>
+<p>L'ús de marques per donar format a documents escrits es remunta a molts segles enrere, però en el context digital, el concepte de llenguatges de marques va començar a prendre forma a mesura que es va desenvolupar la informàtica. Durant els anys 60, a mesura que els ordinadors esdevenien més comuns en entorns corporatius i científics, va sorgir la necessitat d'unificar la manera com es creaven i compartien els documents entre diferents sistemes informàtics.</p>
+<p>En l'àmbit informàtic, l'exemple més conegut són les pàgines web, un llenguatge de marques que ens permet donar format i transformar la informació que es mostra al nostre navegador web.</p>
+<p>Les pàgines web fan servir el llenguatge de marques HTML. Aquest llenguatge permet modificar el títol d'una pàgina perquè es mostri més gran, modificar el color de la font, la disposició dels elements de texte dintre de la pàgina, etc. És a dir permet aplicar un format determinat a la informació.</p>
+<p>Una <strong>marca</strong> és una senyal que delimita un texte, donant-li informació al navegador de com interpretar i renderitzar aquest texte al navegador. Les marques més comuns estan formades per una paraula delimitada pels símbols "&lt;" i "&gt;". Per exemple &lt;html&gt; o &lt;h2&gt;. </p>
+<p>Tal com hem comentat els llenguatges de marques no es consideren llenguatges de programació i per tant no podem dir que estem programant, ja que aquests llenguatges no disposen de sentències de control, funcions, etc. No obstant, els llenguatges de marques sí que es podem combinar amb altres llenguatges de programació, com ara Java, Javascript o PHP per mostrar la informació per pantalla d'una forma més ordenada i amigable.</p>
+<h3 id="131-cronologia-dels-llenguatges-de-marques">1.3.1. Cronologia dels llenguatges de marques</h3>
+<ul>
+<li>
+<p><strong>GML</strong> va ser creat per IBM a finals dels 60 com a solució a la falta de compatibilitat dels documents electrònics que s'enviaven entre els diferents mainframes de l’època. GML va proporcionar una manera estandaritzada de descriure l'estructura i format dels documents. </p>
+</li>
+<li>
+<p><strong>SGML</strong>. La necessitat d'estandarització de GML va porta al desenvolupament de SGML. va passar a formar part de l'estàndar ISO (ISO 8879) el 1986. SGML es defineix com a metallenguatge, és a dir, permet crear altres llenguatges de marques (un d'ells HTML). </p>
+<p>Exemple de document SGML (recipe.sgml):</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>&lt;!doctype recipe system &quot;recipe.dtd&quot;&gt;
+&lt;recipe&gt;
+  &lt;title&gt;Chocolate fudge&lt;/title&gt;
+  &lt;comment&gt;My mother&#39;s recipe&lt;/comment&gt;
+  &lt;ingredients&gt;
+    &lt;ingredient quant=&#39;1&#39; lb&gt;sugar
+    &lt;ingredient quant=&#39;4&#39; oz&gt;chocolate
+    &lt;ingredient quant=&#39;&amp;amp;frac12;&#39; pt&gt;cream
+    &lt;ingredient quant=&#39;1&#39; oz&gt;butter
+  &lt;/ingredients&gt;
+  &lt;method&gt;
+    &lt;list&gt;
+      &lt;item&gt;Mix the ingredients in a pan
+      &lt;item&gt;Heat to 234&amp;amp;deg;F, stirring constantly
+      &lt;item&gt;Pour into greased flat tin
+      &lt;item&gt;Allow to cool before cutting
+    &lt;/list&gt;
+  &lt;/method&gt;
+  &lt;source&gt;Adapted from the Good Housekeepings cookbook&lt;/source&gt;
+&lt;/recipe&gt;
+</code></pre></div>
+<p>Encara que SGML va establir les bases per a molts dels llenguatges de marques més específics (HTML o XML), la seva complexitat va fer difícil adoptar-lo en alguns entorns.</p>
+<ul>
+<li>
+<p>Amb la creació de la World Wide Web a principis dels anys 90, es va fer evident la necessitat d'un llenguatge de marques específicament dissenyat per a la creació de pàgines web. Això va donar lloc a <strong>HTML (HyperText Markup Language)</strong>. Tim Berners-Lee va crear la web (conjunt de protocols i llenguatges, entre ells HTML) a finals de 1990, fent un esforç de simplificació de SGML, que es considerava un llenguatge força complicat. HTML també deriva de SGML, però no és un metallenguatge. L’última versió de HTML, HTML5 va sortir el 2014. Apart dels llenguatges abans esmenats, n'hi ha d'altres basats en XML.</p>
+</li>
+<li>
+<p><strong>XML (eXtensible Markup Language)</strong>. L'any 1996 va sorgir el primer esborrany de l'especificació del <strong>XML</strong>. La primera versió de XML (<strong>XML 1.0</strong>) es va definir l'any 1998. XML és deriva de SGML i es considera un <strong>metallenguatge</strong>.</p>
+</li>
+<li>
+<p>La versió XML 1.1 va sortir al febrer de 2004. Conté algunes característiques amb usos molt específics i no està gaire implementada. Es recomana només si volem fer servir les seves característiques especials. </p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Quina versió utilitzarem per defecte??</p>
+<p>Nosaltres utilitzarem la versió 1.0 d'XML.</p>
+</div>
+<p>La següent imatge relaciona els diferents llenguatges de la família GML.</p>
+<p><img alt="Llenguatges família GML" src="../assets/img/sgml-xml-html.drawio.png" title="Llenguatges família GML" /></p>
+<h3 id="timeline-llenguatges-de-marques">Timeline llenguatges de marques</h3>
+<p><img alt="Timeline llenguatges de marques" src="../assets/img/1-4-markup_timeline.png" title="Timeline llenguatges de marques" /></p>
+<h2 id="14-caracteristiques-dels-llenguatges-de-marques">1.4. Característiques dels llenguatges de marques</h2>
+<p>Els llenguatges de marques tenen les següents característiques:</p>
+<ul>
+<li>
+<p><strong>Text pla.</strong> 
+Els llenguatges de marques fan servir fitxers de text pla. Això vol dir que els podem obrir amb qualsevol editor de texte a qualsevol sistema operatiu, ja sigui amb la línea d'ordres (shell) o amb una aplicació d'escritori (p. ex. notepad).</p>
+</li>
+<li>
+<p><strong>Compactness (compactibilitat).</strong> 
+Les instruccions de marcatge estan barrejades amb el propi contingut, com per exemple a l'Activitat 1.</p>
+</li>
+<li>
+<p><strong>Independència del dispositu final.</strong> 
+El mateix document es pot interpretar de diferent forma depenent de la resolució del dispositiu: mòvil, PC, tablet.</p>
+</li>
+<li>
+<p><strong>Especialització.</strong> 
+Els llenguatges de marques han evolucionat i és fan servir en moltes àrees, no només en la visualització de documents. Tenim llenguatges per a gràfics vectorials (SVG), matemàtiques (MathML), posicionament GPS (GPX), sindicació de continguts (RSS), ePub, síntesi de veu, etc.</p>
+</li>
+<li>
+<p><strong>Flexibilitat.</strong> Els llenguatges de marques es poden combinar en el mateix arxiu amb altres llenguatges, com per exemple HTML amb llenguatges com PHP o Javascript. En aquest cas es fan servir etiquetes especials per indicar quan comença i termina el codi de programació. XHTML permet combinar MathML i SVG en un mateix document. </p>
+</li>
+</ul>
+<h2 id="15-classificacio-dels-llenguatges-de-marques">1.5. Classificació dels llenguatges de marques</h2>
+<p>Podem classificar els llenguatges de marques segons els tipus de marques que utilitzen:</p>
+<ul>
+<li>
+<p><strong>Presentació</strong>.
+Aquests llenguatges especifiques característiques com el tamany de la font, centrar el texte o cambiar una paraula a negreta o cursiva. Els procesadors de texte i en general les aplicacions d'edició professional fan servir aquest marcatge.</p>
+</li>
+<li>
+<p><strong>Descriptiu, estructural o semàntic</strong>.
+En aquest cas els llenguatges especifiquen com s'estrucura el document, sense especificar com s'han de presentar a la pantalla. Aquests llenguatges creen documents amb <strong>estructures d'arbre</strong> que emmagatzemen la informació. Per tant podríem parlar de bases de dades. No obstant això, els llenguatges de marques no tenen algunes de les característiques de les BBDD com les taules o les regles d'integritat, i tanbé se les anomena <strong>Bases de Dades semiestructurades</strong>.</p>
+</li>
+<li>
+<p><strong>Híbrid</strong>.
+Aquests llenguatges contenen marques dels dos tipus anteriors.</p>
+</li>
+</ul>
+<h2 id="16-importancia-en-el-context-actual">1.6. Importància en el context actual</h2>
+<p>Actualment els llenguatges de marques es fan servir de forma intensiva en alguns àmbits de la informàtica. Tota la web està basada en llenguatges de marques (HTML, XHTML), així com els principals formats d'arxius de texte editable. Word (<strong>doc, docx</strong>), Excel (<strong>xls, xlsx</strong>) o <strong>ePub</strong> (e-books) són llenguatges de marques. El format <strong>IDocs</strong> (utilitzar per SAP en els seus sistemes i basat en llenguatge de marques) s'utilitza a les empreses per enviar-se entre elles documents comercials (factures, albarans...). L'administració pública només admet documents signats digitalment (facturae), així que totes les empreses han d'adaptar els seus sistemes per enviar la informació digitalment enlloc de per correu o altres mètodes.</p>
+<p>Els llenguatges de marques continuen sent crucials per al desenvolupament i la gestió de contingut digital (per exemple <strong>Markdown</strong>, <strong>ASCIIDoc</strong> o <strong>JSON</strong>). Amb la creixent demanda de contingut personalitzat, dinàmic i accessible a través de múltiples dispositius, l'ús de llenguatges de marques com HTML, XML, i els seus derivats s'ha expandit a noves àrees. Això inclou l'<strong>Internet de les Coses (IoT)</strong>, la <strong>intel·ligència artificial (IA)</strong> i la gestió de dades massives (<strong>Big Data</strong>), on la capacitat de definir, intercanviar i processar dades de manera eficient és més important que mai.</p>
+<p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

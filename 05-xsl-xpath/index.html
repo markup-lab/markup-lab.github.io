@@ -1,0 +1,1467 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Tema 5. Transformació de documents XML (XSLT) - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-5-transformacio-de-documents-xml-xslt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 5. Transformació de documents XML (XSLT)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#50-resums-uf2" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.0 Resums UF2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-introduccio-a-xslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Introducció a XSLT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-xslt-extensible-stylesheet-language-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 XSLT (Extensible Stylesheet Language Transformations)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-fulls-destil-css-vs-xslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Fulls d'estil: CSS vs XSLT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-versions-de-xslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Versions de XSLT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-processadors-xslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Processadors XSLT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 Processadors XSLT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541-crear-full-destil-ben-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.1. Crear full d'estil ben format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542-vincular-un-xsl-al-document-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.2 Vincular un XSL al document XML
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-creacio-de-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Creació de templates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Creació de templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#document-dexemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document d'exemple
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Document d'exemple">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#551-seleccio-datributs-a-xslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.1 Selecció d'atributs a XSLT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-elements-de-plantilles-mes-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 Elements de plantilles més comuns.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xslvalue-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      xsl:value-of.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xslfor-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      xsl:for-each.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xslif" class="md-nav__link">
+    <span class="md-ellipsis">
+      xsl:if.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xslchoose" class="md-nav__link">
+    <span class="md-ellipsis">
+      xsl:choose.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xslinclude" class="md-nav__link">
+    <span class="md-ellipsis">
+      xsl:include.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-transformacio-de-xml-a-xml-xsloutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7 Transformació de XML a XML (xsl:output)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-plantilles-xsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.8 Plantilles XSL.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-xpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9 XPath
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#591-predicats" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9.1 Predicats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#592-funcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.9.2 Funcions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="tema-5-transformacio-de-documents-xml-xslt">Tema 5. Transformació de documents XML (XSLT)</h1>
+<h2 id="50-resums-uf2">5.0 Resums UF2</h2>
+<p><img alt="Resum UF2" src="../assets/img/5-0-markup-languages-summary.png" title="Resum UF2" /></p>
+<h2 id="51-introduccio-a-xslt">5.1 Introducció a XSLT</h2>
+<p>En capítols anteriors hem vist que XML és un format relativament llegible, doncs es tracta de fitxers de texte pla i la informació està organitzada jeràrquicament. No obstant, com hem vist darrerament amb HTML, als humans els agrada visualitzar la informació col.locada en determinats formats que facin la lectura més agradable, com l'al.lineació, format del texte o els colors. </p>
+<p>Donat que XML està pensat principalment per emmagatzemar i intercanviar informació, si volem representar-les d'una altra manera, tindrem diverses possibilitats:</p>
+<ul>
+<li>
+<p>Desenvolupar un programa que agafi les dades XML i generi la sortida en el format que volem. En aquest cas tenim l'inconvenient que hem de tenir coneixements de programació.</p>
+</li>
+<li>
+<p>Utilizar CSS, que com hem vist permet canviar la visualització de les dades d'un document HTML a la web. CSS permet canviar la visualització de les dades, però no transformar els documents com veurem en aquesta unitat.</p>
+</li>
+<li>
+<p>Transformar el document. Aquesta opció permet transformar el document en un altre pensat per a la seva visualització: PDF, HTML, etc.</p>
+</li>
+</ul>
+<h2 id="52-xslt-extensible-stylesheet-language-transformations">5.2 XSLT (Extensible Stylesheet Language Transformations)</h2>
+<p>XSLT és una familia de llenguatges basats en XML que permeten transformar els documents XML en altres documents. Consta del següents llenguatges:</p>
+<ul>
+<li>
+<p>XSL (eXtensible Stylesheet Language) és un llenguatge per transformar documents XML en altres documents com HTML, XML o texte pla.</p>
+</li>
+<li>
+<p>XPath és un llenguatge que permet accedir a parts concretes d'un document XML mitjançant expressions de búsqueda. Permet navegar per un document XML.</p>
+</li>
+<li>
+<p>XSL-FO (XSL formatting objects) permet definir format als documents XML, tant per a formats de pantalla com per a formats paginats. Permet la creació de documents PDF.</p>
+</li>
+</ul>
+<p>En aquest capitol ens centrarem bàsicament en la transformació de documents mitjantçant XSLT, que permet crear, a partir d'un document XML altres documents com XML, HTML o texte.</p>
+<h2 id="53-fulls-destil-css-vs-xslt">5.3 Fulls d'estil: CSS vs XSLT</h2>
+<p>L'organisme W3C ha definit dues families de normes per als fulls d'estil. La més sencilla es CSS, que ja hem vist al capítol dedicat a HTML. CSS té les següents limitacions, que es solucionen amb XSLT:</p>
+<ul>
+<li>
+<p>Amb CSS no podem canviar l'ordre dels elements que surten en un document HTML, no es poden ordenar els elements o filtrar per algun criteri (tal com fariem a la clàusula WHERE de SQL).</p>
+</li>
+<li>
+<p>Amb CSS no podem realitzar operacions amb els elements, per exemple calcular els valors de tots els elements &lt;preu&gt; d'un document XML.</p>
+</li>
+</ul>
+<p>També podem combinar els dos llenguatges, CSS per donar estil al document i XSLT per fer transformacions sobre ell. A continuació tenim un exemple de XML i CSS. </p>
+<p>Exercici: copia els següents codis en dos fitxers de texte i intenta mostrar-los en un navegador.</p>
+<p>Document alumnes.xml</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;estil.css&quot;?&gt;</span>
+<span class="w">    </span><span class="nt">&lt;alumne&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nom&gt;</span>Marc<span class="nt">&lt;/nom&gt;</span>
+<span class="w">        </span><span class="nt">&lt;cognom&gt;</span>Màrquez<span class="nt">&lt;/cognom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/alumne&gt;</span>
+<span class="w">    </span><span class="nt">&lt;alumne&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nom&gt;</span>Fernando<span class="nt">&lt;/nom&gt;</span>
+<span class="w">        </span><span class="nt">&lt;cognom&gt;</span>Alonso<span class="nt">&lt;/cognom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/alumne&gt;</span>
+<span class="w">    </span><span class="nt">&lt;alumne&gt;</span>
+<span class="w">        </span><span class="nt">&lt;nom&gt;</span>Pau<span class="nt">&lt;/nom&gt;</span>
+<span class="w">        </span><span class="nt">&lt;cognom&gt;</span>Gasol<span class="nt">&lt;/cognom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/alumne&gt;</span><span class="w">    </span>
+</code></pre></div>
+<p>Document estil.css</p>
+<div class="highlight"><pre><span></span><code><span class="nt">alumne</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nom</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">tahoma</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">cognom</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">cyan</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="54-versions-de-xslt">5.4 Versions de XSLT</h2>
+<p>XSLT està inspirat en DSSSL, l'equivalent a XSLT en l'antic SGML. Actualment (2022), tenim tres versions:</p>
+<ul>
+<li>
+<p><strong>XSLT 1.0.</strong> 1999. Desenvolupat pel W3C, juntament es va desenvolupar XSL-FO i XPath. Encara es fa servir bastant (2018) doncs és el més compatible amb els navegadors.</p>
+</li>
+<li>
+<p><strong>XSLT 2.0.</strong> 2007. Desenvolupat per Michael Kay, també desenvolupador de XQuery y Saxon XSLT. Com a novetats permet crear múltiples documents de sortida</p>
+</li>
+<li>
+<p><strong>XSLT 3.0.</strong> 2017. Millores per a la transformació de documents XML molt grans.</p>
+</li>
+</ul>
+<h2 id="54-processadors-xslt">5.4 Processadors XSLT</h2>
+<p>Un processador XSLT permet llegir un document XSL i a partir de les regles de transformació sobre un document XML, permet generar un altre document formatejat tipus XML, HTML o texte.</p>
+<p><img src="assets/img/5-4xlst-processor-diagram.png" height="438" width="231"></p>
+<p>El seu ús implica necessàriament els següents passos:</p>
+<ol>
+<li>Tenir un document XML ben definit (sintàcticament).</li>
+<li>Validar el document mitjançant DTD o XML Schema (XSD).</li>
+<li>Crear un full d'estil XSL ben format (ha de seguir les regles XML).</li>
+<li>Vincular el document XML amb el full d'estil XSL.</li>
+<li>Executar la tranformació amb el processador XSLT.</li>
+</ol>
+<p>El processador XSLT va llegint el document XML, processant node a node el XML i aplicant les transformacions necessàries definidas en las <strong>templates rules</strong> del full XSLT. Los templates son un conjunto de reglas que se aplican cuando se encuentra alguno de los nodos especificados.</p>
+<p>Podem treballar amb processadors off-line amb editors com <strong>XML Copy Editor</strong>, <strong>Visual Studio Code</strong> (requereix d'un programa extern apart d'una extensió) processadors en línia com.</p>
+<p><strong>Processadors XSLT on-line:</strong></p>
+<ul>
+<li>
+<p><a href="https://www.online-toolz.com/tools/xslt-transformation.php" title="XSLT Transformation Online Tool">XSL Transformation (XSLT) Online Toolz</a></p>
+</li>
+<li>
+<p><a href="https://www.freeformatter.com/xsl-transformer.html" title="Free Formatter">Free Online XSLT Transformer</a></p>
+</li>
+</ul>
+<p><strong>Processadors off-line:</strong></p>
+<ul>
+<li>
+<p><a href="https://saxon.sourceforge.net/" title="XSLT Saxon Processor">XSLT Saxon Processor</a>. Està basat en Java, per tant cal tenir insta.lat el JRE (inclòs en el JDK). És el que farem servir en aquesta UF. Veure Annex 1.</p>
+</li>
+<li>
+<p><a href="https://xml.apache.org/xalan-j/">Xalan</a>. Només suporta XSLT 1.0. També està basat en Java però el seu desenvolupament està estancat.</p>
+</li>
+</ul>
+<h3 id="541-crear-full-destil-ben-format">5.4.1. Crear full d'estil ben format</h3>
+<p>La declaració d'un document XSL és la següent (són equivalents, normalment es fa servir <strong>xsl:stylesheet</strong>):</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=“1.0” encoding=“UTF-8”?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span>...
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<p>o</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=“1.0” encoding=“UTF-8”?&gt;</span>
+<span class="nt">&lt;xsl:transform</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span><span class="w"> </span>
+<span class="w">    </span>...
+<span class="nt">&lt;/xsl:transform&gt;</span>
+</code></pre></div>
+<h3 id="542-vincular-un-xsl-al-document-xml">5.4.2 Vincular un XSL al document XML</h3>
+<p>Per vincular el document XSL al document XML, afegim la següent Processing Instruction (PI) al XML:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=“1.0” encoding=“UTF-8”?&gt;</span>
+<span class="cp">&lt;?xml-stylesheet type=“text/xsl” href=“catalog.xsl”?&gt;</span>
+</code></pre></div>
+<h2 id="55-creacio-de-templates">5.5 Creació de templates</h2>
+<h3 id="document-dexemple"><strong>Document d'exemple</strong></h3>
+<p>Aquest és el document XML que farem servir per a la creació de plantilles:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;persones&gt;</span>
+<span class="w">  </span><span class="nt">&lt;persona</span><span class="w"> </span><span class="na">naixement=</span><span class="s">&quot;1912&quot;</span><span class="w"> </span><span class="na">mort=</span><span class="s">&quot;1954&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;nom&gt;</span>
+<span class="w">      </span><span class="nt">&lt;primer_nom&gt;</span>Alan<span class="nt">&lt;/primer_nom&gt;</span>
+<span class="w">      </span><span class="nt">&lt;cognom&gt;</span>Turing<span class="nt">&lt;/cognom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/nom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;profesio&gt;</span>informàtic<span class="nt">&lt;/profesio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;profesio&gt;</span>matemàtic<span class="nt">&lt;/profesio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;profesio&gt;</span>criptògraf<span class="nt">&lt;/profesio&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/persona&gt;</span>
+<span class="w">  </span><span class="nt">&lt;persona</span><span class="w"> </span><span class="na">naixement=</span><span class="s">&quot;1903&quot;</span><span class="w"> </span><span class="na">mort=</span><span class="s">&quot;1957&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;nom&gt;</span>
+<span class="w">      </span><span class="nt">&lt;primer_nom&gt;</span>John<span class="nt">&lt;/primer_nom&gt;</span>
+<span class="w">      </span><span class="nt">&lt;inicial_segon_nom&gt;</span>V<span class="nt">&lt;/inicial_segon_nom&gt;</span>
+<span class="w">      </span><span class="nt">&lt;cognom&gt;</span>Neumann<span class="nt">&lt;/cognom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/nom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;profesio&gt;</span>matematic<span class="nt">&lt;/profesio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;hobby&gt;</span>jugar<span class="w"> </span>a<span class="w"> </span>tenis<span class="nt">&lt;/hobby&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/persona&gt;</span>
+<span class="nt">&lt;/persones&gt;</span>
+</code></pre></div>
+<p>Dintre del document XSL afegirem un template o regles de plantilla per indicar quina salida volem a partir de l'entrada seleccionada. L'element <strong>xsl:template</strong> té dues parts:</p>
+<ul>
+<li>
+<p>Un atribut match que conté un patró que coincideix amb un o més nodes del document XML. Aquest patró está especificat en el llenguatge XPath. En aquest cas el símbol "/" indica l'arrel del document XML. Fixeu-vos que la sintaxi s'assembla deliveradament amb les rutes d'arxius del sistema operatiu Unix/Linux.</p>
+</li>
+<li>
+<p>També conté una plantilla que s'executa quan coincideix el patró. Aquesta plantilla pot contenir part d'un document html, xml o caràcters de texte.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=“1.0” encoding=“UTF-8”?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;html&gt;</span>
+<span class="w">            </span><span class="nt">&lt;body&gt;</span>
+<span class="w">                </span><span class="nt">&lt;h2&gt;</span>Personatges<span class="w"> </span>històrics<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>informàtica<span class="nt">&lt;/h2&gt;</span>
+<span class="w">                </span><span class="cm">&lt;!-- Aqui podem seleccionar elements XML i inserir-los al nostre HTML--&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/body&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/html&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<p>La coincidència de patró més sencilla és el nom d'un element. Si per exemple fem coincidir l'element <strong>persona</strong>, el següent exemple simplement escriu el texte <strong><em>Una persona</em></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;persona&quot;</span><span class="nt">&gt;</span>Una<span class="w"> </span>Persona<span class="nt">&lt;/xsl:template&gt;</span>
+
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<p>Hi ha dos elements coincidents anomenats persona, i cada vegada que el processador troba aquest element simplement escriu <code>una persona</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+
+<span class="w"> </span>Una<span class="w"> </span>Persona
+
+<span class="w"> </span>Una<span class="w"> </span>Persona
+</code></pre></div>
+<p>Una persona és texte pla, però també podem escriure elements de llenguatges de marques, com en l'exemple següent. L'única restricció és que com XSLT és un document XML ben format, el llenguatge de marques de sortida també ha d'estar ben format:</p>
+<p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;persona&quot;</span><span class="nt">&gt;&lt;p&gt;</span>Una<span class="w"> </span>Persona<span class="nt">&lt;/p&gt;&lt;/xsl:template&gt;</span>
+
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+Dona com a resultat:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;p&gt;</span>Una<span class="w"> </span>Person<span class="nt">&lt;/p&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;p&gt;</span>Una<span class="w"> </span>Persona<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<p>La majoria de les vegades, el que farem serà seleccionar elements del document d'entrada e inserir-los en el document de sortida. Un dels elements XSL més utilitzats es <strong>xsl:value-of</strong>, que obté el valor de texte del element del document XML origen. L'element que s'obté es selecciona amb l'atribut <strong>select</strong>, i l'atribut també conté una expressió XPath. Per escriure el nom de la persona fariem:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+<span class="w">                </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;persona&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;p&gt;</span>
+<span class="w">      </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;nom&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/p&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+<span class="w">    </span>Alan
+<span class="w">    </span>Turing
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+<span class="w">    </span>John
+<span class="w">    </span>V
+<span class="w">    </span>Neumann
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<h4 id="551-seleccio-datributs-a-xslt">5.5.1 Selecció d'atributs a XSLT</h4>
+<p>Per seleccionar atributs del document origen, fem servir el símbol <strong>@</strong> a l'expressió XPath dintre de l'element que volem seleccionar. Tenint en compte el document anterior, tenim el següent full XSLT:</p>
+<p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+<span class="w">                </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;persones&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;html&gt;</span>
+<span class="w">      </span><span class="nt">&lt;head&gt;</span>
+<span class="w">        </span><span class="nt">&lt;title&gt;</span>Personatges<span class="w"> </span>històrics<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>informàtica<span class="nt">&lt;/title&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/head&gt;</span>
+<span class="w">      </span><span class="nt">&lt;body&gt;</span>
+<span class="w">        </span><span class="nt">&lt;table&gt;</span>
+<span class="w">          </span><span class="nt">&lt;tr&gt;</span>
+<span class="w">            </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;persona/nom&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">            </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;persona/@naixement&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">            </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;persona/@mort&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">         </span><span class="nt">&lt;/tr&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/table&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/body&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/html&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span><span class="w">  </span>
+</code></pre></div>
+El resultat seria el següent:</p>
+<div class="highlight"><pre><span></span><code> <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Personatges històrics de la informàtica<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Alan Turing<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1912<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1954<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="56-elements-de-plantilles-mes-comuns">5.6 Elements de plantilles més comuns.</h2>
+<p>Dintre de les nostres plantilles XSL podem utilitzar les següents instruccions de plantilla. Pertanyen al vocabulari XSLT definit a l'espai de noms XSL.</p>
+<p>Els més utilitzats són:</p>
+<h2 id="xslvalue-of"><strong>xsl:value-of</strong>.</h2>
+<p>Inserta el valor d'un element o atribut XML a la sortida resultant. Podem fer servir l'atribut select per seleccionar l'atribut o subelement el valor del qual s'utilitzarà.</p>
+<p><strong>Exercici</strong>: copia els següents codis en dos fitxers de texte i fes la transformació amb el processador on-line. Respon a la següent pregunta: 
+Quants discs aparèixen al fitxer html?</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;catalog&gt;</span>
+<span class="w">    </span><span class="nt">&lt;cd&gt;</span>
+<span class="w">        </span><span class="nt">&lt;title&gt;</span>Empire<span class="w"> </span>Burlesque<span class="nt">&lt;/title&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artist&gt;</span>Bob<span class="w"> </span>Dylan<span class="nt">&lt;/artist&gt;</span>
+<span class="w">        </span><span class="nt">&lt;company&gt;</span>Columbia<span class="nt">&lt;/company&gt;</span>
+<span class="w">        </span><span class="nt">&lt;price&gt;</span>10.90<span class="nt">&lt;/price&gt;</span>
+<span class="w">        </span><span class="nt">&lt;year&gt;</span>1985<span class="nt">&lt;/year&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/cd&gt;</span>
+<span class="w">    </span><span class="nt">&lt;cd&gt;</span>
+<span class="w">        </span><span class="nt">&lt;title&gt;</span>Hide<span class="w"> </span>your<span class="w"> </span>heart<span class="nt">&lt;/title&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artist&gt;</span>Bonnie<span class="w"> </span>Tyler<span class="nt">&lt;/artist&gt;</span>
+<span class="w">        </span><span class="nt">&lt;company&gt;</span>CBS<span class="w"> </span>Records<span class="nt">&lt;/company&gt;</span>
+<span class="w">        </span><span class="nt">&lt;price&gt;</span>9.90<span class="nt">&lt;/price&gt;</span>
+<span class="w">        </span><span class="nt">&lt;year&gt;</span>1988<span class="nt">&lt;/year&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/cd&gt;</span>
+<span class="nt">&lt;/catalog&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;html&gt;</span>
+<span class="w">  </span><span class="nt">&lt;body&gt;</span>
+<span class="w">    </span><span class="nt">&lt;h2&gt;</span>My<span class="w"> </span>CD<span class="w"> </span>Collection<span class="nt">&lt;/h2&gt;</span>
+<span class="w">    </span><span class="nt">&lt;table</span><span class="w"> </span><span class="na">border=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;tr</span><span class="w"> </span><span class="na">bgcolor=</span><span class="s">&quot;#9acd32&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;th&gt;</span>Title<span class="nt">&lt;/th&gt;</span>
+<span class="w">        </span><span class="nt">&lt;th&gt;</span>Artist<span class="nt">&lt;/th&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/tr&gt;</span>
+<span class="w">      </span><span class="nt">&lt;tr&gt;</span>
+<span class="w">        </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;catalog/cd/title&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">        </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;catalog/cd/artist&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/tr&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/table&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/body&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<h2 id="xslfor-each"><strong>xsl:for-each</strong>.</h2>
+<p>Es fa servir per a recórrer els elements d'un document i realitzar una sèrie d'operacions amb els nodes. L'atribut select determina els elements que s'ha de recórrer. És equivalent a l'instrucció foreach dels llenguatges de programació.</p>
+<p>La seva sintaxi es:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:for-each</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;condicio&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xsl:for-each&gt;</span>
+</code></pre></div>
+<p>Exercici: modifiqueu l'exercici anterior per mostrar tots els albums:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:for-each</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;catalog/cd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;artist&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/xsl:for-each&gt;</span>
+</code></pre></div>
+<h2 id="xslif"><strong>xsl:if</strong>.</h2>
+<p>Podem sel.leccionar la informació que mostrarà per pantalla en funció de les condicions que li indiquem. </p>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:if</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;price&amp;lt;=10 and Artist=&#39;Xavier Camunyes&#39;&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p>Compte amb les cometes simples si el que volem és comparar cadenes. En la següent taula es resumeixen els símbols utilitzats per als operadors booleans:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Símbol</th>
+<th style="text-align: left;">Operador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">=</td>
+<td style="text-align: left;">Igual</td>
+</tr>
+<tr>
+<td style="text-align: left;">!=</td>
+<td style="text-align: left;">Distint</td>
+</tr>
+<tr>
+<td style="text-align: left;">&lt;</td>
+<td style="text-align: left;">menor que</td>
+</tr>
+<tr>
+<td style="text-align: left;">&gt;</td>
+<td style="text-align: left;">major que</td>
+</tr>
+<tr>
+<td style="text-align: left;">&lt; =</td>
+<td style="text-align: left;">menor o igual que</td>
+</tr>
+<tr>
+<td style="text-align: left;">&gt; =</td>
+<td style="text-align: left;">major o igual que</td>
+</tr>
+<tr>
+<td style="text-align: left;">and</td>
+<td style="text-align: left;">I lògic (&amp;&amp;)</td>
+</tr>
+<tr>
+<td style="text-align: left;">or</td>
+<td style="text-align: left;">O lògic (&#124;&#124;)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>xsl:sort</strong>. Ens permet ordenar la informació en funció del contingut d'un element. Té més opcions que la clàusula ORDER BY a SQL.</li>
+</ul>
+<p>La seva sintaxi seria:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:sort</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;condició&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p><strong>Compte: xsl:sort no té etiqueta de tancament</strong> </p>
+<p>Els atributs (opcions) que té es mostren a la següent taula:</p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th>Valor</th>
+<th>Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>select</td>
+<td>XPath Expression</td>
+<td>Especifica quin node o conjunt de nodes ordenar</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>language-code</td>
+<td>Especifica quin llenguatge s'utilitza per a l'ordenació</td>
+</tr>
+<tr>
+<td>datatype</td>
+<td>text, number, qname</td>
+<td>Especifica el tipus de dada que s'ordenarà. Per defecte és "texte"</td>
+</tr>
+<tr>
+<td>order</td>
+<td>ascending, descending</td>
+<td>Especifica el tipus d'ordre. Per defecte es "ascending"</td>
+</tr>
+<tr>
+<td>caseorder</td>
+<td>upper-first, lower-first</td>
+<td>Especifica si les lletres majúscules o minúscules s'ordenen en primer lloc</td>
+</tr>
+</tbody>
+</table>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:for-each</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;catalog/cd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:sort</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;artist&quot;</span><span class="w"> </span><span class="na">order=</span><span class="s">&quot;descending&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tr&gt;</span>
+<span class="w">        </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">        </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;artist&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/xsl:for-each&gt;</span>
+</code></pre></div>
+<h2 id="xslchoose"><strong>xsl:choose</strong>.</h2>
+<p>Element per a condicionar els resultats que permet establir múltiples condicions dintre del recorregut de l'arbre XML. És equivalent a l'instrucció <strong>switch-case-default</strong> dels llenguatges de programacio.</p>
+<p>La seva sintaxi seria:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:choose&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:when</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;expressio_1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span>tractament<span class="w"> </span>de<span class="w"> </span>les<span class="w"> </span>dades
+<span class="w">    </span><span class="nt">&lt;/xsl:when&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:when</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;expressio_2&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span>tractament<span class="w"> </span>de<span class="w"> </span>les<span class="w"> </span>dades
+<span class="w">    </span><span class="nt">&lt;/xsl:when&gt;</span>
+<span class="w">    </span>...
+<span class="w">    </span><span class="nt">&lt;xsl:otherwise&gt;</span>
+<span class="w">        </span>tractament<span class="w"> </span>de<span class="w"> </span>les<span class="w"> </span>dades
+<span class="w">    </span><span class="nt">&lt;/xsl:otherwise&gt;</span><span class="w">        </span>
+<span class="nt">&lt;/xsl:choose&gt;</span>
+</code></pre></div>
+<p>Exemple:
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:for-each</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;catalog/cd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tr&gt;</span>
+<span class="w">        </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xsl:choose&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xsl:when</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;price &amp;amps;gt; 10&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;td</span><span class="w"> </span><span class="na">bgcolor=</span><span class="s">&quot;#ff00ff&quot;</span><span class="nt">&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;artist&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xsl:when&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;xsl:otherwise</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;price &amp;amps;gt; 10&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;td&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;artist&quot;</span><span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xsl:otherwise&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xsl:choose&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/xsl:for-each&gt;</span>
+</code></pre></div></p>
+<ul>
+<li><strong>xsl:output</strong>. L'element output defineix el format de sortida del document XSL (XML, HTML o texte). És un element de nivell superior, per tant ha d'anar just sota l'element xsl:stylesheet o xsl:transform. Si no especifiquem aquest element, per defecte XSLT enten que estem creant un arxiu HTML. Per exemple, el següent codi produeix un document XML com a sortida. Veure apartat 5.6 (transformació XML a XML)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xsl:output</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;xml&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">encoding=</span><span class="s">&quot;UTF-8&quot;</span><span class="w"> </span><span class="na">indent=</span><span class="s">&quot;yes&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span>...
+<span class="w">    </span>...
+<span class="nt">&lt;/xsl:stylesheet&gt;</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="xslinclude"><strong>xsl:include</strong>.</h2>
+<p>L'element include també és un element de nivell superior que inclou els continguts d'un full d'estils dintre d'un altre. Sintaxi:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsl:include</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;URI&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<h2 id="57-transformacio-de-xml-a-xml-xsloutput">5.7 Transformació de XML a XML (xsl:output)</h2>
+<p>La conversio de XML a XML és igual que en el cas de HTML però treient els elements html, body, etc i fent servir l'element output després de la declaració XML. Per crear atributs nous al XML, fem servir l'element xsl:attribute. Posem un exemple pràctic. Tenim el següent document XML:</p>
+<p>XML Original </p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;tienda&gt;</span>
+<span class="w">  </span><span class="nt">&lt;libro&gt;</span>
+<span class="w">    </span><span class="nt">&lt;titulo&gt;</span>Javascript<span class="w"> </span>coding<span class="nt">&lt;/titulo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;precio&gt;</span>20<span class="nt">&lt;/precio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;idioma&gt;</span>Castellà<span class="nt">&lt;/idioma&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/libro&gt;</span>
+<span class="w">  </span><span class="nt">&lt;libro&gt;</span>
+<span class="w">    </span><span class="nt">&lt;titulo&gt;</span>XML<span class="w"> </span>the<span class="w"> </span>origin<span class="nt">&lt;/titulo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;precio&gt;</span>15<span class="nt">&lt;/precio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;idioma&gt;</span>Anglès<span class="nt">&lt;/idioma&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/tienda&gt;</span>
+</code></pre></div>
+<p>A partir d'aquest document, volem crear un altre document XML amb les següents modificacions:</p>
+<ul>
+<li>L'arrel del document es canvia per tienda2.0</li>
+<li>L'idioma ha de ser un atribut de l'element libro</li>
+<li>Creem un atribut nou a precio anomenat moneda amb valor Euro</li>
+</ul>
+<p>El document XSL de tranformació seria el següent:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xsl:output</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;xml&quot;</span><span class="w"> </span><span class="na">indent=</span><span class="s">&quot;yes&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tienda2.0&gt;</span>
+<span class="w">      </span><span class="nt">&lt;xsl:for-each</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;tienda/libro&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;libro&gt;</span>
+<span class="w">          </span><span class="nt">&lt;xsl:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;idioma&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;idioma&quot;</span><span class="nt">/&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/xsl:attribute&gt;</span>
+<span class="w">          </span><span class="nt">&lt;titulo&gt;&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;titulo&quot;</span><span class="nt">/&gt;&lt;/titulo&gt;</span>
+<span class="w">          </span><span class="nt">&lt;precio&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xsl:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;moneda&quot;</span><span class="nt">&gt;</span>Euro<span class="nt">&lt;/xsl:attribute&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;precio&quot;</span><span class="nt">/&gt;</span><span class="w"> </span>
+<span class="w">          </span><span class="nt">&lt;/precio&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/libro&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/xsl:for-each&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tienda2.0&gt;</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<p>Resultat de la transformació:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;tienda2.0&gt;</span>
+<span class="w">   </span><span class="nt">&lt;libro</span><span class="w"> </span><span class="na">idioma=</span><span class="s">&quot;Castellà&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;titulo&gt;</span>Javascript<span class="w"> </span>coding<span class="nt">&lt;/titulo&gt;</span>
+<span class="w">      </span><span class="nt">&lt;precio</span><span class="w"> </span><span class="na">moneda=</span><span class="s">&quot;Euro&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/precio&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/libro&gt;</span>
+<span class="w">   </span><span class="nt">&lt;libro</span><span class="w"> </span><span class="na">idioma=</span><span class="s">&quot;Anglès&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;titulo&gt;</span>XML<span class="w"> </span>the<span class="w"> </span>origin<span class="nt">&lt;/titulo&gt;</span>
+<span class="w">      </span><span class="nt">&lt;precio</span><span class="w"> </span><span class="na">moneda=</span><span class="s">&quot;Euro&quot;</span><span class="nt">&gt;</span>15<span class="nt">&lt;/precio&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/libro&gt;</span>
+<span class="nt">&lt;/tienda2.0&gt;</span>
+</code></pre></div>
+<h2 id="58-plantilles-xsl">5.8 Plantilles XSL.</h2>
+<p>Fins ara hem aplicat la plantilla a tot el document, i per crear els diferents estils als elements feiem servir xsl:if o xsl:choose. Ara farem servir diferentes plantilles per a condicionar el contingut de cada element. </p>
+<p>Exemple</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;html&gt;</span>
+<span class="w">                </span><span class="nt">&lt;body&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;h1&gt;</span>My<span class="w"> </span>CD<span class="w"> </span>Collection<span class="nt">&lt;/h1&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xsl:apply-templates/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/body&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/html&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xsl:template&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;catalog&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;h2&gt;</span>CD<span class="w"> </span>Catalog<span class="nt">&lt;/h2&gt;</span>
+<span class="w">            </span><span class="nt">&lt;table&gt;</span>
+<span class="w">                </span><span class="nt">&lt;tr</span><span class="w"> </span><span class="na">bgcolor=</span><span class="s">&quot;#887788&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;th&gt;</span>Title<span class="nt">&lt;/th&gt;&lt;th&gt;</span>Artist<span class="nt">&lt;/th&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/tr&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xsl:apply-templates</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;cd&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/table&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xsl:template&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;cd&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;tr&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xsl:apply-templates</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xsl:apply-templates</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;artist&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/tr&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xsl:template&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;td</span><span class="w"> </span><span class="na">bgcolor=</span><span class="s">&quot;DDEEDD&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/td&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xsl:template&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xsl:tempalte</span><span class="w"> </span><span class="na">match=</span><span class="s">&quot;artist&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;td</span><span class="w"> </span><span class="na">bgcolor=</span><span class="s">&quot;AABBAA&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xsl:value-of</span><span class="w"> </span><span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/td&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xsl:template&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<h2 id="59-xpath">5.9 XPath</h2>
+<p>XPath és un llenguatge no XML que permet recórrer i seleccionar els nodes d'un document XML. XPath es fa servir a XSLT dintre de l'atribut <strong>select</strong> de les plantilles i també és un subconjunt de XQuery. XQuery es pot veure com un XPath amb sentències dels llenguatges de programació. </p>
+<p>Farem servir el següent exemple per indicar els nodes seleccionats amb XPath:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1250&quot;?&gt;</span>
+<span class="nt">&lt;classe&gt;</span>
+<span class="w">  </span><span class="nt">&lt;estudiant</span><span class="w"> </span><span class="na">id =</span><span class="w"> </span><span class="s">&quot;393&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;nom&gt;</span>Daniel<span class="nt">&lt;/nom&gt;</span>
+<span class="w">  </span><span class="nt">&lt;cognoms&gt;</span>Pi<span class="w"> </span>Gran<span class="nt">&lt;/cognoms&gt;</span>
+<span class="w">  </span><span class="nt">&lt;nota&gt;</span>85<span class="nt">&lt;/nota&gt;</span>
+<span class="w">  </span><span class="nt">&lt;aficions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficio&gt;</span>Lectura<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficio&gt;</span>Cinema<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/aficions&gt;</span>
+<span class="w">  </span><span class="nt">&lt;naixement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dia&gt;</span>3<span class="nt">&lt;/dia&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mes&gt;</span>5<span class="nt">&lt;/mes&gt;</span>
+<span class="w">    </span><span class="nt">&lt;any&gt;</span>1990<span class="nt">&lt;/any&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/naixement&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/estudiant&gt;</span>
+<span class="w">  </span><span class="nt">&lt;estudiant</span><span class="w"> </span><span class="na">id =</span><span class="w"> </span><span class="s">&quot;493&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;nom&gt;</span>Vanessa<span class="nt">&lt;/nom&gt;</span>
+<span class="w">  </span><span class="nt">&lt;cognoms&gt;</span>Pou<span class="w"> </span>Salat<span class="nt">&lt;/cognoms&gt;</span>
+<span class="w">  </span><span class="nt">&lt;nota&gt;</span>95<span class="nt">&lt;/nota&gt;</span>
+<span class="w">  </span><span class="nt">&lt;aficions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficio&gt;</span>Lectura<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficio&gt;</span>Esport<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficio&gt;</span>Cinema<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/aficions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;naixement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dia&gt;</span>3<span class="nt">&lt;/dia&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mes&gt;</span>1<span class="nt">&lt;/mes&gt;</span>
+<span class="w">    </span><span class="nt">&lt;any&gt;</span>1995<span class="nt">&lt;/any&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/naixement&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/estudiant&gt;</span>
+<span class="w">  </span><span class="nt">&lt;estudiant</span><span class="w"> </span><span class="na">id =</span><span class="w"> </span><span class="s">&quot;593&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;nom&gt;</span>Xavier<span class="nt">&lt;/nom&gt;</span>
+<span class="w">    </span><span class="nt">&lt;cognoms&gt;</span>Fuster<span class="w"> </span>Cantó<span class="nt">&lt;/cognoms&gt;</span>
+<span class="w">    </span><span class="nt">&lt;nota&gt;</span>90<span class="nt">&lt;/nota&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficions&gt;</span>
+<span class="w">      </span><span class="nt">&lt;aficio&gt;</span>Esport<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">      </span><span class="nt">&lt;aficio&gt;</span>Cinema<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/aficions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;naixement&gt;</span>
+<span class="w">      </span><span class="nt">&lt;dia&gt;</span>5<span class="nt">&lt;/dia&gt;</span>
+<span class="w">      </span><span class="nt">&lt;mes&gt;</span>5<span class="nt">&lt;/mes&gt;</span>
+<span class="w">      </span><span class="nt">&lt;any&gt;</span>1989<span class="nt">&lt;/any&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/naixement&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/estudiant&gt;</span>
+<span class="nt">&lt;/classe&gt;</span>
+</code></pre></div>
+<p>A XPath hi ha 7 tipus de nodes:</p>
+<ul>
+<li>
+<p>El <strong>node document</strong> o <strong>node arrel</strong> (un per document). A XPath el node arrel conté tot el document, no només l'arrel del document XML. El node arrel conté almenys un fill, l'arrel del document XML. També conté els comentaris del document XML, les instruccions de processament (PI)-comencen per &lt;?-. El node arrel s'especifica mitjantçant el simbol /.</p>
+</li>
+<li>
+<p>Els <strong>nodes element</strong>. Tots els elements del document XML es poden seleccionar amb XPath. Per seleccionar el contingut dels elements &lt;nom&gt;. a xslt fem servir <xsl:value-of select="nom">. El valor de l'element és la concatenació del texte de tots els elements nom que hi ha al document i tots els seus fills.</p>
+</li>
+<li>
+<p><strong>nodes atribut</strong>. Tot element atribut té un element pare, però no succeeix a l'inrevés. Els elements fills d'un node son el texte, els subelements i els comentaris però no els atributs. Per seleccionar un atribut, fem servir l'operador @. Per exemple, per seleccionar l'atribut id de l'element estudiant, l'expressió XPath seria /classe/estudiant/@id</p>
+</li>
+<li>
+<p><strong>nodes de text</strong>. Contenen el texte d'un element XML. Les entitats es resolen abans d'enviar el node a XPath.</p>
+</li>
+<li>
+<p><strong>nodes comentaris</strong>. Contenen tot el texte entre els caracters &lt;!-- i --&gt;.</p>
+</li>
+<li>
+<p><strong>nodes de processament d'instruccions (PI)</strong>. Contenen tot el texte entre els caracters &lt;? ?&gt; (sense incloure ?&gt;).</p>
+</li>
+<li>
+<p><strong>nodes espai de noms</strong>. No es fan servir gairebé mai als fulls XSLT. Existeixen per a benefici del processador XLST.</p>
+</li>
+</ul>
+<p>Un dels usos més comuns de XPath és crear rutes de localització. Per exemple, el patró <strong>/classe/estudiant/aficions</strong> descriu l'ubicació dintre del XML que volem processar.</p>
+<p>Les rutes poden ser absolutes o relatives (si ja hem seleccionat una prèviament). Les rutes absolutes comencen pel simbol /.</p>
+<h2 id="591-predicats">5.9.1 Predicats</h2>
+<p>Els predicats són filtres que restringeixen els nodes seleccionats per una expressió XPath. Les condicions s'expressen amb claudàtors. Alguns exemples:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Expressió</th>
+<th style="text-align: left;">Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nom="Daniel"]</td>
+<td style="text-align: left;">Retorna totes les dades de l’estudiant de nom Daniel en format XML.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nom="Daniel"]/naixement</td>
+<td style="text-align: left;">Retorna la data de naixement de l’estudiant de nom Daniel en format XML.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[@id&lt;500]</td>
+<td style="text-align: left;">Retorna les dades en format XML de tots els estudiants amb id més petit que 500.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[aficions/aficio="Lectura"]/nom</td>
+<td style="text-align: left;">Retorna en format XML els noms de tots els estudiants aficionats a la lectura.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[aficions/aficio="Lectura"]/nom/string()</td>
+<td style="text-align: left;">Retorna els noms (sense el format XML) de tots els estudiants aficionats a la lectura.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nota&gt;90 or @id&lt;400]/nom/string()</td>
+<td style="text-align: left;">Retorna el nom (sense format XML) de tots els alumnes amb una nota major a 90 o un identificador inferior a 400.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nom="Daniel" or nota&gt;90]/nom/string()</td>
+<td style="text-align: left;">Retorna el nom (sense format XML) de tots els alumnes anomenats Daniel o amb una nota superior a 90.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[naixement/mes=5 and naixement/any&lt;1990]/nom/string()</td>
+<td style="text-align: left;">Retorna el nom (sense format XML) de tots els alumnes nascuts el mes de maig i abans de 1990</td>
+</tr>
+</tbody>
+</table>
+<h2 id="592-funcions">5.9.2 Funcions</h2>
+<p>Conjuntament amb els predicats es poden utilitzar funcions. Per exemple:</p>
+<ul>
+<li>
+<p>count(x): compta el nombre d’elements d’x; x és un camí XPath absolut o relatiu. En el segon cas, sol indicar un element o un atribut d’un node.</p>
+</li>
+<li>
+<p>string(): passen a cadena de caràcters l’element o atribut; es posa a continuació de l’últim element de l’expressió XPath.</p>
+</li>
+</ul>
+<p>Exemples d’utilització d’aquestes funcions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Expressió</th>
+<th style="text-align: left;">Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">count(/classe/estudiant)</td>
+<td style="text-align: left;">A l’exemple, retorna 3, ja que només hi ha 3 estudiants.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant/aficions/count(aficio)</td>
+<td style="text-align: left;">A l’exemple retorna 2 3 2, que és el nombre d’aficions de cadascun dels estudiants.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant/nom/string()</td>
+<td style="text-align: left;">A l’exemple retorna Daniel Vanessa Xavier que són els noms de cadascun dels estudiants (sense /string() retornava el mateix, però cada nom anava delimitat per <nom>... </nom></td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant/@id/string()</td>
+<td style="text-align: left;">A l’exemple retorna 393 493 593, que són els identificadors de cadascun dels estudiants (sense /string() retornava el mateix, però entre comets i precedit del text id= )</td>
+</tr>
+</tbody>
+</table>
+<p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

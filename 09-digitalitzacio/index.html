@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Tema 9. Digitalització aplicada als entorns productius - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-9-digitalitzacio-aplicada-als-entorns-productius" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 9. Digitalització aplicada als entorns productius
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unitat-1-digitalitzacio-creacio-dentorns-it-i-ot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unitat 1. Digitalització. Creació d'entorns IT i OT.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unitat 1. Digitalització. Creació d'entorns IT i OT.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-es-la-digitalitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Què és la digitalització?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-per-que-es-digitalitzen-les-empreses" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Per què es digitalitzen les empreses?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-com-es-digitalitzen-les-empreses" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Com es digitalitzen les empreses?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-com-canvia-la-tecnologia-digital-a-les-empreses" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. Com canvia la tecnologia digital a les empreses?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-son-les-tecnologies-it-i-ot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Què són les tecnologies IT i OT?.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Què són les tecnologies IT i OT?.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-com-van-evolucionar-les-tecnologies-it-ot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Com van evolucionar les tecnologies IT-OT?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-quins-departaments-constitueixen-entorns-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Quins departaments constitueixen entorns IT?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-com-es-relacionen-les-tecnologies-it-i-ot" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Com es relacionen les tecnologies IT i OT?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-entorns-tecnologics-integrats" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Entorns tecnològics integrats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-semblances-i-diferencies-entre-it-i-ot" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Semblances i diferències entre IT i OT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-sintesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Síntesi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-estudi-de-cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Estudi de cas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Estudi de cas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-repsol-integra-tecnologies-diverses" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1. Repsol integra tecnologies diverses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-repte-professional" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Repte professional
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5. Repte professional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-integracio-de-les-it-i-ot-petit-comerc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1. Integració de les IT i OT: petit comerç
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unitat-2-tecnologies-habilitadores-digitals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unitat 2. Tecnologies habilitadores digitals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unitat 2. Tecnologies habilitadores digitals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introducció
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-les-tecnologies-habilitadores-digitals-thd" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Les tecnologies habilitadores digitals (THD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-quines-son-les-thd" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Quines són les THD?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-que-caracteritza-les-thd" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Què caracteritza les THD?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-aplicacions-de-les-thd-per-sectors-professionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Aplicacions de les THD per sectors professionals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-afecten-les-thd-al-medi-ambient" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Afecten les THD al medi ambient?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Afecten les THD al medi ambient?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-efectes-positius" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Efectes positius
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-danys-al-medi-ambient" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Danys al medi ambient
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-impacte-de-les-thd-en-les-empreses" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Impacte de les THD en les empreses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Impacte de les THD en les empreses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-thd-i-tecnologies-de-la-informacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. THD i tecnologies de la informació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-thd-i-tecnologies-doperacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. THD i tecnologies d’operació
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-sintesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Síntesi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-estudi-de-cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Estudi de cas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Estudi de cas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-seat-cap-a-la-revolucio-40" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1. SEAT, cap a la revolució 4.0
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unitat-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unitat 3.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="tema-9-digitalitzacio-aplicada-als-entorns-productius">Tema 9. Digitalització aplicada als entorns productius</h1>
+<h2 id="unitat-1-digitalitzacio-creacio-dentorns-it-i-ot"><strong>Unitat 1. Digitalització. Creació d'entorns IT i OT.</strong></h2>
+<h3 id="11-que-es-la-digitalitzacio">1.1. Què és la digitalització?</h3>
+<p>La digitalització es refereix al procés de convertir processos, serveis o productes tradicionals en formats digitals, utilitzant tecnologies modernes per millorar l'eficiència, reduir costos i augmentar la competitivitat. Això inclou la transformació de dades analògiques en digitals, així com l'automatització de processos.</p>
+<h3 id="12-per-que-es-digitalitzen-les-empreses">1.2. Per què es digitalitzen les empreses?</h3>
+<p>Les empreses es digitalitzen per diverses raons:</p>
+<ul>
+<li>Millora de l'eficiència: La digitalització permet automatitzar processos, reduir temps i costos operatius.</li>
+<li>Augment de la competitivitat: Les empreses digitalitzades poden oferir serveis i productes més innovadors, adaptats a les necessitats dels clients.</li>
+<li>Accés a nous mercats: La digitalització facilita l'accés a mercats globals mitjançant plataformes en línia.</li>
+<li>Adaptació a la demanda: La tecnologia permet a les empreses respondre de manera més àgil als canvis en la demanda del mercat.</li>
+</ul>
+<h3 id="13-com-es-digitalitzen-les-empreses">1.3. Com es digitalitzen les empreses?</h3>
+<p>Les empreses es digitalitzen mitjançant diverses estratègies:</p>
+<ul>
+<li>Adopció de tecnologies digitals: Implementació de sistemes com ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), i plataformes de comerç electrònic.</li>
+<li>Transformació de processos: Redisseny de processos per incorporar tecnologies digitals, com la utilització de big data, intel·ligència artificial, i IoT (Internet of Things).</li>
+<li>Cultura de la innovació: Fomentar una cultura d'innovació que impulsi la transformació digital a través de la formació i la capacitació dels empleats.</li>
+</ul>
+<h3 id="14-com-canvia-la-tecnologia-digital-a-les-empreses">1.4. Com canvia la tecnologia digital a les empreses?</h3>
+<p>La tecnologia digital transforma les empreses de diverses maneres:</p>
+<ul>
+<li>Nous models de negoci: Permet la creació de models de negoci basats en serveis digitals, com ara subscripcions en línia o plataformes de sharing economy.</li>
+<li>Millora en la presa de decisions: Les dades digitals proporcionen informació valuosa que ajuda a prendre decisions basades en evidències.</li>
+<li>Transformació del lloc de treball: Introducció de noves eines de col·laboració i automatització que canvien la manera com els empleats treballen.</li>
+</ul>
+<h2 id="2-que-son-les-tecnologies-it-i-ot">2. Què són les tecnologies IT i OT?.</h2>
+<p><strong>IT (Tecnologia de la Informació)</strong>: Fa referència a la infraestructura i sistemes que gestionen les dades i la informació en una organització. Inclou servidors, xarxes, bases de dades, i programari empresarial.</p>
+<p><strong>OT (Tecnologia Operacional)</strong>: Es refereix als sistemes i tecnologies que controlen i monitoritzen els processos físics dins d'una empresa, com ara els sistemes SCADA, PLCs, i altres sistemes de control industrial.</p>
+<h3 id="21-com-van-evolucionar-les-tecnologies-it-ot">2.1. Com van evolucionar les tecnologies IT-OT?</h3>
+<p>Les tecnologies IT i OT van evolucionar de manera separada durant molts anys:</p>
+<p><strong>IT</strong>: Es va centrar en l'automatització dels processos de negoci i la gestió de la informació.</p>
+<p><strong>OT</strong>: Va sorgir en entorns industrials, on la seguretat i la fiabilitat són prioritàries. Actualment, amb l'Internet of Things (IoT) i altres tecnologies avançades, hi ha una convergència entre IT i OT, facilitant la integració d'aquests dos mons.</p>
+<h3 id="22-quins-departaments-constitueixen-entorns-it">2.2. Quins departaments constitueixen entorns IT?</h3>
+<p>Els entorns IT estan formats per diversos departaments:</p>
+<ul>
+<li>Departament de <strong>Sistemes</strong>: Gestiona els servidors, la xarxa, i la infraestructura tecnològica.</li>
+<li>Departament de <strong>Desenvolupament</strong> de Programari: S'encarrega del disseny, implementació i manteniment de les aplicacions i programari intern.</li>
+<li>Departament de <strong>Seguretat</strong> Informàtica: Protegeix les dades i sistemes contra atacs i accessos no autoritzats.</li>
+<li>Departament de Suport Tècnic (<strong>Helpdesk</strong>): Ofereix suport als usuaris per a la resolució de problemes tècnics.</li>
+</ul>
+<h2 id="3-com-es-relacionen-les-tecnologies-it-i-ot">3. Com es relacionen les tecnologies IT i OT?</h2>
+<p>La relació entre IT i OT és cada vegada més estreta a mesura que les tecnologies digitals esdevenen centrals per a l'operació d'una empresa. Aquesta integració permet una major eficiència operativa i una visió global dels processos empresarials.</p>
+<h2 id="31-entorns-tecnologics-integrats">3.1. Entorns tecnològics integrats</h2>
+<p>Els entorns tecnològics integrats combinen IT i OT per a crear una infraestructura única que gestioni tant la informació com les operacions físiques de l'empresa. Això permet una major col·laboració entre departaments i una millor gestió dels recursos.</p>
+<h2 id="32-semblances-i-diferencies-entre-it-i-ot">3.2. Semblances i diferències entre IT i OT</h2>
+<ul>
+<li>Semblances: Ambdós gestionen tecnologies essencials per al funcionament de l'empresa, busquen optimitzar processos i millorar l'eficiència.</li>
+<li>Diferències: IT està orientat a la gestió de dades i informació, mentre que OT es focalitza en el control de processos físics. IT té més flexibilitat en termes d'actualitzacions i canvis, mentre que OT prioritza la seguretat i l'estabilitat.</li>
+</ul>
+<h2 id="33-sintesi">3.3. Síntesi</h2>
+<p>La digitalització està transformant les empreses, fent que la integració de les tecnologies IT i OT sigui cada vegada més crucial. Aquesta integració permet a les empreses ser més competitives, eficients i innovadores en un mercat cada vegada més globalitzat.</p>
+<h2 id="34-estudi-de-cas">3.4. Estudi de cas</h2>
+<h3 id="341-repsol-integra-tecnologies-diverses">3.4.1. Repsol integra tecnologies diverses</h3>
+<p>Repsol és un exemple d'empresa que ha integrat amb èxit tecnologies IT i OT per a millorar els seus processos. Mitjançant la digitalització, Repsol ha aconseguit optimitzar la seva producció, reduir costos i millorar la seguretat de les seves operacions. La integració de sistemes SCADA amb plataformes de big data ha permès una monitorització més precisa i una presa de decisions basada en dades.</p>
+<h2 id="35-repte-professional">3.5. Repte professional</h2>
+<h3 id="351-integracio-de-les-it-i-ot-petit-comerc">3.5.1. Integració de les IT i OT: petit comerç</h3>
+<p>Com a exercici pràctic, es podria considerar com es pot aplicar la integració de tecnologies IT i OT en un petit comerç. Això podria incloure l'ús de sistemes de punt de venda (POS) que integrin dades de vendes amb la gestió d'inventari en temps real, així com la implementació de sensors IoT per monitoritzar condicions ambientals a l'interior del comerç, optimitzant així tant l'experiència del client com l'eficiència operativa.</p>
+<hr style="border: 8px solid grey; border-radius: 5px;">
+
+<h2 id="unitat-2-tecnologies-habilitadores-digitals"><strong>Unitat 2. Tecnologies habilitadores digitals</strong></h2>
+<h3 id="1-introduccio">1. Introducció</h3>
+<p>Les tecnologies habilitadores digitals (THD) són aquelles tecnologies que faciliten o impulsen la transformació digital en diferents sectors. Aquestes tecnologies estan redefinint la manera com les empreses operen, innoven i es relacionen amb els seus clients i proveïdors, oferint noves oportunitats per a l'eficiència, la personalització i la competitivitat.</p>
+<h3 id="2-les-tecnologies-habilitadores-digitals-thd">2. Les tecnologies habilitadores digitals (THD)</h3>
+<p>Les THD són tecnologies que actuen com a catalitzadors de la transformació digital en les organitzacions. Aquestes tecnologies no només permeten la digitalització, sinó que també creen nous models de negoci i possibilitats que abans no eren factibles. Exemples de THD inclouen la intel·ligència artificial (IA), la computació al núvol, l'Internet de les Coses (IoT), el big data, la robòtica avançada, entre d'altres.</p>
+<h3 id="3-quines-son-les-thd">3. Quines són les THD?</h3>
+<p>Les principals tecnologies habilitadores digitals inclouen:</p>
+<ul>
+<li><strong>Intel·ligència Artificial (IA)</strong>: Tecnologia que permet a les màquines aprendre i prendre decisions de manera autònoma.</li>
+<li><strong>Internet de les Coses (IoT)</strong>: Xarxa d'objectes físics connectats que poden intercanviar dades i actuar sobre el món real.</li>
+<li><strong>Big Data</strong>: Processament de grans volums de dades per extreure informació rellevant.</li>
+<li><strong>Cloud computing</strong>: Accés a recursos informàtics i emmagatzematge de dades a través d'internet.</li>
+<li><strong>Blockchain</strong>: Tecnologia de registre distribuït que permet transaccions segures i transparents.</li>
+<li><strong>Realitat Augmentada (AR) i Realitat Virtual (VR)</strong>: Tecnologies que milloren la percepció del món real o creen entorns completament immersius.</li>
+<li><strong>Robòtica Avançada</strong>: Robots que poden realitzar tasques complexes i interactuar amb el seu entorn de manera intel·ligent.</li>
+</ul>
+<h3 id="4-que-caracteritza-les-thd">4. Què caracteritza les THD?</h3>
+<p>Les <strong>característiques</strong> clau de les THD inclouen:</p>
+<ul>
+<li><strong>Escalabilitat</strong>: Capacitat per augmentar el seu ús o aplicació a gran escala sense perdre efectivitat.</li>
+<li><strong>Interconnexió</strong>: Capacitat de connectar-se i interactuar amb altres sistemes i dispositius.</li>
+<li><strong>Flexibilitat</strong>: Adaptabilitat per ser utilitzades en diversos contextos i sectors.</li>
+<li><strong>Automatització</strong>: Capacitat per automatitzar processos i reduir la necessitat d'intervenció humana.</li>
+<li><strong>Innovació contínua</strong>: Les THD estan en constant evolució, oferint noves funcions i aplicacions.</li>
+</ul>
+<h3 id="5-aplicacions-de-les-thd-per-sectors-professionals">5. Aplicacions de les THD per sectors professionals</h3>
+<p>Les THD tenen aplicacions en gairebé tots els <strong>sectors professionals</strong>:</p>
+<p>Sector de la <strong>Salut</strong>: IA per al diagnòstic, robots quirúrgics, i telemedicina.
+<strong>Manufactura</strong>: IoT per a la gestió d'inventaris, robòtica avançada en la línia de producció.
+<strong>Finances</strong>: Blockchain per a transaccions segures, IA per a l'anàlisi de riscos.
+<strong>Agricultura</strong>: Drones per a la monitorització de cultius, big data per a l'optimització de rendiments.
+<strong>Retail</strong>: AR per a l'experiència del client, IA per a la personalització de l'oferta.
+<strong>Educació</strong>: VR per a l'aprenentatge immersiu, plataformes al núvol per a l'aprenentatge en línia.</p>
+<h3 id="6-afecten-les-thd-al-medi-ambient">6. Afecten les THD al medi ambient?</h3>
+<p>Les THD tenen un impacte dual en el medi ambient, amb efectes tant positius com negatius.</p>
+<h4 id="61-efectes-positius">6.1. Efectes positius</h4>
+<pre><code>Eficiència energètica: L'automatització i l'optimització de processos poden reduir el consum energètic.
+Monitorització ambiental: IoT i big data es poden utilitzar per monitoritzar i reduir l'impacte ambiental de les operacions industrials.
+Reducció de residus: L'ús de THD en la producció i la cadena de subministrament pot minimitzar els residus.
+</code></pre>
+<h4 id="62-danys-al-medi-ambient">6.2. Danys al medi ambient</h4>
+<pre><code>Consum d'energia: Les THD, especialment els centres de dades per al núvol i el processament de big data, poden tenir un alt consum energètic.
+Residus electrònics: La ràpida evolució de la tecnologia pot incrementar la generació de residus electrònics.
+Emissió de CO₂: Algunes tecnologies, com la mineria de criptomonedes, poden contribuir a altes emissions de CO₂.
+</code></pre>
+<h3 id="7-impacte-de-les-thd-en-les-empreses">7. Impacte de les THD en les empreses</h3>
+<p>Les THD estan transformant la manera com les empreses operen i competixen en el mercat global.</p>
+<h4 id="71-thd-i-tecnologies-de-la-informacio">7.1. THD i tecnologies de la informació</h4>
+<p>Les THD han revolucionat les tecnologies de la informació (IT), permetent una major automatització, anàlisi de dades avançada, i una millor gestió de la informació i recursos a través de solucions com la computació al núvol i la IA.</p>
+<h4 id="72-thd-i-tecnologies-doperacio">7.2. THD i tecnologies d’operació</h4>
+<p>En el camp de les tecnologies d'operació (OT), les THD han millorat els sistemes de control, permetent una major eficiència operativa i una millor integració amb els sistemes IT, donant lloc a la convergència IT-OT.</p>
+<h3 id="8-sintesi">8. Síntesi</h3>
+<p>Les THD són fonamentals per a la transformació digital, amb impactes profunds en diversos sectors professionals. Tot i que ofereixen grans avantatges, també presenten reptes, especialment pel que fa al medi ambient i la integració dins de les empreses.</p>
+<h3 id="9-estudi-de-cas">9. Estudi de cas</h3>
+<h4 id="91-seat-cap-a-la-revolucio-40">9.1. SEAT, cap a la revolució 4.0</h4>
+<p>SEAT és un exemple de com una empresa del sector automotriu ha adoptat les THD per avançar cap a la revolució industrial 4.0. SEAT ha implementat robòtica avançada, IA, i IoT per a millorar la seva producció, personalitzar els seus vehicles i optimitzar la seva cadena de subministrament. Aquest cas demostra l'impacte significatiu de les THD en la millora de la competitivitat i l'eficiència operativa.</p>
+<hr style="border: 8px solid grey; border-radius: 5px;">
+
+<h2 id="unitat-3"><strong>Unitat 3.</strong></h2>
+<h1 id="1-introduccio_1">1. Introducció</h1>
+<p>La tecnologia intel·ligent està transformant sectors clau de la societat, com els edificis, les empreses, les ciutats, les fàbriques i els habitatges. A través de l'aplicació de tecnologies habilitadores digitals (THD), com la intel·ligència artificial, el big data i l'Internet de les Coses (IoT), les organitzacions i infraestructures poden optimitzar els seus processos, augmentar l'eficiència i millorar l'experiència de l'usuari. Aquest temari analitza diferents exemples i aplicacions de la tecnologia intel·ligent en diversos sectors.</p>
+<h2 id="2-tecnologia-intelligent">2. Tecnologia intel·ligent</h2>
+<p>Les tecnologies intel·ligents fan referència a sistemes que poden recollir i analitzar informació en temps real per prendre decisions autònomes o optimitzar processos. Aquesta tecnologia s'aplica en edificis, empreses i ciutats, millorant-ne l'eficiència, la seguretat i la sostenibilitat.</p>
+<h3 id="21-edificis-intelligents">2.1. Edificis intel·ligents</h3>
+<p>Els edificis intel·ligents utilitzen sensors i sistemes de control per gestionar de manera automàtica aspectes com la il·luminació, la temperatura, la seguretat i l'energia. Això permet estalviar recursos i oferir un entorn més còmode i segur per als ocupants. Els edificis intel·ligents poden comunicar-se amb altres dispositius a través de xarxes IoT per optimitzar el seu funcionament.</p>
+<h3 id="22-empreses-intelligents">2.2. Empreses intel·ligents</h3>
+<p>Les empreses intel·ligents utilitzen dades massives i tecnologies avançades per millorar la presa de decisions, automatitzar processos i oferir productes i serveis més personalitzats als seus clients. Això inclou l'ús de big data, intel·ligència artificial i sistemes ERP per coordinar totes les operacions d'una empresa.</p>
+<h3 id="23-ciutats-intelligents">2.3. Ciutats intel·ligents</h3>
+<p>Les ciutats intel·ligents aprofiten les tecnologies digitals per gestionar de manera més eficient els serveis urbans, incloent el transport, la seguretat, la gestió de residus i l'energia. Els sistemes IoT permeten la monitorització i el control en temps real de les infraestructures, millorant la qualitat de vida dels habitants i la sostenibilitat urbana.</p>
+<h2 id="3-habitatges-intelligents">3. Habitatges intel·ligents</h2>
+<p>Els habitatges intel·ligents estan equipats amb dispositius connectats que permeten el control remot de diversos sistemes, com ara l'il·luminació, la seguretat, la climatització i els electrodomèstics. Amb l'ús d'assistents virtuals i sistemes d'automatització, els residents poden gestionar la seva llar de manera més eficient i personalitzada.</p>
+<h2 id="4-fabriques-intelligents">4. Fàbriques intel·ligents</h2>
+<p>Les fàbriques intel·ligents utilitzen tecnologies com la robòtica, el big data, i l'Internet de les Coses per millorar l'eficiència de la producció. Aquests sistemes poden predir errors, optimitzar cadenes de subministrament i permetre la fabricació personalitzada. Això forma part de la quarta revolució industrial, coneguda com Indústria 4.0.</p>
+<h2 id="5-ciutats-intelligents">5. Ciutats intel·ligents</h2>
+<p>Les ciutats intel·ligents no només integren tecnologies per gestionar millor els seus serveis, sinó que també impliquen els ciutadans en la presa de decisions, utilitzant aplicacions mòbils i sistemes de participació electrònica. A més, utilitzen la informació en temps real per prendre decisions que redueixen el consum d'energia i milloren la mobilitat i la seguretat.</p>
+<h2 id="6-utilitat-de-les-thd">6. Utilitat de les THD</h2>
+<p>Les tecnologies habilitadores digitals (THD) són aquelles que impulsen i faciliten la digitalització i automatització de processos. Aquestes tecnologies són crucials per a la implementació de sistemes intel·ligents, ja que proporcionen la infraestructura i les eines necessàries per connectar dispositius, analitzar dades i prendre decisions. Les principals THD inclouen:
+- <strong>Internet de les Coses (IoT):</strong> Connecta dispositius per intercanviar dades en temps real.
+- <strong>Intel·ligència Artificial (IA):</strong> Permet prendre decisions intel·ligents basades en dades.
+- <strong>Big Data:</strong> Gestiona grans volums de dades per identificar patrons i tendències.
+- <strong>Computació al Núvol:</strong> Proporciona l'infraestructura necessària per gestionar i emmagatzemar dades a gran escala.</p>
+<h2 id="7-sintesi">7. SÍNTESI</h2>
+<p>La tecnologia intel·ligent està canviant sectors clau de la nostra societat, des dels habitatges fins a les ciutats, passant per les empreses i les fàbriques. Les THD són fonamentals per a aquesta transformació, permetent la connectivitat, l'automatització i l'eficiència en tots els àmbits.</p>
+<h2 id="7-estudi-de-cas">7. ESTUDI DE CAS</h2>
+<h3 id="71-adecco-innovacio-en-la-cerca-de-feina">7.1. Adecco: innovació en la cerca de feina</h3>
+<p>Adecco, una de les principals empreses de recursos humans, ha utilitzat tecnologies com la intel·ligència artificial i l'automatització per millorar els seus processos de cerca i selecció de personal. Utilitzen algorismes per trobar els millors candidats per a les posicions obertes, analitzant milions de perfils en temps real. Això ha permès a Adecco ser més eficient en la cerca de feina i millorar l'experiència dels seus clients i candidats.</p>
+<h2 id="9-comprova-el-teu-aprenentatge">9. COMPROVA EL TEU APRENENTATGE</h2>
+<p>Per avaluar els teus coneixements, pots:
+- Explicar els beneficis dels habitatges intel·ligents.
+- Descriure com una empresa pot utilitzar la tecnologia intel·ligent per millorar els seus processos.
+- Identificar les THD clau en la implementació de ciutats intel·ligents.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

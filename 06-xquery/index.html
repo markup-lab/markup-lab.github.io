@@ -1,0 +1,1153 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Tema 6. XQuery - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-6-xquery" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 6. XQuery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Introducció
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1. Introducció">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-base-de-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.1. Base de dades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-tipus-de-bbdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.2. Tipus de BBDD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1.2. Tipus de BBDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bbdd-jerarquica" class="md-nav__link">
+    <span class="md-ellipsis">
+      BBDD jeràrquica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bbdd-relacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      BBDD relacional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bbdd-transaccional" class="md-nav__link">
+    <span class="md-ellipsis">
+      BBDD transaccional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bbdd-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      BBDD noSQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-sgdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.2. SGDB
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml-al-b2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML al B2B
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-bases-de-dades-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Bases de dades XML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. Bases de dades XML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-sistemes-demmagatzematge-de-la-informacio-mitjancant-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.1. Sistemes d'emmagatzematge de la informació mitjançant XML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2.1. Sistemes d'emmagatzematge de la informació mitjançant XML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fitxers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitxers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-dades-no-natives-xml-xml-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de dades no natives XML (XML-Enabled)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-dades-natives-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de dades natives XML
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-sql-i-xquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. SQL i XQuery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-xquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4. XQuery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-expressions-flwor" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5. Expressions FLWOR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-flwor-a-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      De FLWOR a HTML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-actualitzacio-de-dades-amb-xquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.6. Actualització de dades amb XQuery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6. Actualització de dades amb XQuery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-insercio-dun-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Insercio d'un element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-esborrat-dun-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Esborrat d'un element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-modificar-un-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Modificar un element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-restriccions-per-a-la-modificacio-massiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 Restriccions per a la modificació massiva.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-enllacos-dinteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5 Enllaços d'interés
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="tema-6-xquery">Tema 6. XQuery</h1>
+<h2 id="61-introduccio">6.1. Introducció</h2>
+<h3 id="611-base-de-dades"><strong>6.1.1. Base de dades</strong></h3>
+<p>Una base de dades (BBDD) és una eina que permet organitzar les dades que tenen algun tipus de relació entre sí, típicament emmagatzemada a un ordinador. Una base de dades és controla normalment mitjantçant un sistema gestor de base de dades (SGDB) o DBMS en anglés.</p>
+<h3 id="612-tipus-de-bbdd"><strong>6.1.2. Tipus de BBDD</strong></h3>
+<p>Hi ha molts tipus de BBDD segons el model lògic on es descriuen les dades. </p>
+<h4 id="bbdd-jerarquica"><strong>BBDD jeràrquica</strong></h4>
+<p>Utilitza una estructura en forma d'arbre (arrel, nodes pares/fills, nodes fulla). Són eficients per a la cerca de dades, però la seva estructura és més dificil de modificar. Permet la redundància de les dades</p>
+<h4 id="bbdd-relacional"><strong>BBDD relacional</strong></h4>
+<p>En aquest model no existeix jerarquia, les dades s'emmagatzemen en tuples (una fila) que formen taules (conjunt de tuples). Cada taula representa un objecte del mon real que es vol representar en un ordinador (contenen dades amb la mateixa informació semàntica). Les taules es poden relacionar entre sí amb taules intermèdies (claus primàries i claus forànees), solucionant el problema de la redundància. Fan servir el llenguatge SQL per a fer consultes.</p>
+<p>Alguns exemples de BBDD relacionals a nivell comercial són Oracle (primer SBDG comercial) o Microsoft SQL Server. En l'àmbit Open Source tenim postgreSQL o mariaDB/mySQL.</p>
+<h4 id="bbdd-transaccional"><strong>BBDD transaccional</strong></h4>
+<p>Poc comuns. Es fan servir a les entitats bancàries per a la transferència de diners. Permeten enviar informació a gran velocitat.</p>
+<h4 id="bbdd-nosql"><strong>BBDD noSQL</strong></h4>
+<p>Són bases de dades no relacionals. Algunes característiques:</p>
+<ul>
+<li>No fan servir el lleguatge SQL, les dades s'emmagatzemen en parells clau-valor. Els registres s'emmagatzemen com a documents (típicament JSON). Un exemple seria el sistema mongoDB.</li>
+</ul>
+<h3 id="612-sgdb"><strong>6.1.2. SGDB</strong></h3>
+<p>L'ús dels SGBD és molt comú i té alguns avantatges respecte a l'ús de fitxers:</p>
+<ul>
+<li>Evita la redundància de dades.</li>
+<li>Evita errors de robustesa (dos programes volen modificar la mateixa dada).</li>
+<li>Permet la independència del Hardware i del software que gestiona la BBDD.</li>
+</ul>
+<p>També té alguns inconvenients:</p>
+<ul>
+<li>
+<p>No són fàcils d'administrar, es requereixen coneixements tècnics, personal especialitzat en administració de BBDD i en llenguatges de consultes.</p>
+</li>
+<li>
+<p>Si no necessitem accés concurrent a les dades (més d'un usuari vol modificar la mateixa dada), podem fer servir fitxers.</p>
+</li>
+<li>
+<p>Cost elevat en HW i SW, requereix d'un servidor.</p>
+</li>
+</ul>
+<h2 id="xml-al-b2b">XML al B2B</h2>
+<p>La majoria de BBDD actuals estan basades en el model de dades E-R i totes les empreses disponen d'alguna BBDD on emmagatzemen informació del seu negoci. </p>
+<p>Anomenem B2B (Bussiness to Bussiness) a les transaccions comercials entre empreses (proveïdors, distribuidors), que implica la compartició d'informació entre elles. Aquesta compartició de dades suposa un probleme doncs cada empresa utilitza SGBD diferents. XML permet definir una representació d'informació que les empreses desitjen compartir. El SGDB haurà d'incorporar la possibilitat d'exportar o importar dades amb XML.</p>
+<p>Per exemple, les empreses amb ERPs com SAP fan servir el document IDoc (Intermediate Document) que permet tranferir informació entre bases de dades. Un IDoc pot representar una factura, una comanda de vendes, una entrada al magatzem, una entrega, etc.</p>
+<h2 id="62-bases-de-dades-xml">6.2. Bases de dades XML</h2>
+<p>Un document XML és pot considerar una base de dades (BBDD), doncs la informació està guardada de manera estructurada, és a dir organitzada o ordenada dintre del document. Podem dir que una base de dades XML (document) permet emmagatzemar dades en format XML (format estructurat).</p>
+<p>Les operacions que normalment es poden fer amb una BBDD com inserir, modificar o esborrar -<a href="https://es.wikipedia.org/wiki/CRUD" title="Crud">operacions CRUD</a>- es realitzen amb els llenguatges XPath i XQuery.</p>
+<p>Les bases de dades XML són una bona solució si la informació està estructurada de forma jeràrquica i necessitem un accés lleuger a la BBDD. Per actualitzar una columna a XML hem d'actualitzar tot el document XML. Per tant, si les dades són actualitzades molt freqüentment i els documents XML tenen moltes files (o registres) pot ser més eficients guardar les dades en una BBDD relacional. Per altra banda, si actualitzem documents petits i pocs documents al mateix temps, XML també pot ser eficient.</p>
+<h3 id="621-sistemes-demmagatzematge-de-la-informacio-mitjancant-xml">6.2.1. Sistemes d'emmagatzematge de la informació mitjançant XML</h3>
+<p>Existeixen tres formes d'emmagatzemament de la informació mitjançant XML:</p>
+<ul>
+<li>Fitxers de text</li>
+<li>Bases de dades no natives XML (XML Enabled)</li>
+<li>Bases de dades natives XML</li>
+</ul>
+<h4 id="fitxers"><strong>Fitxers</strong></h4>
+<p>Es fan servir fitxers XML, els que fem servir al nostre SO. No és la millor opció, doncs no podem garantir la concurrència (dues persones no poden modificar el mateix arxiu a la vegada), la seguretat és menor i altres avantatges que ofereixen els SGBD.</p>
+<h4 id="bases-de-dades-no-natives-xml-xml-enabled"><strong>Bases de dades no natives XML (XML-Enabled)</strong></h4>
+<p>Les dades es guarden en una base de dades relacional. La BBDD relacional converteix el document XML en un esquema relacional per importar després aquestes dades. Aquestes BBDD poden generar un document XML com a sortida. </p>
+<p>Aquestes BBDD presenten alguns inconvenients:</p>
+<ul>
+<li>No es poden restaurar el documents XML originals (la BBDD és relacional i necessiten conversió).</li>
+<li>L'estructura de les dades deixa de ser jeràrquica per convertir-se en relacional.</li>
+</ul>
+<p>Aquestes BBDD són més adients per sistemes on la majoria de les dades són no-XML. Els següents SGDB suporten el tipus de dades ISO XML:</p>
+<ul>
+<li>IBM DB2</li>
+<li>Microsoft SQL Server</li>
+<li>Oracle Database</li>
+<li>PostgreSQL</li>
+</ul>
+<h4 id="bases-de-dades-natives-xml"><strong>Bases de dades natives XML</strong></h4>
+<p>Aquestes BBDD estan especialment adaptades per treballar amb dades XML. El seu model intern es basa en XML i les seves unitats d'emmagatzematge són els nodes XML i el document, mentre que en les BBDD relacionals són els camps i els registres.</p>
+<p>En aquestes BBDD no s'utilitza el llenguatge de consulta SQL, sinó que es fan servir els llenguatges XPath i XQuery. Alguns exemples de BBDD natives XML són: MarkLogic, BaseX, eXist-db o sedna.</p>
+<p>XPath serveix per seleccionar els nodes del document XML i XQuery permet fer les consultes al document XML.</p>
+<p>Comparativa de BBDD XML natives:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nom</th>
+<th style="text-align: left;">Llicència</th>
+<th style="text-align: center;">Llenguatge nadiu</th>
+<th style="text-align: center;">XQuery 3.1/3.0/1.0</th>
+<th style="text-align: center;">XQuery Update</th>
+<th style="text-align: center;">XSLT 2.0</th>
+<th style="text-align: center;">XForms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BaseX</td>
+<td style="text-align: left;">BSD</td>
+<td style="text-align: center;">Java</td>
+<td style="text-align: center;">Si/Si/Si</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: center;">Si</td>
+</tr>
+<tr>
+<td style="text-align: left;">eXist</td>
+<td style="text-align: left;">GNU LGPL</td>
+<td style="text-align: center;">Java</td>
+<td style="text-align: center;">Parcial/Parcial/Si</td>
+<td style="text-align: center;">Propietari</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: center;">Si</td>
+</tr>
+<tr>
+<td style="text-align: left;">MarkLogic</td>
+<td style="text-align: left;">Comercial</td>
+<td style="text-align: center;">C++</td>
+<td style="text-align: center;">No/Parcial/Si</td>
+<td style="text-align: center;">Propietari</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: center;">Si</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sedna</td>
+<td style="text-align: left;">Apache 2.0</td>
+<td style="text-align: center;">C++</td>
+<td style="text-align: center;">No/?/Si</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="63-sql-i-xquery">6.3. SQL i XQuery</h2>
+<p>SQL (Structured Query Language) és un llenguatge declaratiu. A diferència dels llenguatges imperatius, li indiquem les dades que volem, no com obtenir-les físicament del disc. SQL serveix per accedir i manipular BBDD relacionals:</p>
+<p>Concretament, les operacions CRUD són:</p>
+<ul>
+<li>Creació i eliminació de taules</li>
+<li>Inserció, modificació i eliminació de registres.</li>
+<li>Execució de cerques mitjançant consultes (SELECT).</li>
+</ul>
+<p>Les sentències SQL es classifiquen en diferents tipus segons el seu propòsit:</p>
+<ul>
+<li><strong>DDL (Data Definition Language)</strong>: Permeten crear les estructures que emmagatzemaran les dades, com CREATE, ALTER o DROP.</li>
+<li><strong>DML (Data Manipulation Language)</strong>: Permeten introduir dades i manipularles: SELECT, INSERT, UPDATE o DELETE.</li>
+<li><strong>DCL (Data Control Language)</strong>: Permeten als administradors controlar l'accés als objectes de la BBDD: GRANT o REVOKE.</li>
+</ul>
+<p>La versió de SQL més utilitzada és la del 1993. Respecte a l'us amb XML:</p>
+<ul>
+<li>Estàndar 2003, suport inicial a documents XML.</li>
+<li>Estàndar 2006, major integració amb XML (importació i exportació de dades XML).</li>
+</ul>
+<p>XQuery (XML Query) és a XML el que SQL a les BBDD relacionals. XQuery és compatible amb les següents tecnologies: XML, Namespaces, XSLT, XPath i XML Schema.</p>
+<p>XQuery 1.0 va ser desenvolupat pel grup de treball W3C i XPath 2.0 és un subconjunt de XQuery 1.0.</p>
+<p>XQuery és molt semblant a SQL, afegint-li estructures dels llenguatges de programació com for, return, etc. Aquestes estructures s'anomenen sentències <strong>FLOWR</strong>, és a dir <strong>For, Let, Where, Order by i Return</strong>.</p>
+<p>Quan s'analitza el document XML es crea un arbre de nodes on tenim:</p>
+<ul>
+<li>Node arrel o "/": El primer node del document XML.</li>
+<li>Node element: Qualsevol element del document XML, si te fills és un node pare, sino és un node fulla.</li>
+<li>Node text: Node que conté només texte</li>
+<li>Node atribut: Atributs dels elements XML que complementen la informació del node element.</li>
+</ul>
+<p>Semblances i diferències entre XQuery i SQL:</p>
+<ul>
+<li>Els dos permeten fer consultes a documents XML i BBDD relacionals, respectivament.</li>
+<li>Comparteixen algunes característiques de les sentències FLWOR.</li>
+</ul>
+<p>Per altra banda:</p>
+<ul>
+<li>XQuery recorre dades jeràrquiques i SQL dades relacionals.</li>
+<li>SQL permet eliminar i modificar dades, XQuery té dificultat a l'hora d'esborrar o editar dades.</li>
+</ul>
+<h2 id="64-xquery">6.4. XQuery</h2>
+<p>Algunes consideracions inicials:</p>
+<ul>
+<li>És sensible a majúscules i minúscules com XML.</li>
+<li>Els elements, atributs i variables han de tenir noms vàlids a XML.</li>
+<li>Podem realitzar les consultes carregant un arxiu .xq a al gestor de BBDD XML.</li>
+<li>Podem realitzar les consultes directament a l'interfície del SGDB-Jeràrquic com baseX, eXistDB, etc..</li>
+<li>Per processar els arbres dels nodes d'un document XQuery utilitza XPath.</li>
+</ul>
+<p><strong>Extracció de dades</strong>:</p>
+<ul>
+<li>Per extreure totes les dades d'un document: </li>
+</ul>
+<p>Local:
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;ruta_a_l’arxiu/nom_arxiu.xml&quot;</span><span class="p">)</span>
+</code></pre></div>
+URL:
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;http://adreça_del_document&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Exemple: pel document “catalog.xml” emplaçat a la mateixa arrel:
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)</span>
+</code></pre></div>
+* Per accedir a un o un conjunt de nodes:
+<div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;ruta_a_l’arxiu/nom_arxiu.xml&quot;</span><span class="p">)</span><span class="err">Xp</span><span class="k">at</span><span class="nt">h</span>
+</code></pre></div>
+Exemple: per accedir a TOTS els cd’s del document catalog.xml:
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)/</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span>
+</code></pre></div></p>
+<p><strong>Comparació</strong></p>
+<p>Mitjançant operadors de comparació en els elements i els
+arguments d’un arbre. Utilitzem XPath.</p>
+<p><div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;document.xml&quot;</span><span class="p">)//</span><span class="nt">element_de_cerca</span><span class="p">[</span><span class="nt">element_filtre</span><span class="o">=</span><span class="s2">&quot;argument&quot;</span><span class="p">]</span>
+</code></pre></div>
+Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="w"> </span><span class="p">[</span><span class="nt">price</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>Comparació de strings</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">[./</span><span class="nt">artist</span><span class="w"> </span><span class="ow">eq</span><span class="w"> </span><span class="s2">&quot;Bob Dylan&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p><a href="https://www.w3schools.com/xml/xpath_operators.asp">Operadors XPath (w3schools)</a></p>
+<h2 id="65-expressions-flwor">6.5. Expressions FLWOR</h2>
+<p>FLWOR és un acronim de "For, Let, Where, Order by, Return". És una més potent que les vistes amb XPath per seleccionar nodes.</p>
+<ul>
+<li><strong>For</strong> - selecciona una seqüència de nodes, guardant-los en una variable.</li>
+<li><strong>Let</strong> - Uneix una seqüència a una variable, és opcional.</li>
+<li><strong>Where</strong> - Filtra els nodes guardats a la variable del <em>for</em> o del <em>let</em></li>
+<li><strong>Order by</strong> - Ordena els nodes</li>
+<li><strong>Return</strong> - Que retorna (s'evalua una vegada per cada node)</li>
+</ul>
+<p>Utilitza variables amb el simbol dòlar ($).</p>
+<p>Aquestes dues expressions XPath i FLWOR són equivalents:</p>
+<p>XPath</p>
+<p><div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">]/</span><span class="nt">artist</span>
+</code></pre></div>
+FLWOR</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">”</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span>
+<span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">price</span><span class="o">&lt;=</span><span class="mi">10</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span>
+</code></pre></div>
+<p>Comparació SQL i FLWOR</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="p">...</span><span class="n">columnes</span><span class="p">...</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="p">...</span><span class="n">taules</span><span class="p">...</span><span class="w">                 </span><span class="o">===&gt;</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="p">...</span><span class="n">condició_columnes</span><span class="p">...</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="p">...</span><span class="n">nodes</span><span class="p">...</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="p">...</span><span class="k">catalog</span><span class="p">.</span><span class="n">xml</span><span class="p">...</span><span class="w">            </span><span class="o">===&gt;</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="p">...</span><span class="n">condició_nodes</span><span class="p">...</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">var</span>
+<span class="w">  </span><span class="ow">in</span><span class="w"> </span><span class="p">(..</span><span class="o">.</span><span class="err">c</span><span class="k">at</span><span class="nt">alog.xml...</span><span class="p">)</span><span class="o">...</span><span class="err">nodes</span><span class="o">...</span>
+<span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="p">..</span><span class="o">.</span><span class="err">condició_nodes</span><span class="w"> </span><span class="err">(amb</span><span class="w"> </span><span class="nv">$</span><span class="n">var</span><span class="p">)</span><span class="o">...</span>
+</code></pre></div>
+<p><strong>FOR</strong></p>
+<p>En aquest cas es mostra els artistes que tenen un cd amb un preu
+superior a 10 i més petit a 15.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">”</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span>
+<span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&lt;</span><span class="mi">15</span><span class="p">]</span><span class="err">“</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span>
+</code></pre></div>
+<p><strong>LET</strong></p>
+<p>Podem assignar una nova variable, per mostrar els resultats.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">”</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span>
+<span class="k">let</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span><span class="o">:=</span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span>
+<span class="k">where</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">price</span><span class="o">&lt;</span><span class="mi">10</span>
+<span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span>
+</code></pre></div>
+<p><strong>RETURN</strong>
+Si volem tornar més d’un valor podem fer:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/(</span><span class="nt">artist</span><span class="p">/</span><span class="nt">name</span><span class="p">,</span><span class="w"> </span><span class="nt">Title</span><span class="p">)</span>
+</code></pre></div>
+o
+<div class="highlight"><pre><span></span><code><span class="k">let</span><span class="w"> </span><span class="nv">$</span><span class="n">Titulo</span><span class="o">:=</span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">Titile</span>
+<span class="k">let</span><span class="w"> </span><span class="nv">$</span><span class="n">nomArtis</span><span class="o">:=</span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span><span class="p">/</span><span class="nt">name</span>
+<span class="k">let</span><span class="w"> </span><span class="nv">$</span><span class="n">codigo</span><span class="o">:=</span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span><span class="p">/</span><span class="nt">cod_Artist</span>
+<span class="k">return</span><span class="w"> </span><span class="nf">concat</span><span class="p">(</span><span class="nv">$</span><span class="n">Titulo</span><span class="p">,</span><span class="w"> </span><span class="err">“</span><span class="w"> </span><span class="err">“</span><span class="p">,</span><span class="w"> </span><span class="nv">$</span><span class="n">nomArtis</span><span class="p">,</span><span class="err">”</span><span class="w"> </span><span class="err">“</span><span class="p">,</span><span class="nv">$</span><span class="n">codigo</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>ORDER</strong></p>
+<p>En aquest cas ordenem els artistes per nom.
+<div class="highlight"><pre><span></span><code><span class="nt">order</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="nv">$</span><span class="n">variable</span><span class="w"> </span><span class="p">[</span><span class="nt">ascending</span><span class="p">,</span><span class="w"> </span><span class="nt">descending</span><span class="p">]</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">/</span><span class="nt">artist</span>
+<span class="w">  </span><span class="k">order by</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="k">descending</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span>
+</code></pre></div>
+<h2 id="de-flwor-a-html">De FLWOR a HTML</h2>
+<p>Podem realitzar consultes i guardar els resultats en format HTML. Ho podem fer tant amb expressions XQuery com clàusules FLWOR.</p>
+<p>Indicarem la part del codi FLWOR entre claus “{“ “}”.</p>
+<p>Si volem afegir, per exemple, codi CSS utilitzarem {{ i }}, en la declaració CSS, en compte d’una sola { i }.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ul&gt;</span>
+<span class="p">{</span>
+<span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">x</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">/</span><span class="nt">artist</span>
+<span class="w">  </span><span class="k">order by</span><span class="w"> </span><span class="nv">$</span><span class="n">x</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nt">&lt;li&gt;</span><span class="p">{</span><span class="nv">$</span><span class="n">x</span><span class="p">}</span><span class="nt">&lt;/li&gt;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
+<p>Exemple complert:</p>
+<p>XQuery
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;html&gt;</span>
+<span class="l">  </span><span class="nt">&lt;head&gt;</span>
+<span class="l">    </span><span class="nt">&lt;title&gt;</span><span class="l">Prova XQuery</span><span class="nt">&lt;/title&gt;</span>
+<span class="l">  </span><span class="nt">&lt;/head&gt;</span>
+<span class="l">  </span><span class="nt">&lt;body&gt;</span>
+<span class="l">    </span><span class="nt">&lt;ul&gt;</span>
+<span class="l">      </span><span class="p">{</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">x</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">/</span><span class="nt">artist</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nt">&lt;li&gt;</span><span class="p">{</span><span class="nv">$</span><span class="n">x</span><span class="p">}</span><span class="nt">&lt;/li&gt;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="l">    </span><span class="nt">&lt;/ul&gt;</span>
+<span class="l">  </span><span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></p>
+<p>HTML
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Prova XQuery<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">artist</span><span class="p">&gt;</span>Bob Dylan<span class="p">&lt;/</span><span class="nt">artist</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">artist</span><span class="p">&gt;</span>Bonnie Tyler<span class="p">&lt;/</span><span class="nt">artist</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">artist</span><span class="p">&gt;</span>Dolly Parton<span class="p">&lt;/</span><span class="nt">artist</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>Per imprimir només el nom de l'element, enlloc d'escriure 
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nt">&lt;li&gt;</span><span class="p">{</span><span class="nv">$</span><span class="n">x</span><span class="p">}</span><span class="nt">&lt;/li&gt;</span>
+</code></pre></div>
+posem</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nt">&lt;li&gt;</span><span class="p">{</span><span class="nf">data</span><span class="p">(</span><span class="nv">$</span><span class="n">x</span><span class="p">)}</span><span class="nt">&lt;/li&gt;</span>
+</code></pre></div>
+<h2 id="66-actualitzacio-de-dades-amb-xquery">6.6. Actualització de dades amb XQuery</h2>
+<p>Encara que XQuery permet seleccionar dades, la versió XQuery 1.0 no té funcions per insertar, esborrar o actualitzar dades d'un XML. Patrick Lehti va desenvolupar un sistema per possibilitar aquestes funcions, encara que el consorci W3C, posteriorment, va proposar l'extensió XQUF (XQuery Update Facilites) que ja està implementada a partir de la versió 7.1 de BaseX. La versió que farem servir de BaseX és la 9.0.1 (2022), així que farem servir la implementació XQUF.</p>
+<p>En els exemples que mostrarem a continuació <strong>element</strong> és un fragment XML i <strong>ubicació</strong> és una expressió XPath.</p>
+<h3 id="61-insercio-dun-element">6.1 Insercio d'un element</h3>
+<p>La sintaxi general amb XQUF és:</p>
+<p><strong>insert node</strong> element {<strong>into</strong> | <strong>as first into</strong> | <strong>as last into</strong> | <strong>before</strong> | <strong>after</strong>} ubicació</p>
+<p>S'ha d'especificar un dels elements que van dintre de les claus:</p>
+<ul>
+<li>into: l'element s'insereix dins dins l'element especificat, al final dels fills actuals (depen de l'implementació).</li>
+<li>as first into / as last into: l'element s'insereix dins de l'element especificat, al principi o al final respectivament dels fills actuals.</li>
+<li>before / after: l'element s'insereix abans o després de l'element especificat per la ubicació.</li>
+</ul>
+<p>Exemple (veure XML exemple de l'apartat 5.9):</p>
+<p>Afegir l'afició "gastronomia" a l'estudiant amb id = 393 al final de les seves aficions</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">insert</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">aficio</span><span class="o">&gt;</span><span class="nt">Gastronomia</span><span class="o">&lt;</span><span class="p">/</span><span class="nt">aficio</span><span class="o">&gt;</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="err">last</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">aficions</span>
+</code></pre></div>
+L'atribut id pot anar o sense cometes</p>
+<h3 id="62-esborrat-dun-element">6.2 Esborrat d'un element</h3>
+<p>La sintaxi amb XQUF és:</p>
+<p><strong>delete node</strong> ubicacio</p>
+<p>Exemple:</p>
+<p>Suprimir l'afició lectura de l'estudiant amb id = 393</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">delete</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">aficions</span><span class="p">/</span><span class="nt">aficio</span><span class="p">[.</span><span class="o">=</span><span class="s2">&quot;Lectura&quot;</span><span class="p">]</span>
+</code></pre></div>
+El punt fa referència al node actual, és a dir a una afició.</p>
+<p>L'atribut id pot anar o no sense cometes</p>
+<p>La versió amb llenguatge FLWOR seria:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">aficions</span><span class="p">/</span><span class="nt">aficio</span><span class="p">[.</span><span class="o">=</span><span class="s2">&quot;Lectura&quot;</span><span class="p">]</span><span class="w"> </span>
+<span class="k">return</span><span class="w"> </span><span class="nt">delete</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span>
+</code></pre></div>
+<h3 id="63-modificar-un-element">6.3 Modificar un element</h3>
+<p>En el cas de modificació, podem modificar l'element sencer o el contingut de l'element especificat.</p>
+<p>La sintaxi amb XQUF per modificar l'element:</p>
+<p><strong>replace node</strong> ubicació <strong>with</strong> element</p>
+<p>Modificar un element:</p>
+<p>Exemple: canviar el nom de l’estudiant amb id = 393 per Dani (es diu Daniel).</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">replace</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">nom</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nt">&lt;nom&gt;</span><span class="l">Dani</span><span class="nt">&lt;/nom&gt;</span>
+</code></pre></div>
+Per altra banda, la sintaxi per modificar el valor de l'element:</p>
+<p><strong>replace value of node</strong> ubicació <strong>with</strong> element</p>
+<div class="highlight"><pre><span></span><code><span class="nt">replace</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">nom</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="s2">&quot;Dani&quot;</span>
+</code></pre></div>
+<p>La versió replace node amb FLWOR seria:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">nom</span><span class="w"> </span>
+<span class="k">return</span><span class="w"> </span><span class="nt">replace</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nt">&lt;nom&gt;</span><span class="l">Dani</span><span class="nt">&lt;/nom&gt;</span>
+</code></pre></div>
+<h3 id="64-restriccions-per-a-la-modificacio-massiva">6.4 Restriccions per a la modificació massiva.</h3>
+<p>Als apartats anteriors, el paràmetre ubicacio no sempre pot fer referència a més d'un element. A continuació es mostren les restriccions per a cada sentencia.</p>
+<table>
+<thead>
+<tr>
+<th>sentencia</th>
+<th>restricció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>insert node</td>
+<td>un unic element</td>
+</tr>
+<tr>
+<td>delete node</td>
+<td>un o varis elements</td>
+</tr>
+<tr>
+<td>replace node</td>
+<td>un unic element</td>
+</tr>
+<tr>
+<td>replace value of node</td>
+<td>un unic element</td>
+</tr>
+</tbody>
+</table>
+<p>Amb FLWOR podem fer moficacions massives, cosa que amb XQUF sense FLWOR no podem. Per modificar massivament nodes (replace node) fariem el següent:</p>
+<p>Exemple: Substituir l'afició "Esport" per "Basquet" a tots els alumnes:</p>
+<p>for $a in /classe/estudiant/aficions/aficio[.="Esport"] 
+return replace node $a with <aficio>Basquet</aficio></p>
+<h3 id="65-enllacos-dinteres">6.5 Enllaços d'interés</h3>
+<p><a href="https://docs.basex.org/wiki/XQuery_Update">XQuery Update - BaseX Documentation</a></p>
+<p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

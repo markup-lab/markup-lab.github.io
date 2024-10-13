@@ -1140,6 +1140,62 @@ comprensió del document XML, ja que és on explicarem per a que serveix cadascu
 <span class="k">&lt;!ATTLIST</span> <span class="nt">nom</span> <span class="na">dni</span> <span class="kc">NMTOKEN</span> <span class="kc">#IMPLIED</span><span class="k">&gt;</span>
 <span class="err">&lt;!ATTRLIST</span> <span class="err">document</span> <span class="err">versio</span> <span class="err">CDATA</span> <span class="err">#FIXED</span> <span class="s2">&quot;1.0&quot;</span><span class="k">&gt;</span>
 </code></pre></div>
+<p>Els atributs poden tenir els següents tipus de dades:</p>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Descripcio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDATA</td>
+<td>El valor són dades caràcters</td>
+</tr>
+<tr>
+<td>(en1</td>
+<td>en2</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>El valor ha de ser un id únic (Ha de començar per lletra)</td>
+</tr>
+<tr>
+<td>IDREF</td>
+<td>El valor és l'id d'altre element</td>
+</tr>
+<tr>
+<td>IDREFS</td>
+<td>El valor és una llista d'ids d'altres elements</td>
+</tr>
+<tr>
+<td>NMTOKEN</td>
+<td>El valor és un nom XML vàlid</td>
+</tr>
+<tr>
+<td>NMTOKENS</td>
+<td>El valor és un llistat de noms XML vàlids</td>
+</tr>
+<tr>
+<td>ENTITY</td>
+<td>El valor és una entitat</td>
+</tr>
+<tr>
+<td>ENTITIES</td>
+<td>El valor és una llista d'entitats</td>
+</tr>
+<tr>
+<td>NOTATION</td>
+<td>El valor és una notació</td>
+</tr>
+<tr>
+<td>xml:</td>
+<td>El valor és un valor predefinit d'XML</td>
+</tr>
+</tbody>
+</table>
+<p>Els modificadors següents indiquen l'obligatorietat de l'atribut:</p>
 <ul>
 <li><code>#REQUIRED</code> indica que l'atribut és obligatori.</li>
 <li><code>#IMPLIED</code> indica que el dni és un atribut opcional.</li>

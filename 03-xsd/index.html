@@ -893,10 +893,10 @@ També existeixen altres llenguatges d'esquema:</p>
 <li>anyURI (adreça web)</li>
 </ul>
 <p>Exemples:</p>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;dia&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:date&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;dia&gt;</span>2011-09-15<span class="nt">&lt;/dia&gt;</span>
-<span class="w">      </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;altura&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;altura&gt;</span>220<span class="nt">&lt;/altura&gt;</span>
-<span class="w">      </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;nombre&gt;</span>Pere<span class="w"> </span>Puig<span class="nt">&lt;/nombre&gt;</span>
-<span class="w">      </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamaño&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:float&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;tamany&gt;</span>1.7E2<span class="nt">&lt;/tamany&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;dia&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:date&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;dia&gt;</span>2011-09-15<span class="nt">&lt;/dia&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;altura&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;altura&gt;</span>220<span class="nt">&lt;/altura&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nombre&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;nombre&gt;</span>Pere<span class="w"> </span>Puig<span class="nt">&lt;/nombre&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamaño&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:float&quot;</span><span class="nt">/&gt;</span><span class="w"> </span><span class="nt">&lt;tamany&gt;</span>1.7E2<span class="nt">&lt;/tamany&gt;</span>
 </code></pre></div>
 <p><a href="https://www.w3.org/TR/xmlschema-2/#built-in-datatypes">Tipus de dades predefinits a XSD (https://www.w3.org)</a></p>
 <h3 id="325-definicio-de-tipus-de-dades-propis">3.2.5. Definició de tipus de dades propis.</h3>
@@ -909,37 +909,37 @@ També existeixen altres llenguatges d'esquema:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;tamany&gt;</span>M<span class="nt">&lt;/tamany&gt;</span>
 </code></pre></div>
 <p>El següent fragment XSD crea un tipus personalitzat simple mitjançant l'element <strong>xs:simpleType</strong> (el contingut no te altres elements fills i l'element no té atributs). La restricció tipus <strong>xs:enumeration</strong> defineix uns valors vàlids per a l'element <strong><tamany></strong>. Les restriccions (també anomenades facetes) es veuen més endavant i permeten definir tipus de dades.</p>
-<div class="highlight"><pre><span></span><code>&lt;!-- pas 1 --&gt;
-&lt;xs:simpleType name=&quot;tipus_samarreta&quot;&gt;
-  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
-    &lt;xs:enumeration value=&quot;L&quot;/&gt;
-    &lt;xs:enumeration value=&quot;M&quot;/&gt;
-    &lt;xs:enumeration value=&quot;XL&quot;/&gt;
-    &lt;xs:enumeration value=&quot;XXL&quot;/&gt;
-  &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- pas 1 --&gt;</span>
+<span class="nt">&lt;xs:simpleType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tipus_samarreta&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;L&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;M&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;XL&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;XXL&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span>
 
-&lt;!-- pas 2 --&gt;
-&lt;xs:element name=&quot;tamany&quot; type=&quot;tipus_samarreta&quot;/&gt;
+<span class="cm">&lt;!-- pas 2 --&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamany&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tipus_samarreta&quot;</span><span class="nt">/&gt;</span>
 
-&lt;!-- element XML --&gt;
-&lt;tamany&gt;L&lt;/tamany&gt;    &lt;!-- OK --&gt;
-&lt;tamany&gt;XXXL&lt;/tamany&gt; &lt;!-- No valida --&gt;
+<span class="cm">&lt;!-- element XML --&gt;</span>
+<span class="nt">&lt;tamany&gt;</span>L<span class="nt">&lt;/tamany&gt;</span><span class="w">    </span><span class="cm">&lt;!-- OK --&gt;</span>
+<span class="nt">&lt;tamany&gt;</span>XXXL<span class="nt">&lt;/tamany&gt;</span><span class="w"> </span><span class="cm">&lt;!-- No valida --&gt;</span>
 </code></pre></div>
 <p>El següent fragment XSD crea un tipus personalitzat anomenat <strong>tipus_edat</strong> indicant que el valor mínim ha de ser 1.</p>
-<div class="highlight"><pre><span></span><code>&lt;!-- pas 1 --&gt;
-&lt;xs:simpleType name=&quot;tipus_edat&quot;&gt;
-  &lt;xs:restriction base=&quot;xs:integer&quot;&gt;
-    &lt;xs:minExclusive value=&quot;0&quot;/&gt;
-  &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- pas 1 --&gt;</span>
+<span class="nt">&lt;xs:simpleType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tipus_edat&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:integer&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:minExclusive</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span>
 
-&lt;!-- pas 2 --&gt;
-&lt;xs:element name=&quot;edat&quot; type=&quot;tipus_edat&quot;/&gt;
+<span class="cm">&lt;!-- pas 2 --&gt;</span>
+<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;edat&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tipus_edat&quot;</span><span class="nt">/&gt;</span>
 
-&lt;!-- element XML --&gt;
-&lt;edat&gt;23&lt;/edat&gt;
-&lt;edat&gt;0&lt;/edat&gt;        &lt;!-- No valida --&gt;
+<span class="cm">&lt;!-- element XML --&gt;</span>
+<span class="nt">&lt;edat&gt;</span>23<span class="nt">&lt;/edat&gt;</span>
+<span class="nt">&lt;edat&gt;</span>0<span class="nt">&lt;/edat&gt;</span><span class="w">        </span><span class="cm">&lt;!-- No valida --&gt;</span>
 </code></pre></div>
 <h3 id="325-atributs">3.2.5. Atributs</h3>
 <p>Fem servir el component <strong>&lt;xs:attribute&gt;</strong> per especificar els atributs dels nostre document XML.</p>
@@ -983,9 +983,9 @@ També existeixen altres llenguatges d'esquema:</p>
 </tbody>
 </table>
 <p>Exemple:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;alias&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="cm">&lt;!-- Ahora podemos usarlo dentro de un elemento nombre --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;nombre</span><span class="w"> </span><span class="na">alias=</span><span class="s">&quot;Snake&quot;</span><span class="nt">&gt;</span><span class="w"> </span>Plissken<span class="w"> </span><span class="nt">&lt;/nombre&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;alias&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="cm">&lt;!-- Ahora podemos usarlo dentro de un elemento nombre --&gt;</span>
+<span class="nt">&lt;nombre</span><span class="w"> </span><span class="na">alias=</span><span class="s">&quot;Snake&quot;</span><span class="nt">&gt;</span><span class="w"> </span>Plissken<span class="w"> </span><span class="nt">&lt;/nombre&gt;</span>
 </code></pre></div>
 <p>Un exemple complet:</p>
 <p><a href="https://www.w3schools.com/xml/schema_intro.asp">XML Schema Tutorial</a></p>
@@ -1023,8 +1023,10 @@ També existeixen altres llenguatges d'esquema:</p>
 <h2 id="331-tipus-complexes">3.3.1 Tipus complexes</h2>
 <p>El contingut d'un element són els caràcters de dades i elements fills dintre de les etiquetes. Hi ha <strong>quatre</strong> tipus de contingut per a tipus complexes: <strong>simple, element, mixed i buit</strong>. El tipus de contingut és independent dels atributs. És a dir tots els tipus de contingut poden tenir atributs o no.</p>
 <p>A continuació tenim un exemple de cadascun i com definir-los a XSD.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--1 Simple --&gt;</span>
-<span class="nt">&lt;tamany</span><span class="w"> </span><span class="na">sistema=</span><span class="s">&quot;EU&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/size&gt;</span>
+<ul>
+<li>Simple:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;tamany</span><span class="w"> </span><span class="na">sistema=</span><span class="s">&quot;EU&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/size&gt;</span>
 </code></pre></div>
 <p>Definició amb XSD:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamany&quot;</span><span class="nt">&gt;</span>
@@ -1036,12 +1038,14 @@ També existeixen altres llenguatges d'esquema:</p>
 <span class="w">    </span><span class="nt">&lt;/xs:simpleContent&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--2 Element --&gt;</span>
-<span class="nt">&lt;producte&gt;</span>
+<ul>
+<li>Element:
+  <div class="highlight"><pre><span></span><code><span class="nt">&lt;producte&gt;</span>
 <span class="w">  </span><span class="nt">&lt;numero&gt;</span>34D<span class="nt">&lt;/numero&gt;</span>
 <span class="w">  </span><span class="nt">&lt;tamany&gt;</span>10<span class="nt">&lt;/tamany&gt;</span>
 <span class="nt">&lt;/producte&gt;</span>
-</code></pre></div>
+</code></pre></div></li>
+</ul>
 <p>Definició amb XSD:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;producte&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:complexType&gt;</span>
@@ -1052,30 +1056,32 @@ També existeixen altres llenguatges d'esquema:</p>
 <span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span><span class="w">  </span>
 </code></pre></div>
-<!--3 mixed -->
-<p><carta> Estimat <nomClient>Carles Puig</nomClient> ...</carta>
-<div class="highlight"><pre><span></span><code>Definició amb XSD:
-
-```xml
-&lt;xs:element name=&quot;carta&quot;&gt;
-  &lt;xs:complexType mixed=&quot;true&quot;&gt;
-    &lt;xs:sequence&gt;
-      &lt;xs:element name=&quot;nomClient&quot;&gt;&lt;/xs:element&gt;
-    &lt;/xs:sequence&gt;
-  &lt;/xs:complexType&gt;
-&lt;/xs:element&gt;
-</code></pre></div></p>
-<!--4 buit -->
-<p><color valor="blau"/>
-<div class="highlight"><pre><span></span><code>Definició amb XSD:
-
-```xml
-&lt;xs:element name=&quot;color&quot;&gt;
-  &lt;xs:complexType&gt;
-    &lt;xs:attribute name=&quot;valor&quot; type=&quot;TipusColorValors&quot;/&gt;
-  &lt;/xs:complexType&gt;
-&lt;/xs:element&gt;
-</code></pre></div></p>
+<ul>
+<li>Mixed (contingut mixte):
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;carta&gt;</span><span class="w"> </span>Estimat<span class="w"> </span><span class="nt">&lt;nomClient&gt;</span>Carles<span class="w"> </span>Puig<span class="nt">&lt;/nomClient&gt;</span><span class="w"> </span>...<span class="nt">&lt;/carta&gt;</span>
+</code></pre></div></li>
+</ul>
+<p>Definició amb XSD:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;carta&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">mixed=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">      </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nomClient&quot;</span><span class="nt">&gt;&lt;/xs:element&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div>
+<ul>
+<li>Element Buit:
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;color</span><span class="w"> </span><span class="na">valor=</span><span class="s">&quot;blau&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div></li>
+</ul>
+<p>Definició amb XSD:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;color&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;valor&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;TipusColorValors&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div>
 <h2 id="34-indicadors">3.4. Indicadors</h2>
 <p>Hi ha <strong>set</strong> indicadors a XML. Els indicadors especifiquen com s'utilitzen els elements dintre del document XML. Per exemple defineixen l'ordre, el número de instàncies o l'obligatorietat.</p>
 <h3 id="341-indicadors-dordre">3.4.1. Indicadors d'ordre</h3>
@@ -1405,41 +1411,40 @@ El següent exemple defineix un element anomenat "address" amb una restricció. 
 </code></pre></div>
 <p>Els símbols que s'utilitzen a les expressions regulars (el que va dintre de l'element pattern), són els següents:</p>
 <ul>
-<li>Metacaràcters Comuns:</li>
+<li>
+<p>Metacaràcters Comuns:</p>
+<ul>
 <li>.: Qualsevol caràcter excepte el caràcter de nova línea</li>
 <li>\d: Dígit (equivalent a [0-9]).</li>
 <li>\w: Caràcter de paraula (lletra, dígit o guió baix).</li>
-<li>
-<p>\s: Espai en blank</p>
+<li>\s: Espai en blank</li>
+</ul>
 </li>
 <li>
 <p>Quantificadors: estableixen el número de repeticions:</p>
-</li>
-<li>
-<p>*: Zero o més repeticions.</p>
-</li>
+<ul>
+<li>*: Zero o més repeticions.</li>
 <li>+: Una o més repeticions.</li>
 <li>?: Zero o cap repetició.</li>
 <li>{n}: Exactament n repeticions.</li>
 <li>{n,}: Almenys n repeticions.</li>
-<li>
-<p>{n,m}: Entre n y m repeticions.</p>
+<li>{n,m}: Entre n y m repeticions.</li>
+</ul>
 </li>
 <li>
 <p>Grups i Alternatives:</p>
-</li>
-<li>
-<p>(...): Agrupació de patrons.</p>
-</li>
+<ul>
+<li>(...): Agrupació de patrons.</li>
 <li>|: Alternativa (OR).</li>
 <li>[]: rang de valors</li>
+</ul>
+</li>
 </ul>
 <p>Escapat de caràcters especiales:</p>
 <ul>
 <li>Si volen un dels caràcters amb significat especial (com . o *), s'han d'escapar amb una barra invertida.</li>
 </ul>
-<p>Veiem alguns exemples més:</p>
-<p>Per validar un número de telèfon a Espanya:</p>
+<p>Veiem alguns exemples més. Per validar un número de telèfon a Espanya:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;telefon&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:simpleType&gt;</span>
 <span class="w">        </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:integer&quot;</span><span class="nt">&gt;</span>

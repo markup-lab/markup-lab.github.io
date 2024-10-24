@@ -653,9 +653,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-altres-exemples-amb-restriccions" class="md-nav__link">
+  <a href="#7-altres-exemples-amb-patrons-expressions-regulars" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Altres exemples amb restriccions
+      7. Altres exemples amb patrons (Expressions regulars)
     </span>
   </a>
   
@@ -722,7 +722,8 @@
 <p><strong>Incorporació de dades noves</strong> XSD permet incorporar valors per defecte i fixes al document XML. També permet normalitzar els espais en blanc.</p>
 </li>
 </ul>
-<p>XML Schema o XSD (XML Schema Definition) permet definir de forma molt precisa el contingut dels documents XML. Existeixen altres llenguatges d'esquema:</p>
+<p>XML Schema o XSD (XML Schema Definition) permet definir de forma molt precisa el contingut dels documents XML i és el que farem servir en aquesta unitat. 
+També existeixen altres llenguatges d'esquema:</p>
 <ul>
 <li>
 <p><a href="https://relaxng.org/">Relax NG</a>. Basat en gramàtica. És més fàcil d'entendre que XML Schema. Desenvolupat per <a href="https://www.oasis-open.org/">Oasis</a>.</p>
@@ -769,11 +770,11 @@
 <p>L'element arrel s'anomena <strong>schema</strong>.</p>
 </li>
 <li>
-<p>L'espai de noms ha de ser <a href="http://www.w3.org.2001/XMLSchema">http://www.w3.org.2001/XMLSchema</a>. Es pot no usar prefixe, utilitzar xs o xsd:</p>
+<p>L'espai de noms ha de ser <a href="http://www.w3.org/2001/XMLSchema">http://www.w3.org/2001/XMLSchema</a>. Es pot no usar prefixe, utilitzar xs o xsd:</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml versión=&quot;1.0&quot;?&gt;</span>
-<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmnls:xs =</span><span class="s">&quot;http://www.w3.org.2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmnls:xs =</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
 .....
 <span class="nt">&lt;/xs:schema&gt;</span>
 </code></pre></div>
@@ -783,8 +784,8 @@
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name =</span><span class="w"> </span><span class="s">&quot;nom-element-arrel&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
 <p>Aquest element conté l'atribut name que defineix l'element arrel del document. XSD permet tenir més d'un element arrel al nostre esquema. </p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml versión=&quot;1.0&quot;?&gt;</span>
-<span class="w">  </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs =</span><span class="s">&quot;http://www.w3.org.2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs =</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cotxe&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;vaixell&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/xs:schema&gt;</span>
@@ -825,48 +826,19 @@
 </code></pre></div>
 <p>Els <strong>elements han d'incloure com a mínim</strong> l'<strong>atribut name</strong> per especificar el nom de l'element XML i <strong>type</strong> per especificar el tipus de dades.</p>
 <p>Exemples de declaració d'elements a XSD:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- 1 --&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- L&#39;element nom utilitza el tipus predefinit xsd:string (veure **3.2.4. Tipus de dades** més endavant) --&gt;</span>
 <span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nom&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xsd:string&quot;</span><span class="nt">/&gt;</span>
 
 <span class="nt">&lt;nom&gt;</span>Joan<span class="nt">&lt;/nom&gt;</span>
 
-<span class="cm">&lt;!-- 2 --&gt;</span>
+<span class="cm">&lt;!-- l&#39;element __tamany__ fa servir el tipus __TamanyTipus__ per indicar el tipus de dades de l&#39;element(veure 3.2.5. Definició de tipus de dades propis) --&gt;</span>
 <span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamany&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;TamanyTipus&quot;</span><span class="nt">/&gt;</span>
 
 <span class="nt">&lt;tamany&gt;</span>L<span class="nt">&lt;/tamany&gt;</span>
 
-<span class="cm">&lt;!-- 3 --&gt;</span>
-<span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;product&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;xsd:complexType&gt;</span>
-<span class="w">    </span><span class="nt">&lt;xsd:sequence&gt;</span>
-<span class="w">      </span><span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;size&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;xsd:sequence&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/xsd:complexType&gt;</span>
-<span class="nt">&lt;/xsd:element&gt;</span><span class="w">  </span>
-
-<span class="nt">&lt;product&gt;</span>
-<span class="w">  </span><span class="nt">&lt;name&gt;&lt;/name&gt;</span>
-<span class="w">  </span><span class="nt">&lt;size&gt;&lt;/size&gt;</span>
-<span class="nt">&lt;/product&gt;</span>
-
-<span class="cm">&lt;!-- 4 --&gt;</span>
+<span class="cm">&lt;!-- 3 Si no hem especificat cap tipus de dades, el tipus serà __anyType__, que permet qualsevol contingut amb fills o caràcters. --&gt;</span>
 <span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;anything&quot;</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<ul>
-<li>
-<p>El primer element s'anomena nom utilitza el tipus predefinit xsd:string. (veure <strong>tipus de dades</strong> més endavant).</p>
-</li>
-<li>
-<p>El segon element fa servir el tipus <strong>TamanyTipus</strong> per indicar el tipus de dades de l'element <strong>tamany</strong>. (veure com crear <strong>tipus de dades</strong> més endavant).</p>
-</li>
-<li>
-<p>El tercer exemple mostra com també podem definir un tipus de dada especificant <strong>simpleType</strong> o <strong>complexType</strong>. En aquest cas l'element està definit com una seqüència d'altres elements.</p>
-</li>
-<li>
-<p>Per últim, si no hem especificat cap tipus de dades, el tipus serà <strong>anyType</strong> que permet qualsevol contingut amb fills o caràcters.</p>
-</li>
-</ul>
 <p>Els atributs principals de <strong>&lt;xs:element&gt;</strong> són els següents:</p>
 <table>
 <thead>
@@ -928,7 +900,7 @@
 </code></pre></div>
 <p><a href="https://www.w3.org/TR/xmlschema-2/#built-in-datatypes">Tipus de dades predefinits a XSD (https://www.w3.org)</a></p>
 <h3 id="325-definicio-de-tipus-de-dades-propis">3.2.5. Definició de tipus de dades propis.</h3>
-<p>Per crear un tipus de dades nou personalitzat, ho fem en dos passos:</p>
+<p>Per a crear un tipus de dades nou personalitzat, fem el següent:</p>
 <ol>
 <li>Creem la definició del tipus mitjançant <code>&lt;xs:simpleType&gt;</code> o <code>&lt;xs:complexType&gt;</code>.</li>
 <li>Definim un element a XSD i li assignem el nou tipus de dades creat.</li>
@@ -949,11 +921,13 @@
 
 &lt;!-- pas 2 --&gt;
 &lt;xs:element name=&quot;tamany&quot; type=&quot;tipus_samarreta&quot;/&gt;
+
+&lt;!-- element XML --&gt;
+&lt;tamany&gt;L&lt;/tamany&gt;    &lt;!-- OK --&gt;
+&lt;tamany&gt;XXXL&lt;/tamany&gt; &lt;!-- No valida --&gt;
 </code></pre></div>
 <p>El següent fragment XSD crea un tipus personalitzat anomenat <strong>tipus_edat</strong> indicant que el valor mínim ha de ser 1.</p>
-<div class="highlight"><pre><span></span><code>&lt;edat&gt;23&lt;/edat&gt;
-
-&lt;!-- pas 1 --&gt;
+<div class="highlight"><pre><span></span><code>&lt;!-- pas 1 --&gt;
 &lt;xs:simpleType name=&quot;tipus_edat&quot;&gt;
   &lt;xs:restriction base=&quot;xs:integer&quot;&gt;
     &lt;xs:minExclusive value=&quot;0&quot;/&gt;
@@ -962,6 +936,10 @@
 
 &lt;!-- pas 2 --&gt;
 &lt;xs:element name=&quot;edat&quot; type=&quot;tipus_edat&quot;/&gt;
+
+&lt;!-- element XML --&gt;
+&lt;edat&gt;23&lt;/edat&gt;
+&lt;edat&gt;0&lt;/edat&gt;        &lt;!-- No valida --&gt;
 </code></pre></div>
 <h3 id="325-atributs">3.2.5. Atributs</h3>
 <p>Fem servir el component <strong>&lt;xs:attribute&gt;</strong> per especificar els atributs dels nostre document XML.</p>
@@ -976,7 +954,7 @@
 <tbody>
 <tr>
 <td>name</td>
-<td>nom de l'atribut. Aquest atribut no puede aparèixer al mateix temps que ref</td>
+<td>nom de l'atribut. Aquest atribut no pot aparèixer al mateix temps que ref</td>
 </tr>
 <tr>
 <td>ref</td>
@@ -1012,11 +990,13 @@
 <p>Un exemple complet:</p>
 <p><a href="https://www.w3schools.com/xml/schema_intro.asp">XML Schema Tutorial</a></p>
 <h2 id="33-data-types-i-exemples">3.3. Data types i exemples.</h2>
-<p>Els tipus de dades permeten la validació del contingut dels elements i els valors dels atributs. Poden ser tipus simples (simpleType) o tipus complexes (complexType).</p>
+<p>Els tipus de dades permeten la validació del contingut dels elements i dels valors dels atributs. Poden ser tipus simples (simpleType) o tipus complexes (complexType).</p>
 <p>Els elements que tenen assignats tipus simples tenen dades de caràcters, però no tenen elements fills o atributs. Si tenen fills o atributs, aleshores es consideren tipus complexes.</p>
 <p>Els següents elements tenen tipus simple:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;tamany&gt;</span>L<span class="nt">&lt;tamany&gt;</span>
+
 <span class="nt">&lt;comentari&gt;</span>va<span class="w"> </span>molt<span class="w"> </span>gran<span class="nt">&lt;/comentari&gt;</span>
+
 <span class="nt">&lt;tamanysDisponibles&gt;</span>10<span class="w"> </span>L<span class="w"> </span>2<span class="w"> </span>M<span class="nt">&lt;/tamanysDisponibles&gt;</span>
 </code></pre></div>
 <p>Per altra banda, els elements complexos poden tenir elements fills o atributs.</p>
@@ -1030,8 +1010,8 @@
 <span class="w">  </span><span class="nt">&lt;size&gt;</span>2<span class="nt">&lt;/size&gt;</span>
 <span class="nt">&lt;/tamanysDisponibles&gt;</span>
 </code></pre></div>
-<p>Els atributs sempre tipus simple, doncs els atributs no poden tenir elements fills.</p>
-<p>Per declarar l’element &lt;tamanysDisponibles&gt; amb XSD:</p>
+<p>Els atributs sempre són de tipus simple, doncs els atributs no poden tenir elements fills.</p>
+<p>Per declarar l’element <strong>&lt;tamanysDisponibles&gt;</strong> amb XSD:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamanysDisponibles&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:complexType&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:sequence&gt;</span>
@@ -1041,26 +1021,13 @@
 <span class="nt">&lt;/xs:element&gt;</span>
 </code></pre></div>
 <h2 id="331-tipus-complexes">3.3.1 Tipus complexes</h2>
-<p>El contingut d'un element són els caràcters de dades i elements fills dintre de les etiquetes. Hi ha <strong>cuatre</strong> tipus de contingut per a tipus complexes: simple, element, mixed i buit. El tipus de contingut és independent dels atributs. És a dir tots els tipus de contingut poden tenir atributs o no.</p>
+<p>El contingut d'un element són els caràcters de dades i elements fills dintre de les etiquetes. Hi ha <strong>quatre</strong> tipus de contingut per a tipus complexes: <strong>simple, element, mixed i buit</strong>. El tipus de contingut és independent dels atributs. És a dir tots els tipus de contingut poden tenir atributs o no.</p>
 <p>A continuació tenim un exemple de cadascun i com definir-los a XSD.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--1 --&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--1 Simple --&gt;</span>
 <span class="nt">&lt;tamany</span><span class="w"> </span><span class="na">sistema=</span><span class="s">&quot;EU&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/size&gt;</span>
-
-<span class="cm">&lt;!--2 --&gt;</span>
-<span class="nt">&lt;producte&gt;</span>
-<span class="w">  </span><span class="nt">&lt;numero&gt;</span>34D<span class="nt">&lt;/numero&gt;</span>
-<span class="w">  </span><span class="nt">&lt;tamany&gt;</span>10<span class="nt">&lt;/tamany&gt;</span>
-<span class="nt">&lt;/producte&gt;</span>
-
-<span class="cm">&lt;!--3 --&gt;</span>
-<span class="nt">&lt;carta&gt;</span><span class="w"> </span>Estimat<span class="w"> </span><span class="nt">&lt;nomClient&gt;</span>Carles<span class="w"> </span>Puig<span class="nt">&lt;/nomClient&gt;</span><span class="w"> </span>...<span class="nt">&lt;/carta&gt;</span>
-
-<span class="cm">&lt;!--4 --&gt;</span>
-<span class="nt">&lt;color</span><span class="w"> </span><span class="na">valor=</span><span class="s">&quot;blau&quot;</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<p>Definicions amb XSD:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--1 --&gt;</span>
-<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamany&quot;</span><span class="nt">&gt;</span>
+<p>Definició amb XSD:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamany&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:complexType&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:simpleContent&gt;</span>
 <span class="w">      </span><span class="nt">&lt;xs:extension</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
@@ -1068,9 +1035,15 @@
 <span class="w">      </span><span class="nt">&lt;/xs:extension&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/xs:simpleContent&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
-
-<span class="cm">&lt;!--2 --&gt;</span>
-<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamany&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--2 Element --&gt;</span>
+<span class="nt">&lt;producte&gt;</span>
+<span class="w">  </span><span class="nt">&lt;numero&gt;</span>34D<span class="nt">&lt;/numero&gt;</span>
+<span class="w">  </span><span class="nt">&lt;tamany&gt;</span>10<span class="nt">&lt;/tamany&gt;</span>
+<span class="nt">&lt;/producte&gt;</span>
+</code></pre></div>
+<p>Definició amb XSD:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;producte&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:complexType&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:sequence&gt;</span>
 <span class="w">      </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;numero&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
@@ -1078,42 +1051,55 @@
 <span class="w">    </span><span class="nt">&lt;/xs:sequence&gt;</span><span class="w">          </span>
 <span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span><span class="w">  </span>
-
-<span class="cm">&lt;!--3 --&gt;</span>
-<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;carta&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">mixed=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;xs:sequence&gt;</span>
-<span class="w">      </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nomClient&quot;</span><span class="nt">&gt;&lt;/xs:element&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/xs:sequence&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
-<span class="nt">&lt;/xs:element&gt;</span>
-
-<span class="cm">&lt;!--4 --&gt;</span>
-<span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;color&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;xs:complexType&gt;</span>
-<span class="w">    </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;valor&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;TipusColorValors&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
-<span class="nt">&lt;/xs:element&gt;</span>
 </code></pre></div>
+<!--3 mixed -->
+<p><carta> Estimat <nomClient>Carles Puig</nomClient> ...</carta>
+<div class="highlight"><pre><span></span><code>Definició amb XSD:
+
+```xml
+&lt;xs:element name=&quot;carta&quot;&gt;
+  &lt;xs:complexType mixed=&quot;true&quot;&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name=&quot;nomClient&quot;&gt;&lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre></div></p>
+<!--4 buit -->
+<p><color valor="blau"/>
+<div class="highlight"><pre><span></span><code>Definició amb XSD:
+
+```xml
+&lt;xs:element name=&quot;color&quot;&gt;
+  &lt;xs:complexType&gt;
+    &lt;xs:attribute name=&quot;valor&quot; type=&quot;TipusColorValors&quot;/&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre></div></p>
 <h2 id="34-indicadors">3.4. Indicadors</h2>
-<p>Hi ha set indicadors a XML. Els indicadors especifiquen com s'utilitzen els elements dintre del document XML (ordre, repeticions, etc.).</p>
+<p>Hi ha <strong>set</strong> indicadors a XML. Els indicadors especifiquen com s'utilitzen els elements dintre del document XML. Per exemple defineixen l'ordre, el número de instàncies o l'obligatorietat.</p>
 <h3 id="341-indicadors-dordre">3.4.1. Indicadors d'ordre</h3>
 <p>Cada element complexe (excepte els elements buits) conté un únic model de grup.</p>
-<p><strong>Sequence</strong>
-L'indicador sequence s'utilitza per indicar l'ordre dels elements (si apareixen) fills de l'element complexe. Els elements contenen un indicador d'ocurrència, com minOccurs, però aquest és opcional.</p>
+<ul>
+<li><strong>Sequence</strong>
+  L'indicador sequence s'utilitza per indicar l'ordre dels elements fills (si apareixen) de l'element complexe. Els elements poden conentir un indicador d'ocurrència, com minOccurs, però aquest és opcional.</li>
+</ul>
 <p>Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;employee&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:sequence&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;firstname&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;lastname&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;registration-date&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;registration-date&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:date&quot;</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/xs:sequence&gt;</span>
 <span class="nt">&lt;/xs:complexType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span>
 </code></pre></div>
-<p><strong>All</strong>
-L'indicador all es comporta com el seqüence, excepte que no es necessari que surtin tots els elements ni en el mateix ordre. Si surten, només poden sortir un cop.</p>
+<ul>
+<li><strong>All</strong>
+  L'indicador all es comporta com el seqüence, excepte que no es necessari que surtin tots els elements ni en el mateix ordre. Si surten, només poden sortir un cop.</li>
+</ul>
+<p>Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xsd:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;samarreta&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xsd:complexType&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xsd:all&gt;</span>
@@ -1123,24 +1109,27 @@ L'indicador all es comporta com el seqüence, excepte que no es necessari que su
 <span class="w">  </span><span class="nt">&lt;/xsd:complexType&gt;</span>
 <span class="nt">&lt;/xsd:element&gt;</span>
 </code></pre></div>
-<p><strong>Choice</strong>
-L'indicador choice declara un grup d'elements del qual només sortirà un al document XML</p>
+<ul>
+<li><strong>Choice</strong>
+  L'indicador choice declara un grup d'elements del qual <strong>només un</strong> sortirà un al document XML.</li>
+</ul>
+<p>Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;vehicle-motor&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:choice&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cotxe&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;moto&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;camio&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xs:choice&gt;</span>
 <span class="nt">&lt;/xs:complexType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span>
 </code></pre></div>
 <h3 id="342-indicadors-docurrencia">3.4.2. Indicadors d'ocurrència</h3>
-<p>Els indicadors d'ocurrència determinen el número de vegades que surt un element en el document XML. Els valors per defecte de minOccurs i maxOccurs és 1.</p>
+<p>Els indicadors d'ocurrència determinen el número de vegades que surt un element en el document XML. <strong>Els valor per defecte de minOccurs i maxOccurs és 1</strong>.</p>
 <p>Els indicadors <strong>maxOccurs</strong> i <strong>minOccurs</strong> es poden utilitzar com a atributs dintre dels xs:element i els indicadors d'ordre (xs:sequence, xs:choice).</p>
-<p>Exemples:</p>
+<p>Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;book&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:complexType&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:sequence&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cotxe&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;moto&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
@@ -1152,7 +1141,8 @@ L'indicador choice declara un grup d'elements del qual només sortirà un al doc
 <p>Dintre d'aquests indicadors podem fer servir un valor numèric o <strong>unbounded</strong> que indica un número il.limitat d'elements.</p>
 <h3 id="343-indicadors-de-grup">3.4.3. Indicadors de grup</h3>
 <p><strong>Group name</strong> i <strong>attributeGroup name</strong>
-Podem definir un grup d'elements o atributs, donar-li un nom i fer referència al grup desde una altra definició. Exemple</p>
+Podem definir un grup d'elements o atributs, donar-li un nom i fer referència al grup desde una altra definició. </p>
+<p>Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:group</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;persona-grup&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:sequence&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nom&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
@@ -1185,7 +1175,7 @@ Podem definir un grup d'elements o atributs, donar-li un nom i fer referència a
 </code></pre></div>
 <h3 id="2-restriccions-per-una-serie-de-valors">2. Restriccions per una sèrie de valors</h3>
 <p>Per limitar el contingunt d'un element XML a una sèrie acceptable de valors, farem servir la restricció d'enumeració. L'exemple que ve a continuació defineix un element anomenat <strong>cotxe</strong> amb una restricció. Els únics valors acceptables son: Audi, Golf, BMW.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cotxe&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;marca_cotxe&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:simpleType&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
 <span class="w">      </span><span class="nt">&lt;xs:enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Audi&quot;</span><span class="nt">/&gt;</span>
@@ -1196,8 +1186,8 @@ Podem definir un grup d'elements o atributs, donar-li un nom i fer referència a
 <span class="nt">&lt;/xs:element&gt;</span>
 </code></pre></div>
 <p>L'exemple de dalt també es pot escrire com segueix:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;car&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;carType&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;xs:simpleType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;carType&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;car&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;marca_cotxe&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xs:simpleType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;marca_cotxe&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
 <span class="w">      </span><span class="nt">&lt;xs:enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Audi&quot;</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;xs:enumeration</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Golf&quot;</span><span class="nt">/&gt;</span>
@@ -1375,7 +1365,8 @@ El següent exemple defineix un element anomenat "address" amb una restricció. 
 </tr>
 </tbody>
 </table>
-<h3 id="7-altres-exemples-amb-restriccions">7. Altres exemples amb restriccions</h3>
+<h3 id="7-altres-exemples-amb-patrons-expressions-regulars">7. Altres exemples amb patrons (Expressions regulars)</h3>
+<p>Els patrons és un tipus de restricció molt potent que permet detectar patrons dintre d'una cadena. </p>
 <p>El següent exemple defineix un element anomenat "letter" amb una restricció. Els valors acceptables són zero o més ocurrències de lletres en minúscula de la a a la z:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;letter&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:simpleType&gt;</span>
@@ -1398,7 +1389,7 @@ El següent exemple defineix un element anomenat "address" amb una restricció. 
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;genere&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:simpleType&gt;</span>
 <span class="w">    </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;xs:pattern</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;home|dona&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;xs:pattern</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;(home|dona)&quot;</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/xs:restriction&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/xs:simpleType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span>
@@ -1412,6 +1403,81 @@ El següent exemple defineix un element anomenat "address" amb una restricció. 
 <span class="w">  </span><span class="nt">&lt;/xs:simpleType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span>
 </code></pre></div>
+<p>Els símbols que s'utilitzen a les expressions regulars (el que va dintre de l'element pattern), són els següents:</p>
+<ul>
+<li>Metacaràcters Comuns:</li>
+<li>.: Qualsevol caràcter excepte el caràcter de nova línea</li>
+<li>\d: Dígit (equivalent a [0-9]).</li>
+<li>\w: Caràcter de paraula (lletra, dígit o guió baix).</li>
+<li>
+<p>\s: Espai en blank</p>
+</li>
+<li>
+<p>Quantificadors: estableixen el número de repeticions:</p>
+</li>
+<li>
+<p>*: Zero o més repeticions.</p>
+</li>
+<li>+: Una o més repeticions.</li>
+<li>?: Zero o cap repetició.</li>
+<li>{n}: Exactament n repeticions.</li>
+<li>{n,}: Almenys n repeticions.</li>
+<li>
+<p>{n,m}: Entre n y m repeticions.</p>
+</li>
+<li>
+<p>Grups i Alternatives:</p>
+</li>
+<li>
+<p>(...): Agrupació de patrons.</p>
+</li>
+<li>|: Alternativa (OR).</li>
+<li>[]: rang de valors</li>
+</ul>
+<p>Escapat de caràcters especiales:</p>
+<ul>
+<li>Si volen un dels caràcters amb significat especial (com . o *), s'han d'escapar amb una barra invertida.</li>
+</ul>
+<p>Veiem alguns exemples més:</p>
+<p>Per validar un número de telèfon a Espanya:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;telefon&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:simpleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:integer&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:pattern</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;[69][0-9]{8}&quot;</span><span class="nt">&gt;&lt;/xs:pattern&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:simpleType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div>
+<p>Primer tindrem el digit 6 ó 9 i després qualsevol combinació de 8 digits. Per validar una adreça d'email tenim la següent restricció</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;email&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:simpleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:pattern</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;[A-Za-z._%+-]+@[A-Za-z\.]+[A-Za-z]{2,}&quot;</span><span class="nt">&gt;&lt;/xs:pattern&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:simpleType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div>
+<p>Aquesta expressió té tres parts:</p>
+<ul>
+<li><code>[A-Za-z._%+-]+@</code>.  Aquesta primera part defineix la part anterior a l'arroba d'una adreça. Es permeten totes les lletres més els símbols _, %, + i - un número indefinit de vegades (simbol +).</li>
+<li><code>[A-Za-z\.]+</code>. La segona part (nom del domini) permet un número indefinit de totes les lletres i punts</li>
+<li><code>[A-Za-z]{2,}</code>. La part del TLD té mínim dues lletres o més (.com, .edu, .io).</li>
+</ul>
+<p>Per últim, volem validar una data amb format americà (AAAA-MM-DD):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;data&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:simpleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:pattern</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:simpleType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div>
+<p>Aquesta expressió es divideix com segueix:</p>
+<ul>
+<li><code>\d{4}-</code>: quatre digits qualsevols seguit d'un guió.</li>
+<li><code>(0[1-9]|1[0-2])-</code>: el més pot ser un 0 més un digit del 1 al nou o un 1 més un altre 1 o un 2.</li>
+<li><code>(0[1-9]|[12]\d|3[01])</code>: el dia pot ser del 0 al 9, del 10 al 29 o el 30 i 31.</li>
+</ul>
 <p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
 
 

@@ -547,6 +547,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#332-tipus-simples-definicio-datributs-i-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 Tipus simples (definició d'atributs i extensions)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#34-indicadors" class="md-nav__link">
     <span class="md-ellipsis">
       3.4. Indicadors
@@ -1010,7 +1019,6 @@ També existeixen altres llenguatges d'esquema:</p>
 <span class="w">  </span><span class="nt">&lt;size&gt;</span>2<span class="nt">&lt;/size&gt;</span>
 <span class="nt">&lt;/tamanysDisponibles&gt;</span>
 </code></pre></div>
-<p>Els atributs sempre són de tipus simple, doncs els atributs no poden tenir elements fills.</p>
 <p>Per declarar l’element <strong>&lt;tamanysDisponibles&gt;</strong> amb XSD:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;tamanysDisponibles&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;xs:complexType&gt;</span>
@@ -1020,6 +1028,7 @@ També existeixen altres llenguatges d'esquema:</p>
 <span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span>
 </code></pre></div>
+<p>Els atributs sempre són de tipus simple, doncs els atributs no poden tenir elements fills. Per veure com definir atributs, veure (<strong>3.3.2 Tipus simples</strong>)</p>
 <h2 id="331-tipus-complexes">3.3.1 Tipus complexes</h2>
 <p>El contingut d'un element són els caràcters de dades i elements fills dintre de les etiquetes. Hi ha <strong>quatre</strong> tipus de contingut per a tipus complexes: <strong>simple, element, mixed i buit</strong>. El tipus de contingut és independent dels atributs. És a dir tots els tipus de contingut poden tenir atributs o no.</p>
 <p>A continuació tenim un exemple de cadascun i com definir-los a XSD.</p>
@@ -1081,6 +1090,53 @@ També existeixen altres llenguatges d'esquema:</p>
 <span class="w">    </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;valor&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;TipusColorValors&quot;</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/xs:complexType&gt;</span>
 <span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div>
+<h2 id="332-tipus-simples-definicio-datributs-i-extensions">3.3.2 Tipus simples (definició d'atributs i extensions)</h2>
+<p>Per definir un atribut per un element qualsevol, podem diferenciar si el contingut de l'element és simple o complex (conté altres elements). A continuació veiem dos exemples i com definir-los a XSD.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Exemple 1: aquest element és complexType (té atributs) pero el seu contingut és simple --&gt;</span>
+<span class="nt">&lt;ciutat</span><span class="w"> </span><span class="na">poblacio=</span><span class="s">&quot;45258&quot;</span><span class="nt">&gt;</span>Reus<span class="nt">&lt;/ciutat&gt;</span>
+
+<span class="cm">&lt;!-- Exemple 2: aquest element és complexType (té atributs) i el seu contingut és complexe --&gt;</span>
+<span class="nt">&lt;ciutat</span><span class="w"> </span><span class="na">poblacio=</span><span class="s">&quot;45258&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;nom&gt;</span>Reus<span class="nt">&lt;/nom&gt;</span>
+<span class="nt">&lt;/ciutat&gt;</span>
+</code></pre></div>
+<p>Donat que el primer element té un contingut simple, hem d'extendre el contingut de texte. Per tant utilitzem la seqüencia d'elements: <code>xs:complexType</code>-&gt;<code>xs:simpleContent</code>-&gt;<code>xs:extension</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Exemple 1: aquest element és complexType (té atributs) pero el seu contingut és simple --&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ciutat&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:simpleContent&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:extension</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;poblacio&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:extension&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</code></pre></div>
+<p>En aquest cas definim l'atribut dintre de l'element complexe:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Exemple 2: aquest element és complexType (té atributs) pero el seu contingut és simple --&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ciutat&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nom&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;poblacio&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
+</code></pre></div>
+<p>Es possible definir el primer exemple sense l'ús de simpleContent, per exemple declarant el contingut mixte:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Exemple 1 alternatiu: utilitzem el contingut mixte --&gt;</span>
+<span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ciutat&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">mixed=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;poblacio&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span>
 </code></pre></div>
 <h2 id="34-indicadors">3.4. Indicadors</h2>
 <p>Hi ha <strong>set</strong> indicadors a XML. Els indicadors especifiquen com s'utilitzen els elements dintre del document XML. Per exemple defineixen l'ordre, el número de instàncies o l'obligatorietat.</p>

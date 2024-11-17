@@ -445,22 +445,31 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#annex-2-instalacio-saxon-sxlt-a-visual-studio" class="md-nav__link">
+  <a href="#annex-2-extensions-vscodium-per-a-html" class="md-nav__link">
     <span class="md-ellipsis">
-      Ànnex 2. Instalació Saxon SXLT a Visual Studio.
+      Annex 2. Extensions VSCodium per a HTML.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#annex-3-introduccio-a-javascript-per-a-principiants" class="md-nav__link">
+  <a href="#annex-3-instalacio-saxon-sxlt-a-visual-studio" class="md-nav__link">
     <span class="md-ellipsis">
-      Ànnex 3. Introducció a JavaScript per a Principiants
+      Ànnex 3. Instalació Saxon SXLT a Visual Studio.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Ànnex 3. Introducció a JavaScript per a Principiants">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annex-4-javascript-per-a-principiants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ànnex 4. JavaScript per a Principiants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ànnex 4. JavaScript per a Principiants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -507,16 +516,21 @@
 
 <h1 id="annexos">Annexos</h1>
 <h2 id="annex-1-instalacio-i-configuracio-vscodium">Annex 1. Instalació i configuració VSCodium.</h2>
-<p>Per crear els nostres arxius xml utilitzarem el software VSCodium, basat en el mateix codi font que Visual Studio Code però amb telemetria deshabilitada i amb un altre loco</p>
+<p>Per crear els nostres arxius xml utilitzarem el software VSCodium, basat en el mateix codi font que Visual Studio Code però amb telemetria deshabilitada i amb un altre logo.</p>
 <ul>
 <li><a href="https://vscodium.com/">VSCodium Open Source Binaries of VSCode</a></li>
 <li><a href="https://github.com/VSCodium/vscodium/releases">Releases VSCodium</a></li>
 </ul>
 <p>Primer, descarrega i instal·la la versió de VSCodium segons el teu S.O (Win10, Debian). 
 Després, anirem a instal·lar la nostra primera extensió a VSCodium. Per tal de fer-ho anem a Extensions (panell lateral), busquem el terme "xml" a la casella i instal·lem l'extensió seleccionada (XML Redhat).</p>
-<p><img alt="" src="../assets/img/2-4-VSCodium-1.png" /></p>
-<p><img alt="" src="../assets/img/2-4-VSCodium-2.png" /></p>
-<h2 id="annex-2-instalacio-saxon-sxlt-a-visual-studio">Ànnex 2. Instalació Saxon SXLT a Visual Studio.</h2>
+<p><img alt="Extension XML VSCodium" src="../assets/img/2-4-VSCodium-1.png" /></p>
+<p><img alt="Extension XML VSCodium-2" src="../assets/img/2-4-VSCodium-2.png" /></p>
+<h2 id="annex-2-extensions-vscodium-per-a-html">Annex 2. Extensions VSCodium per a HTML.</h2>
+<p>Per tal de poder previsualitzar les pàgines ràpidament i millorar el formateig d'HTML es recomanen les següents extensions:</p>
+<p><strong>Extension XML VSCodium Live Server</strong></p>
+<p><img alt="Extension Live Sever " src="../assets/img/live_server.png" /></p>
+<p>Altres extensions interessants són CSS Peek Name: <a href="https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek">CSS Peek</a> i <a href="https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css">HTML CSS support</a></p>
+<h2 id="annex-3-instalacio-saxon-sxlt-a-visual-studio">Ànnex 3. Instalació Saxon SXLT a Visual Studio.</h2>
 <p>Per tal de processar els nostres documents XML i generar una sortida amb XSLT necessitem un processador. Per instal.lar el processador Saxon SXLT a Visual Studio Code:</p>
 <ol>
 <li>
@@ -559,8 +573,9 @@ Després, anirem a instal·lar la nostra primera extensió a VSCodium. Per tal d
 <li><a href="https://deltaxml.github.io/vscode-xslt-xpath/run-xslt.html">Running SXLT</a></li>
 </ul>
 <p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
-<h2 id="annex-3-introduccio-a-javascript-per-a-principiants">Ànnex 3. Introducció a JavaScript per a Principiants</h2>
-<p>JavaScript és un llenguatge de programació que permet afegir interactivitat i dinamisme a les pàgines web. Si alguna vegada has vist un botó que canvia de color en passar-hi el ratolí per sobre, o una finestra emergent que et demana el nom això es pot fer amb JavaScript. A diferència d'altres llenguatges que funcionen al servidor, JavaScript s'executa directament al navegador de l'usuari. cosa que el fa ideal per a la creació d'interfícies interactives.</p>
+<h2 id="annex-4-javascript-per-a-principiants">Ànnex 4. JavaScript per a Principiants</h2>
+<p>JavaScript és un llenguatge de programació que permet afegir interactivitat i dinamisme a les pàgines web. Si alguna vegada has vist un botó que canvia de color en passar-hi el ratolí per sobre, o una finestra emergent que et demana el nom això es pot fer amb JavaScript. A diferència d'altres llenguatges que funcionen al servidor, JavaScript s'executa directament al navegador de l'usuari, cosa que el fa ideal per a la creació d'interfícies interactives.</p>
+<p>Javascript és l'únic llenguatge que s'utilitza a la part client (navegador) i per tant és molt popular.</p>
 <h3 id="conceptes-basics">Conceptes Bàsics</h3>
 <ul>
 <li>
@@ -569,34 +584,58 @@ Després, anirem a instal·lar la nostra primera extensió a VSCodium. Per tal d
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="p">...</span><span class="nx">el</span><span class="w"> </span><span class="nx">meu</span><span class="w"> </span><span class="nx">codi</span><span class="w"> </span><span class="nx">Javascript</span><span class="p">...</span>
-<span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="c1">//el meu codi Javascript</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-</li>
-<li>
-<p><strong>Variables</strong>: Les variables són espais on podem guardar informació (nombres, text, etc.) que després podem reutilitzar. Hi ha diverses maneres de declarar variables en JavaScript, però les més comunes són let, const, i var.</p>
+<p>El codi Javascript es pot ubicar 
+- <strong>Variables</strong>: Les variables són espais on podem guardar informació (nombres, text, etc.) que després podem reutilitzar. Hi ha diverses maneres de declarar variables en JavaScript, però les més comunes són let, const, i var.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Joan&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// Una variable que guarda un text</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w">   </span><span class="c1">// Una constant que no canviarà el seu valor</span>
 </code></pre></div>
+<p>Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">h2</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;missatge_pi&quot;</span><span class="o">&gt;&lt;</span><span class="err">/h2&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Joan&quot;</span><span class="p">;</span><span class="w">  </span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w">   </span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">h2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;missatge_pi&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">h2</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hola em dic &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; i el valor de pi és &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">pi</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">//també console.log(&quot;Hola em dic &quot; + nom + &quot; i el valor de pi és &quot; + pi);</span>
+<span class="o">&lt;</span><span class="err">/script&gt;    </span>
+</code></pre></div>
 </li>
 <li>
-<p><strong>Funcions</strong>: Les funcions són blocs de codi que podem definir una vegada i reutilitzar cada vegada que les cridem. Una funció pot acceptar dades (anomenades "paràmetres") i retornar un resultat.</p>
+<p><strong>Funcions</strong>: Una funció és un conjunt d'instruccions que s'executen seqüencialment i permeten dur a terme una tasca concreta, per exemple donat un numero enter positiu, la funcio arrel2() retorna l'arrel quadrada del número. Les funcions són blocs de codi que podem definir una vegada i reutilitzar cada vegada que les cridem. Una funció pot acceptar dades (anomenades "paràmetres") en format de llista de variables (var1, var2,..,varn) i retornar un resultat. </p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">saludar</span><span class="p">(</span><span class="nx">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Hola, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>Exemple:
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Joan&quot;</span><span class="p">;</span><span class="w">  </span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">acomiadar</span><span class="p">(</span><span class="nx">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Fins aviat &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nom</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">acomiadar</span><span class="p">(</span><span class="nx">nom</span><span class="p">));</span>
+</code></pre></div></p>
 </li>
 <li>
 <p><strong>Esdeveniments</strong>: JavaScript pot reaccionar a diferents accions de l'usuari, com fer clic en un botó, moure el ratolí o escriure en un camp de text. Aquestes reaccions s'anomenen "esdeveniments".</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;elMeuBoto&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Has fet clic al botó!&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;elMeuBoto&quot;</span><span class="o">&gt;</span><span class="nx">Fes</span><span class="w"> </span><span class="nx">clic</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;elMeuBoto&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Has fet clic al botó!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">);</span>
 </code></pre></div>
 </li>
 <li>
@@ -607,21 +646,24 @@ Després, anirem a instal·lar la nostra primera extensió a VSCodium. Per tal d
 </li>
 </ul>
 <h3 id="activitat-practica">Activitat Pràctica</h3>
-<p>Per posar en pràctica el que hem après, crearem una petita aplicació que canviï el color de fons de la pàgina quan l'usuari faci clic en un botó.</p>
+<p>Per posar en pràctica els conceptes bàsics, crearem una petita aplicació que canviï el color de fons de la pàgina quan l'usuari faci clic en un botó.</p>
 <p>En el teu fitxer HTML, crea un botó i un paràgraf:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canviarColor&quot;</span><span class="p">&gt;</span>Canviar color<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;elMeuText&quot;</span><span class="p">&gt;</span>Aquest és un paràgraf.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Ara, escriu el següent codi JavaScript per canviar el color de fons de la pàgina:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;canviarColor&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">      </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;lightblue&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">});</span>
+<div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;canviarColor&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;lightblue&quot;</span><span class="p">;</span>
+<span class="p">});</span>
 </code></pre></div>
 <p>Aquest codi li diu a JavaScript que esperi que l'usuari faci clic al botó amb l'id canviarColor, i quan això passi, canviarà el color de fons de la pàgina.
-Conclusió</p>
-<p>En resum, JavaScript ens permet fer que les pàgines web siguin més dinàmiques i interactives. Amb variables podem emmagatzemar dades, amb funcions podem reutilitzar codi, i gràcies a la manipulació del DOM podem fer canvis visuals i funcionals a la nostra pàgina web en temps real.</p>
-<p>Ara estàs preparat per començar a crear aplicacions senzilles utilitzant JavaScript!</p>
+Ampliacions</p>
+<ul>
+<li>Fes que hi hagi un altre botó al costat que torni al color de fons per defecte.</li>
+<li>Inclou un color picker per a que l'usuari esculli un color.</li>
+</ul>
+<p>Ara estàs preparat per començar a crear aplicacions senzilles amb JavaScript!</p>
 
 
 

@@ -496,6 +496,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4.7. Taules. Estructura bàsica.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#propietats-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propietats CSS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -590,26 +605,67 @@
 <p>La web no se trata de tecnología, se trata de conexiones.</p>
 </div>
 <h2 id="41-introduccio-a-html">4.1 Introducció a HTML</h2>
-<p>HTML (HyperText Markup Language) és un llenguatge de marques que permet visualitzar documents a la Web.</p>
-<p>Les etiquetes utilitzades a HTML, com per exemple "paràgraf" (&lt;p&lt;) o "taula" (&lt;table&gt;) no es mostren en el navegador, sino que indiquen com mostrar la informació.</p>
-<p>L'estructura de HTML és semblant a XML: etiquetes, atributs, element arrel, etc... però el nom dels elements està establert, no ens els podem inventar. És a dir, HTML no és un metallenguatge i hem d'aprendre les etiquetes ja predefinides. </p>
-<p>HTML5 es va llançar el 2014 i és la última versió del llenguatge.</p>
-<p>Dintre d’un document HTML podem trobar 3 llenguatges diferents:</p>
+<ul>
+<li>
+<p>HTML (HyperText Markup Language) és un <strong>llenguatge de marques</strong> que permet visualitzar documents a la <strong>Web</strong>.</p>
+</li>
+<li>
+<p>Consisteix en una sèrie d'elements que 'marquen' el contingut per a que aparegui d'una forma determinada.<br />
+  Els <strong>elements HTML</strong> poden fer que un texte es comporti com un enllaç que ens pot connectar amb altra web, pot posar en negreta una paraula, etc.</p>
+</li>
+<li>
+<p>Hi ha més de 100 etiquetes predefinides a HTML. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML elements reference</a>.
+  Els elements es poden dividir en varis <strong>tipus</strong>: </p>
+</li>
+<li><strong>estructuració del contingut</strong> (header, footer, main, nav). Permet organitzar el contingut del document.</li>
+<li><strong>metadades</strong> document (head, style, title, link). Conté informació sobre la pàgina.</li>
+<li><strong>semantica</strong> texte inline (a, abbr, br, code, strong, sub). Defineixen el significat, estructura o estil <br />
+    d'un texte.</li>
+<li>
+<p><strong>contingut</strong> texte (div, hr, li, pre)</p>
+</li>
+<li>
+<p><strong>Les etiquetes</strong> utilitzades a HTML, com per exemple "paràgraf" (<code>&lt;p&gt;</code>) o "taula" (<code>&lt;table&gt;</code>).
+  <strong>no es mostren en el navegador</strong>, indiquen com mostrar la informació. Per exemple per mostrar un paràgraf:</p>
+</li>
+</ul>
+<p>The gulls swept over Dover.</p>
+
+<ul>
+<li>
+<p>Les <strong>regles pels elements a HTML són equivalents a XML</strong>: etiquetes, atributs, element arrel. Recordem 
+  que HTML no és un metallenguatge i no podem inventar les nostres etiquetes. Teniu en compte que a HTML els elements normalment s'aniden (per exemple <code>&lt;p&gt;El meu gat està &lt;strong&gt;sempre&lt;/strong&gt; dormint.&lt;/p&gt;</code>) i que alguns elements normalmen són buits (per exemple una imagte <code>&lt;img src="https://example.com/icon.png"  alt="icon" /&gt;</code>).</p>
+</li>
+<li>
+<p>HTML5 es va llançar el 2014 i és la última versió del llenguatge. El desenvolupament d'HTML està a càrrec del consorci WHATWG (Web Hypertext<br />
+  Application Technology Working Group). HTML inicialment va estar liderat pel W3C però el seu desenvolupament era molt lent (HTML 4.0 va sortir el 1997). </p>
+</li>
+<li>
+<p>Dintre d’un document HTML podem trobar 3 llenguatges diferents: HTML, CSS i Javascript.</p>
+</li>
+</ul>
 <p><img alt="Llenguatges Web" src="../assets/img/html-css-js.png" title="Llenguatges Web" /></p>
+<ul>
+<li>
 <p>Javascript (JS) és un llenguatge de programació i permet la creació de pàgines web interactives.</p>
+</li>
+<li>
+<p>Un navegador (browser) permet visualitzar pàgines HTML. També sap interpretar CSS (per donar estil) i Javascript (per donar funcionalitat).</p>
+</li>
+</ul>
 <p>Estructura d’una pàgina HTML5:</p>
 <div class="highlight"><pre><span></span><code>  <span class="cp">&lt;!DOCTYPE html&gt;</span>
-  <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">”ES”</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ES&quot;</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">”utf-8”</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">”viewport”</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-</span>
-<span class="s">          scale=1.0&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-          <span class="cm">&lt;!-- scripts, css, meta --&gt;</span>
+          <span class="cm">&lt;!-- css, meta --&gt;</span>
       <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Això és un <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>titular<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> en HTML<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aquest és el primer paràgraf.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+          <span class="cm">&lt;!-- scripts Javascript --&gt;</span>
       <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
@@ -617,11 +673,9 @@
 <p>L’etiqueta <strong>head</strong> permet especificar algunes metadades adicionals sobre la pàgina web. Els elements que apareixen dintre de l’element <strong>head</strong> no surten al navegador. Dintre podem especificar el joc de caràcters que farem servir, el títol de la web (surt a la barra del navegador) i enllaços a diferents fitxers, com scripts, estils css, etc.</p>
 <p>L’etiqueta <strong>body</strong> representa el contingut de la pàgina i tot el que afegim en aquesta part sortirà al navegador.</p>
 <h2 id="42-demo">4.2. Demo</h2>
-<p>Afegir snippet a Visual Studio Code
-https://code.visualstudio.com/docs/editor/emmet</p>
-<p>Instalar extensión Live Server per iniciar el navegador web des del codi font:</p>
-<p>Per veure el resultat:</p>
-<p>Més informació:&amp;lt:</p>
+<p>Veure annexos per Extensions recomanades.</p>
+<p>https://code.visualstudio.com/docs/editor/emmet</p>
+<p>Més informació:</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">Element Meta (mozilla.org)</a></p>
 <p><a href="https://www.sitepoint.com/a-basic-html5-template/">HTML5 template complet</a></p>
 <h2 id="43-elements-basics-de-formateig">4.3. Elements bàsics de formateig</h2>
@@ -639,8 +693,13 @@ https://code.visualstudio.com/docs/editor/emmet</p>
 <li>Resaltat de texte, subíndex, superíndex: &lt;mark&gt;&lt;sub&gt;&lt;sup&gt; H2O H&lt;sub&gt;2&lt;/sub&gt;O</li>
 </ul>
 <p>El resultat dels elements bàsics seria:</p>
-<p></p>
-
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Capcelera H1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Capcelera H2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Capcelera H3<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Capcelera H4<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Capcelera H5<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>Capcelera H6<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</code></pre></div>
 <h1>Capcelera H1</h1>
 <h2>Capcelera H2</h2>
 <h3>Capcelera H3</h3>
@@ -648,33 +707,40 @@ https://code.visualstudio.com/docs/editor/emmet</p>
 <h5>Capcelera H5</h5>
 <h6>Capcelera H6</h6>
 
-<p></p>
-
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Això es un paràgraf a HTML<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>Això es un paràgraf a HTML</p>
 
-<p></p>
-
+<p>El texte preformatejat conserva els espais</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+Tu corazón, ya terciopelo ajado,
+llama a un campo de almendras espumosas
+mi avariciosa voz de enamorado.
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></div>
 <pre>
 Tu corazón, ya terciopelo ajado,
 llama a un campo de almendras espumosas
 mi avariciosa voz de enamorado.
 </pre>
 
-<p></p>
-
+<p><code>Alguns efectes de texte bàsics com &lt;strong&gt;negreta&lt;/strong&gt;, &lt;em&gt;èmfasi&lt;/em&gt;, &lt;ins&gt;subratllat&lt;/ins&gt; o &lt;del&gt;ratllar&lt;/del&gt;, s'aconsegueixen amb les etiquetes strong, em, ins o del.</code></p>
 <p>Alguns efectes de texte bàsics com <strong>negreta</strong>, <em>èmfasi</em>, <ins>subratllat</ins> o <del>ratllar</del>, s'aconsegueixen amb les etiquetes strong, em, ins o del.</p>
+<p><code>Podem &lt;mark&gt;resaltar el texte&lt;/mark&gt; i crear subíndex i superíndex, com a H2O =&gt; H&lt;sub&gt;2&lt;/sub&gt;O</code></p>
 <p>Podem <mark>resaltar el texte</mark> i crear subíndex i superíndex, com a H2O =&gt; H<sub>2</sub>O</p>
 <p>Més informació:</p>
 <p><a href="https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/">Introduction to HTML (Mozilla.org)</a></p>
-<p>Capítols:
-* HTML_text_fundamentals
-* Advanced_text_formatting</p>
+<p>Capítols:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals">HTML_text_fundamentals</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting">Advanced_text_formatting</a></li>
+</ul>
 <h2 id="44-enllacos">4.4. Enllaços</h2>
 <p>Un enllaç (link) permet navegar per la web, és a dir accedir a altres llocs remots mitjançant un click.</p>
-<p>L’element &lt;a&lt; (ancla o “anchor”) fa que la web sigui navegable. </p>
+<p>L’element <code>&lt;a&gt;</code> (ancla o "anchor") fa que la web sigui navegable. </p>
 <p>Podem enllaçar diversos elements: 
 * Un altre lloc remot.
-* Un altre lloc de la mateixa pàgina 
+* Un altre lloc de la mateixa pàgina.
 * Una adreça de correu electrònic.</p>
 <p>Enllaç a una url externa:
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">”http://www.exemple.org”</span><span class="p">&gt;</span>texte de l’enllaç<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
@@ -689,13 +755,15 @@ Escriu-nos a <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 </code></pre></div></p>
 <p>Atributs més comuns:</p>
 <ul>
-<li>href: HyperText Reference</li>
-<li>title: mostra una descripció quan es pasa el ratolí per sobre</li>
-<li>target: Per defecte la pàgina enllaçada es mostra en la finestra actual del navegador. Aquest comportament es pot modificar. L'atribut admet els següents valors:</li>
+<li><strong>href</strong>: HyperText Reference</li>
+<li><strong>title</strong>: mostra una descripció quan es pasa el ratolí per sobre</li>
+<li><strong>target</strong>: Per defecte la pàgina enllaçada es mostra en la finestra actual del navegador. Aquest comportament es pot modificar. L'atribut admet els següents valors:</li>
 <li>“__blank” obre l’enllaç en una nova finestra</li>
 </ul>
 <p>Més info:</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating HyperLinks</a></p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating HyperLinks (MDN)</a></li>
+</ul>
 <h2 id="45-imatges">4.5. Imatges</h2>
 <p>L'etiqueta <code>&lt;img&gt;</code> es fa servir per mostrar imatges.</p>
 <p>Sintaxi:
@@ -725,7 +793,7 @@ d’estils (CSS). El full d’estil té prioritat sobre els atributs de la etiqu
 </code></pre></div></p>
 <p>Imatge amb enllaç:
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.w3schools.com&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;w3html.gif&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;W3Schools.com&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;132&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;w3html.gif&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;W3Schools.com&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;132&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <p>L'element a admet els següents formats d’imatge:</p>
@@ -735,6 +803,11 @@ d’estils (CSS). El full d’estil té prioritat sobre els atributs de la etiqu
 <li>GIF (inclós GIF animat)</li>
 <li>BMP</li>
 <li>SVG (vectorial, basat en XML)</li>
+</ul>
+<p>Més info:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML">Images in HTML (MDN)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">img The Image Embed element  (MDN)</a></li>
 </ul>
 <h2 id="46-llistes">4.6. Llistes</h2>
 <p>Les llistes ens permeten mostrar elements amb vinyetes per formar una llista d’elements. Les llistes poden ser ordenades, desordenades i de definició. </p>
@@ -816,7 +889,13 @@ proceso automatizado.</dd>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 Diferents propietats CSS (estil), que podem canviar de les llistes:</p>
-<p><a href="https://www.w3schools.com/css/css_list.asp">CSS Lists w3schools</a></p>
+<ul>
+<li><a href="https://www.w3schools.com/css/css_list.asp">CSS Lists (w3schools)</a></li>
+</ul>
+<p>Més informació sobre llistes:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists">Styling lists (MDN)</a></li>
+</ul>
 <h2 id="47-taules-estructura-basica">4.7. Taules. Estructura bàsica.</h2>
 <p>Les taules ens permeten mostrar la informació en files i columnes. El posicionament dels elements a la pàgina no es fa mitjançant taules. Actualment hi ha altres tècniques amb CSS per a posicionament d’elements, tal com veurem més endavant en aquest capítol</p>
 <p>Un exemple bàsic:</p>
@@ -851,36 +930,78 @@ Diferents propietats CSS (estil), que podem canviar de les llistes:</p>
     </tbody>
   </table>
 
-<ul>
-<li>L’etiqueta <code>&lt;table&gt;</code> permet definir la taula. </li>
+<table>
+<thead>
+<tr>
+<th>element taula</th>
+<th>significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>table</td>
+<td>contenidor principal taula</td>
+</tr>
+<tr>
+<td>thead</td>
+<td>contenidor per a la linea de capcelera (negreta)</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>identifica l'inici d'una nova fila</td>
+</tr>
+<tr>
+<td>th</td>
+<td>marca cada camp de la capcelera. Equivalent a td</td>
+</tr>
+<tr>
+<td>tbody</td>
+<td>contenidor per al contingut principal de la taula</td>
+</tr>
+<tr>
+<td>td</td>
+<td>contenidor per a la cel.la de dades</td>
+</tr>
+<tr>
+<td>tfoot</td>
+<td>contenidor per al peu de la taula (per exemple per a calcular subtotals)</td>
+</tr>
+</tbody>
+</table>
+<ol>
 <li>Definirem cada fila de la nostra taula amb l'etiqueta <code>&lt;tr&gt;</code>, excepte la fila de capcelera que fem servir <code>&lt;th&gt;</code>, que té un format diferent de la resta (negreta).</li>
 <li>Dintre de cada fila, les columnes s'identifiquen amb l'etiqueta <code>&lt;td&gt;</code>.</li>
 <li>Els elements <td> poden contenir tot tipus d’elements HTML: text, imatges, llistes, altres taules, ...</li>
-<li>Per últim tenim l'etiqueta </li>
+<li>Per últim també tenim l’etiqueta <strong>tfoot</strong> per afegir un peu de taula, per exemple per sumaritzar alguna de les columnes.</li>
+</ol>
+<p>A les taules li podem aplicar diferents propietats CSS aquí les podeu consultar</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables">Styling tables (MDN)</a></li>
 </ul>
-<p>A les taules li podem aplicar diferents propietats CSS
-aquí les podeu consultar . 􀀀 Propietats:
-○ width i height: ens permet donar l’amplada a la
-taula o a les columnes i l’alçada de cada fila. Si
-volem que ocupi tot l’ample farem servir el valor
-100%
-○ border: ens permet especificar les línies que
-separen cada cel.la. Si li volem aplicar a tota la
-taula, li aplicarem a les etiquetes: table, th, td
-○ border-collapse: quan posem border a una taula i
-les seves cel.les es crea una línia doble que podem
-treure amb aquesta propietat amb el valor
-collapse.</p>
-<p>Per últim també tenim l’etiqueta <strong>tfooter</strong> per afegir un peu de taula, per exemple per sumaritzar alguna de les columnes.</p>
+<h3 id="propietats-css">Propietats CSS:</h3>
+<ul>
+<li>
+<p><code>width</code> i <code>height</code>: ens permet donar l’amplada a la taula o a les columnes i l’alçada de cada fila. Si volem que ocupi tot l’ample farem servir el valor 100%</p>
+</li>
+<li>
+<p><code>order</code>: ens permet especificar les línies que separen cada cel.la. Si li volem aplicar a tota la taula, li aplicarem a les etiquetes: table, th, td</p>
+</li>
+<li><code>border-collapse</code>: quan posem border a una taula i les seves cel.les es crea una línia doble que podem treure amb aquesta propietat amb el valor collapse.</li>
+</ul>
+<p>Més info:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics">HTML table basics MDN</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced">HTML table advanced features and accessibility MDN</a></li>
+</ul>
 <h2 id="48-formularis">4.8. Formularis</h2>
 <p>Els formularis són un dels elements HTML més complexos. Permeten recollir dades de l’usuari amb la incorporació de controls (input, radio button, dropdown, botons,
 etc. Amb l’ajuda d’un llenguatge de servidor (PHP, NodeJS) podem guardar-ho en una base de dades. L’esquema bàsic per a un formulari seria:</p>
 <div class="highlight"><pre><span></span><code>  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">”gestio-form.php”</span> <span class="na">method</span><span class="o">=</span><span class="s">”post”</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">”name”</span><span class="p">&gt;</span>Nom<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">”text”</span> <span class="na">id</span><span class="o">=</span><span class="s">”name”</span><span class="p">&gt;</span>
-  ...
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">””</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">”submit”</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">”name”</span><span class="p">&gt;</span>Nom<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">”text”</span> <span class="na">id</span><span class="o">=</span><span class="s">”name”</span><span class="p">&gt;</span>
+    ...
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">””</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">”submit”</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Els tipus d’elements que podem incloure en un formulari són:</p>
@@ -955,78 +1076,85 @@ etc. Amb l’ajuda d’un llenguatge de servidor (PHP, NodeJS) podem guardar-ho 
 </tbody>
 </table>
 <p>Més info:</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms">Forms (Mozilla.org)</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data">Element FORM: Mètode GET vs POST</a></p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms">Forms (Mozilla.org)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data">Element FORM: Mètode GET vs POST</a></li>
+</ul>
 <h2 id="49-altres-elements-video-audio-pictures">4.9. Altres elements: video, audio, pictures</h2>
 <p>HTML5 incorporta elements nous com &lt;video&gt;, que permet inserir un video dins
 una pàgina web. Youtube i altres plataformes de video fan servir aquest element.
 Alguns elements propis de HTML5:</p>
 <p>video, audio, figure i iframe</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
- <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;300&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">linearGradient</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;grad1&quot;</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;0%&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;0%&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;0%&quot;</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">stop</span> <span class="na">offset</span><span class="o">=</span><span class="s">&quot;0%&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;stop-color:rgb(255,255,0);stop-opacity:1&quot;</span> <span class="p">/&gt;</span>
-          <span class="p">&lt;</span><span class="nt">stop</span> <span class="na">offset</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;stop-color:rgb(255,0,0);stop-opacity:1&quot;</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">linearGradient</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">rx</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">ry</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#grad1)&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;fill:blue;stroke:darkblue;stroke-width:5;opacity:0.6&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">ellipse</span> <span class="na">cx</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">rx</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">ry</span><span class="o">=</span><span class="s">&quot;55&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#grad1)&quot;</span> <span class="p">/&gt;</span> 
-      <span class="p">&lt;</span><span class="nt">text</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#ffffff&quot;</span> <span class="na">font-size</span><span class="o">=</span><span class="s">&quot;45&quot;</span> <span class="na">font-family</span><span class="o">=</span><span class="s">&quot;Verdana&quot;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;86&quot;</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>Pagina Web Multimedia<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
-      Sorry, your browser does not support inline SVG.
-    <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>    
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;div&gt;</span>
+<span class="w">  </span><span class="nt">&lt;svg</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;300&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;800&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;defs&gt;</span>
+<span class="w">      </span><span class="nt">&lt;linearGradient</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;grad1&quot;</span><span class="w"> </span><span class="na">x1=</span><span class="s">&quot;0%&quot;</span><span class="w"> </span><span class="na">y1=</span><span class="s">&quot;0%&quot;</span><span class="w"> </span><span class="na">x2=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="na">y2=</span><span class="s">&quot;0%&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0%&quot;</span><span class="w"> </span><span class="na">style=</span><span class="s">&quot;stop-color:rgb(255,255,0);stop-opacity:1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;stop</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="na">style=</span><span class="s">&quot;stop-color:rgb(255,0,0);stop-opacity:1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/linearGradient&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/defs&gt;</span>
+<span class="w">    </span><span class="nt">&lt;rect</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">rx=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">ry=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;url(#grad1)&quot;</span><span class="w"> </span><span class="na">style=</span><span class="s">&quot;fill:blue;stroke:darkblue;stroke-width:5;opacity:0.6&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ellipse</span><span class="w"> </span><span class="na">cx=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">cy=</span><span class="s">&quot;70&quot;</span><span class="w"> </span><span class="na">rx=</span><span class="s">&quot;85&quot;</span><span class="w"> </span><span class="na">ry=</span><span class="s">&quot;55&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;url(#grad1)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&lt;text</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;#ffffff&quot;</span><span class="w"> </span><span class="na">font-size=</span><span class="s">&quot;45&quot;</span><span class="w"> </span><span class="na">font-family=</span><span class="s">&quot;Verdana&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;50&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;86&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;nbsp;</span>Pagina<span class="w"> </span>Web<span class="w"> </span>Multimedia<span class="nt">&lt;/text&gt;</span>
+<span class="w">    </span>Sorry,<span class="w"> </span>your<span class="w"> </span>browser<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>support<span class="w"> </span>inline<span class="w"> </span>SVG.
+<span class="w">  </span><span class="nt">&lt;/svg&gt;</span><span class="w">    </span>
+<span class="nt">&lt;/div&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="cm">&lt;!-- HTML compatible video formats: mp4 webm ogg</span>
-<span class="cm">     https://es.wikipedia.org/wiki/WebM --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;320&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;240&quot;</span> <span class="na">controls</span>
-            <span class="na">autoplay</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src </span><span class="o">=</span><span class="s">&quot;tierra_noche_MP4_480_1_5MG.mp4&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>    
+<span class="nt">&lt;div&gt;</span>
+<span class="cm">&lt;!-- HTML compatible video formats: mp4 webm ogg https://es.wikipedia.org/wiki/WebM --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;video</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;320&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;240&quot;</span><span class="w"> </span><span class="err">controls</span>
+<span class="w">            </span><span class="err">autoplay</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">src =</span><span class="s">&quot;tierra_noche_MP4_480_1_5MG.mp4&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/video&gt;</span>
+<span class="nt">&lt;/div&gt;</span><span class="w">    </span>
 
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;320&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;240&quot;</span> <span class="na">controls</span> <span class="na">autoplay</span> <span class="na">loop</span><span class="p">&gt;</span> 
-      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src </span><span class="o">=</span><span class="s">&quot;./vid/escena_animacion.mp4&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./vid/escena_animacion.srt&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Ingles SRT&quot;</span> <span class="na">kind</span><span class="o">=</span><span class="s">&quot;subtitles&quot;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./vid/escena_animacion.vtt&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Ingles&quot;</span> <span class="na">kind</span><span class="o">=</span><span class="s">&quot;subtitles&quot;</span> <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">default</span><span class="p">&gt;</span>
-      Video tag not supported. Download the video 
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./vid/escena_animacion.mp4&quot;</span><span class="p">&gt;</span>here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.
-    <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+<span class="nt">&lt;video</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;320&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;240&quot;</span><span class="w"> </span><span class="err">controls</span><span class="w"> </span><span class="err">autoplay</span><span class="w"> </span><span class="err">loop</span><span class="nt">&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">src =</span><span class="s">&quot;./vid/escena_animacion.mp4&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;track</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;./vid/escena_animacion.srt&quot;</span><span class="w"> </span><span class="na">label=</span><span class="s">&quot;Ingles SRT&quot;</span><span class="w"> </span><span class="na">kind=</span><span class="s">&quot;subtitles&quot;</span><span class="w"> </span><span class="na">srclang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;track</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;./vid/escena_animacion.vtt&quot;</span><span class="w"> </span><span class="na">label=</span><span class="s">&quot;Ingles&quot;</span><span class="w"> </span><span class="na">kind=</span><span class="s">&quot;subtitles&quot;</span><span class="w"> </span><span class="na">srclang=</span><span class="s">&quot;en&quot;</span><span class="w"> </span><span class="err">default</span><span class="nt">&gt;</span>
+<span class="w">  </span>Video<span class="w"> </span>tag<span class="w"> </span>not<span class="w"> </span>supported.<span class="w"> </span>Download<span class="w"> </span>the<span class="w"> </span>video<span class="w"> </span>
+<span class="w">  </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;./vid/escena_animacion.mp4&quot;</span><span class="nt">&gt;</span>here<span class="nt">&lt;/a&gt;</span>.
+<span class="nt">&lt;/video&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span> <span class="na">autoplay</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./vid/viper.mp3&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/mp3&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./vid/viper.ogg&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/ogg&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Your browser doesn&#39;t support HTML5 audio. Here is a <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;viper.mp3&quot;</span><span class="p">&gt;</span>link to the audio<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> instead.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+<span class="nt">&lt;audio</span><span class="w"> </span><span class="err">controls</span><span class="w"> </span><span class="err">autoplay</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;./vid/viper.mp3&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;audio/mp3&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;source</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;./vid/viper.ogg&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;audio/ogg&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;p&gt;</span>Your<span class="w"> </span>browser<span class="w"> </span>doesn&#39;t<span class="w"> </span>support<span class="w"> </span>HTML5<span class="w"> </span>audio.<span class="w"> </span>Here<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;viper.mp3&quot;</span><span class="nt">&gt;</span>link<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>audio<span class="nt">&lt;/a&gt;</span><span class="w"> </span>instead.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/audio&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://picsum.photos/600/400&quot;</span>
-         <span class="na">width</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span>
-         <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Esta es una foto aleatoria de picsum&quot;</span>
-    <span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Foto aleatoria de picsum<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+<span class="nt">&lt;figure&gt;</span>
+<span class="w">    </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://picsum.photos/600/400&quot;</span>
+<span class="w">         </span><span class="na">width=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;400&quot;</span>
+<span class="w">         </span><span class="na">alt=</span><span class="s">&quot;Esta es una foto aleatoria de picsum&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;figcaption&gt;</span>Foto<span class="w"> </span>aleatoria<span class="w"> </span>de<span class="w"> </span>picsum<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://es.wikipedia.org/wiki/Rage_Against_the_Machine&quot;</span> 
-    <span class="na">title</span><span class="o">=</span><span class="s">&quot;Wikipedia Rage_Against_the_Machine&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> 
-    <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+<span class="w">    </span><span class="nt">&lt;iframe</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;800&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://es.wikipedia.org/wiki/Rage_Against_the_Machine&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="na">title=</span><span class="s">&quot;Wikipedia Rage_Against_the_Machine&quot;</span><span class="w"> </span><span class="na">frameborder=</span><span class="s">&quot;0&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="na">allow=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span><span class="w"> </span><span class="err">allowfullscreen</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/iframe&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5918.938391083444!2d2.762264678464291!3d42.118837724998826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1638391807509!5m2!1ses!2ses&quot;</span> 
-    <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border:0;&quot;</span> <span class="na">allowfullscreen</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>  
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+<span class="w">    </span><span class="nt">&lt;iframe</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5918.938391083444!2d2.762264678464291!3d42.118837724998826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1638391807509!5m2!1ses!2ses&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="na">width=</span><span class="s">&quot;800&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="na">style=</span><span class="s">&quot;border:0;&quot;</span><span class="w"> </span><span class="na">allowfullscreen=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">loading=</span><span class="s">&quot;lazy&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/iframe&gt;</span><span class="w">  </span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
+<p>Descarregar arxius:</p>
+<ul>
+<li><a href="../assets/vid/escena_animacion.mp4">escena_animacion.mp4</a></li>
+<li><a href="../assets/vid/escena_animacion.vtt">escena_animacion.vtt</a></li>
+<li><a href="../assets/vid/viper.mp3">viper.mp3</a></li>
+</ul>
 <h2 id="410-html5-tags-semantics-i-contenidor">4.10. HTML5: tags semàntics i contenidor</h2>
-<p>Elements NO semàntics: &lt;div&gt; i &lt;span&gt;. Aquests contenidors no aporten informació sobre el contingut. HTML5 incorpora uns 100 tags semàntics. 
+<p>Elements <strong>NO semàntics</strong>: <code>&lt;div&gt;</code> i <code>&lt;span&gt;</code>. Aquests contenidors no aporten informació sobre el contingut. </p>
+<p>HTML5 incorpora uns 100 tags semàntics. 
 Per ex: &lt;nav&gt; per incloure una barra de navegació.</p>
 <div class="highlight"><pre><span></span><code>  <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">aside</span><span class="p">&gt;</span>
@@ -1038,12 +1166,14 @@ Per ex: &lt;nav&gt; per incloure una barra de navegació.</p>
   <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">time</span><span class="p">&gt;</span>
 </code></pre></div>
-<p><strong>Activitat 10:</strong></p>
-<p>Escriu en un HTML l’estructura de les dues pàgines de la imatge amb elements semàntics.</p>
-<p><a href="https://www.w3schools.com/html/html5_semantic_elements.asp">HTML5 semantic elements</a></p>
+<p><img alt="semantic_vs_nonsemantic" src="../assets/img/semantic_vs_nonsemantic.png" /></p>
+<ul>
+<li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp">HTML5 semantic elements</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure">Document and website structure MDN</a></li>
+</ul>
 <h2 id="411-estils">4.11. Estils</h2>
 <p>De moment hem vist elements HTML que permeten organitzar la informació mostrada. També podem aplicar estils a cadascun dels elements individualment. Per això fem servir el llenguatge CSS. La sintaxi es:</p>
-<p><div class="highlight"><pre><span></span><code>  <span class="p">&lt;</span><span class="nt">etiqueta</span> <span class="na">style</span><span class="o">=</span><span class="s">”propietat:valor;”</span><span class="p">&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">style=</span><span class="s">”propietat:valor;”</span><span class="nt">&gt;</span>
 </code></pre></div>
 Per exemple, per establir el color de fons del cos de la web, fariem:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background-color:powderblue;&quot;</span><span class="p">&gt;</span> (nom del color o en hexadecimal)
@@ -1200,7 +1330,7 @@ El funcionament és similar al concepte classe:</p>
 <span class="w">  </span><span class="n">propietat</span><span class="p">:</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<p>Estats de <a>:</p>
+<p>Possibles estats dels enllaços (<code>&lt;a href=""&gt;</code>):</p>
 <ul>
 <li>Sense visitar - link</li>
 <li>Visitat - visited</li>
@@ -1213,7 +1343,7 @@ El funcionament és similar al concepte classe:</p>
 <span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<p><a href="https://htmldog.com/guides/">HTMLDog Gudes</a></p>
+<p><a href="https://htmldog.com/guides/">HTMLDog Guides</a></p>
 <h2 id="credits">Crèdits</h2>
 <p>Aquest text conté material pres d'una presentació de <strong>Toni Ruiz</strong>, utilitzat sota els termes de la <strong>GNU Free Documentation License</strong>.</p>
 <h3 id="licencia">Licència</h3>

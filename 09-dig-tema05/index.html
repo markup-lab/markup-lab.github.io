@@ -1,0 +1,774 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Unitat 5. Avaluació de dades - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unitat-5-avaluacio-de-dades" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unitat 5. Avaluació de dades
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-dades-versus-informacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Dades versus informació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1. Dades versus informació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-diferencies-clau-entre-dades-i-informacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1. Diferències clau entre dades i informació
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-cicle-de-vida-de-les-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Cicle de vida de les dades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Cicle de vida de les dades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-gestio-del-cicle-de-vida-de-les-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1. Gestió del cicle de vida de les dades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-big-data-analisi-de-les-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3. Big data. Anàlisi de les dades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3. Big data. Anàlisi de les dades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531-caracteristiques-del-big-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.1. Característiques del big data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532-relacio-entre-big-data-analisi-de-dades-machinedeep-learning-i-intelligencia-artificial" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.2. Relació entre big data, anàlisi de dades, machine/deep learning i intel·ligència artificial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#533-tipus-danalisi-de-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.3. Tipus d’anàlisi de dades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-emmagatzematge-de-dades-al-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4. Emmagatzematge de dades al núvol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4. Emmagatzematge de dades al núvol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541-importancia-del-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.1. Importància del cloud computing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-etapes-de-lenginyeria-de-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5. Etapes de l’enginyeria de dades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5. Etapes de l’enginyeria de dades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#551-escenaris-en-els-quals-es-pot-utilitzar-la-mineria-de-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.1. Escenaris en els quals es pot utilitzar la mineria de dades
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-aplicacio-a-les-empreses-de-la-ciencia-de-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6. Aplicació a les empreses de la ciència de dades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6. Aplicació a les empreses de la ciència de dades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#561-obtencio-dinformacio-sobre-els-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6.1. Obtenció d’informació sobre els clients
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-eines-per-analitzar-les-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.7. Eines per analitzar les dades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusió
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="unitat-5-avaluacio-de-dades"><strong>Unitat 5. Avaluació de dades</strong></h1>
+<h2 id="51-dades-versus-informacio"><strong>5.1. Dades versus informació</strong></h2>
+<p>Les <strong>dades</strong> són elements en brut: xifres, paraules, valors, etc. En canvi, la <strong>informació</strong> és el resultat d’analitzar i interpretar aquestes dades, donant-los context i significat.</p>
+<h3 id="511-diferencies-clau-entre-dades-i-informacio"><strong>5.1.1. Diferències clau entre dades i informació</strong></h3>
+<ul>
+<li><strong>Processament</strong>: Les dades són matèria primera; la informació és el producte final.  </li>
+<li><strong>Utilitat</strong>: Les dades soles poden tenir poca utilitat sense anàlisi; la informació és rellevant per a la presa de decisions.  </li>
+<li><strong>Context</strong>: La informació necessita un marc (temporal, geogràfic, etc.) per ser realment comprensible.</li>
+</ul>
+<hr />
+<h2 id="52-cicle-de-vida-de-les-dades"><strong>5.2. Cicle de vida de les dades</strong></h2>
+<ol>
+<li><strong>Recollida</strong>: Dades procedents de sensors, formularis, bases de dades externes, etc.  </li>
+<li><strong>Emmagatzematge</strong>: En bases de dades, entorns al núvol o sistemes híbrids.  </li>
+<li><strong>Processament</strong>: Neteja de dades, transformació i fusió de diverses fonts.  </li>
+<li><strong>Anàlisi i explotació</strong>: Generació de models, informes i indicadors.  </li>
+<li><strong>Arxiu o destrucció</strong>: Quan les dades deixen de ser útils o compleixen la seva vida útil segons les polítiques internes o la legislació vigent.</li>
+</ol>
+<h3 id="521-gestio-del-cicle-de-vida-de-les-dades"><strong>5.2.1. Gestió del cicle de vida de les dades</strong></h3>
+<p>Cal implementar bones pràctiques de governança (controls d’accés, qualitat de dades, compliment normatiu). També és crucial planificar la retenció i la destrucció de dades, evitant riscos de seguretat o costos innecessaris.</p>
+<hr />
+<h2 id="53-big-data-analisi-de-les-dades"><strong>5.3. Big data. Anàlisi de les dades</strong></h2>
+<p>El <strong>big data</strong> fa referència a conjunts de dades tan grans i heterogenis que requerixen tecnologies i eines especialitzades per ser gestionats i analitzats.  </p>
+<h3 id="531-caracteristiques-del-big-data"><strong>5.3.1. Característiques del big data</strong></h3>
+<p>Sovint s’expressen amb “V”:
+- <strong>Volum</strong> (quantitat massiva).<br />
+- <strong>Velocitat</strong> (gran rapidesa en la generació de dades).<br />
+- <strong>Varietat</strong> (formats diferents).<br />
+- <strong>Veracitat</strong> (qualitat i fiabilitat).<br />
+- <strong>Valor</strong> (utilitat de la informació extreta).</p>
+<h3 id="532-relacio-entre-big-data-analisi-de-dades-machinedeep-learning-i-intelligencia-artificial"><strong>5.3.2. Relació entre big data, anàlisi de dades, machine/deep learning i intel·ligència artificial</strong></h3>
+<ul>
+<li>Les <strong>tècniques de machine learning</strong> aprofiten <strong>grans conjunts de dades</strong> per aprendre i fer prediccions.  </li>
+<li>El <strong>deep learning</strong> requereix volums de dades encara més grans per entrenar xarxes neuronals profundes.  </li>
+<li>La <strong>IA</strong> en general s’alimenta de big data per identificar patrons, optimitzar processos i resoldre problemes complexos.</li>
+</ul>
+<h3 id="533-tipus-danalisi-de-dades"><strong>5.3.3. Tipus d’anàlisi de dades</strong></h3>
+<ul>
+<li><strong>Descriptiva</strong>: Explica què ha passat o està passant (estadístiques bàsiques, KPIs).  </li>
+<li><strong>Predictiva</strong>: Endevina tendències o comportaments futurs, tot modelant dades històriques.  </li>
+<li><strong>Prescriptiva</strong>: Recomana accions òptimes basades en els resultats predictius (optimització de rutes, preus dinàmics, etc.).</li>
+</ul>
+<hr />
+<h2 id="54-emmagatzematge-de-dades-al-nuvol"><strong>5.4. Emmagatzematge de dades al núvol</strong></h2>
+<p>Les plataformes de <em>cloud computing</em> ofereixen recursos escalables i segurs per guardar dades, amb models de pagament per ús.  </p>
+<h3 id="541-importancia-del-cloud-computing"><strong>5.4.1. Importància del cloud computing</strong></h3>
+<p>Permet a les empreses créixer o reduir serveis en funció de la demanda, sense haver d’invertir en infraestructures físiques. A més, la centralització dels recursos pot redundar en una millora de la seguretat i de la productivitat.</p>
+<hr />
+<h2 id="55-etapes-de-lenginyeria-de-dades"><strong>5.5. Etapes de l’enginyeria de dades</strong></h2>
+<ol>
+<li><strong>Recollida i ingestió</strong>: Connectar i integrar diferents fonts (APIs, bases de dades…).  </li>
+<li><strong>Transformació</strong>: Neteges, normalitzacions i canvis de format (ETL —Extract, Transform, Load—).  </li>
+<li><strong>Emmagatzematge</strong>: Seleccionar el tipus de base de dades o <em>data lake</em> adequat.  </li>
+<li><strong>Modelatge</strong>: Definir esquemes i estructures que facilitin l’anàlisi.  </li>
+<li><strong>Distribució i consum</strong>: Oferir dades o analítiques a usuaris, aplicacions i sistemes.</li>
+</ol>
+<h3 id="551-escenaris-en-els-quals-es-pot-utilitzar-la-mineria-de-dades"><strong>5.5.1. Escenaris en els quals es pot utilitzar la mineria de dades</strong></h3>
+<ul>
+<li><strong>Sector financer</strong>: Detecció de frau, anàlisi de riscos.  </li>
+<li><strong>Màrqueting</strong>: Segmentació de clients, campanyes dirigides.  </li>
+<li><strong>Sanitat</strong>: Estudis poblacionals, personalització de tractaments.  </li>
+<li><strong>Logística</strong>: Predicció de demandes, optimització de rutes.</li>
+</ul>
+<hr />
+<h2 id="56-aplicacio-a-les-empreses-de-la-ciencia-de-dades"><strong>5.6. Aplicació a les empreses de la ciència de dades</strong></h2>
+<p>La <em>ciència de dades</em> és la disciplina que fusiona estadística, programació i coneixement de negoci per extreure valor a partir de la informació. S’ha convertit en un actiu estratègic per a empreses de tots els sectors.</p>
+<h3 id="561-obtencio-dinformacio-sobre-els-clients"><strong>5.6.1. Obtenció d’informació sobre els clients</strong></h3>
+<p>Mitjançant l’anàlisi de dades es pot conèixer millor les necessitats i preferències dels clients, millorar la fidelització i identificar noves oportunitats de venda.</p>
+<hr />
+<h2 id="57-eines-per-analitzar-les-dades"><strong>5.7. Eines per analitzar les dades</strong></h2>
+<ul>
+<li><strong>Business Intelligence (BI)</strong>: Microsoft Power BI, Tableau, Qlik.  </li>
+<li><strong>Eines estadístiques i de programació</strong>: R, Python (Pandas, NumPy, Matplotlib).  </li>
+<li><strong>Sistemes distribuïts</strong>: Hadoop, Spark, per al processament de grans volums.  </li>
+<li><strong>Bases de dades</strong>: Relacionals (MySQL, PostgreSQL) o no relacionals (MongoDB, Cassandra).</li>
+</ul>
+<hr />
+<h2 id="conclusio"><strong>Conclusió</strong></h2>
+<p>Les <strong>Unitats 3, 4 i 5</strong> mostren la importància de:
+1. <strong>El núvol</strong> (Unitat 3): Com a infraestructura flexible i escalable per al treball i l’emmagatzematge de dades.
+2. <strong>La intel·ligència artificial</strong> (Unitat 4): Impulsada per les dades i l’evolució tecnològica, amb gran impacte en la indústria.
+3. <strong>L’avaluació de dades</strong> (Unitat 5): Fonamental per transformar la informació en coneixement i prendre decisions estratègiques.</p>
+<p>La transformació digital dels sectors productius passa, en gran mesura, per un ús intel·ligent del núvol, la IA i l’anàlisi de dades, sempre tenint en compte la ciberseguretat, la privacitat i la sostenibilitat.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

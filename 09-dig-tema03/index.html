@@ -1,0 +1,864 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Unitat 3. El núvol - M4 Llenguatges de marques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unitat-3-el-nuvol" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="M4 Llenguatges de marques" class="md-header__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            M4 Llenguatges de marques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unitat 3. El núvol
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf1/" class="md-tabs__link">
+        
+  
+    
+  
+  UF1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf2/" class="md-tabs__link">
+        
+  
+    
+  
+  UF2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uf3/" class="md-tabs__link">
+        
+  
+    
+  
+  UF3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../informacio/" class="md-tabs__link">
+        
+  
+    
+  
+  Informació
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE/" class="md-tabs__link">
+        
+  
+    
+  
+  Llicència
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="M4 Llenguatges de marques" class="md-nav__button md-logo" aria-label="M4 Llenguatges de marques" data-md-component="logo">
+      
+  <img src="../assets/img/logo.png" alt="logo">
+
+    </a>
+    M4 Llenguatges de marques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inici
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UF3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../informacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicència
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-nuvol-definicio-i-nivells-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Núvol. Definició i nivells. Cloud computing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Núvol. Definició i nivells. Cloud computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-breu-historia-del-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1. Breu història del núvol
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2. Cloud computing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-nivells" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3. Nivells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-nuvol-public-privat-i-hibrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.4. Núvol públic, privat i híbrid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315-on-semmagatzemen-les-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.5. On s’emmagatzemen les dades?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-possibilitats-de-treball-al-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Possibilitats de treball al núvol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Possibilitats de treball al núvol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-treballar-al-nuvol-el-nou-paradigma-laboral" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1. Treballar al núvol, el nou paradigma laboral
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-edge-computing-i-la-seva-relacio-amb-el-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Edge computing i la seva relació amb el núvol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Edge computing i la seva relació amb el núvol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-situacions-reals-on-implementar-la-edge-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1. Situacions reals on implementar la edge computing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-fog-i-mist-relacio-amb-el-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Fog i mist. Relació amb el núvol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Fog i mist. Relació amb el núvol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fog-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fog computing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mist-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mist computing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mist computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-casos-daplicacio-de-la-fog-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1. Casos d’aplicació de la fog computing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-casos-daplicacio-de-la-mist-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.2. Casos d’aplicació de la mist computing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-avantatges-i-desavantatges-de-lus-dels-recursos-del-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Avantatges i desavantatges de l’ús dels recursos del núvol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5. Avantatges i desavantatges de l’ús dels recursos del núvol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-desavantatges-de-lus-del-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1. Desavantatges de l’ús del núvol
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-us-del-nuvol-i-la-rendibilitat-de-lempresa" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6. Ús del núvol i la rendibilitat de l’empresa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6. Ús del núvol i la rendibilitat de l’empresa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-plataformes-al-nuvol-per-a-empreses" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6.1. Plataformes al núvol per a empreses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-cloud-computing-com-a-tecnologia-que-impulsa-la-sostenibilitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7. Cloud computing com a tecnologia que impulsa la sostenibilitat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7. Cloud computing com a tecnologia que impulsa la sostenibilitat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#371-nuvol-verd" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7.1. Núvol verd
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-incidents-de-ciberseguretat" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8. Incidents de ciberseguretat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.8. Incidents de ciberseguretat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#381-que-es-un-atac-al-nuvol" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8.1. Què és un atac al núvol?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+<h1 id="unitat-3-el-nuvol"><strong>Unitat 3. El núvol</strong></h1>
+<h2 id="31-nuvol-definicio-i-nivells-cloud-computing"><strong>3.1. Núvol. Definició i nivells. Cloud computing</strong></h2>
+<h3 id="311-breu-historia-del-nuvol"><strong>3.1.1. Breu història del núvol</strong></h3>
+<p>Al llarg de la història de la informàtica, la idea de compartir recursos a distància ja va aparèixer a la dècada dels seixanta, però no va ser fins als anys 2000 que es va popularitzar el concepte de <em>cloud computing</em>. Grans empreses com Amazon, Google i Microsoft van començar a oferir serveis de servidors i emmagatzematge remots, fent possible que les organitzacions accedissin a recursos informàtics a gran escala sense haver d’invertir en infraestructures físiques pròpies.</p>
+<h3 id="312-cloud-computing"><strong>3.1.2. Cloud computing</strong></h3>
+<p>El <em>cloud computing</em> permet accedir a serveis informàtics (servidors, bases de dades, emmagatzematge, programari, etc.) sota demanda i a través d’Internet. El model de pagament segons l’ús (<em>pay-as-you-go</em>) facilita l’escalabilitat i l’optimització de costos, convertint el núvol en una eina fonamental per a la transformació digital de les empreses.</p>
+<h3 id="313-nivells"><strong>3.1.3. Nivells</strong></h3>
+<ol>
+<li><strong>IaaS (Infrastructure as a Service)</strong>: Proporciona infraestructura bàsica (màquines virtuals, xarxa, emmagatzematge).  </li>
+<li><strong>PaaS (Platform as a Service)</strong>: Ofereix una plataforma on desenvolupar, executar i gestionar aplicacions sense haver d’administrar la infraestructura subjacent.  </li>
+<li><strong>SaaS (Software as a Service)</strong>: Dóna accés a aplicacions de programari allotjades al núvol, sense necessitat d’instal·lar-les localment (p. ex. Google Workspace, Microsoft 365).</li>
+</ol>
+<h3 id="314-nuvol-public-privat-i-hibrid"><strong>3.1.4. Núvol públic, privat i híbrid</strong></h3>
+<ul>
+<li><strong>Núvol públic</strong>: El proveïdor (AWS, Azure, Google Cloud…) comparteix recursos entre diversos clients. És el model més flexible i rendible, però amb menys control directe sobre la infraestructura.  </li>
+<li><strong>Núvol privat</strong>: Infraestructura exclusiva per a una organització, pot estar al seu propi centre de dades o en un data center dedicat. Ofereix més control i seguretat, però menys escalabilitat.  </li>
+<li><strong>Núvol híbrid</strong>: Barreja de núvol públic i privat. S’utilitza el núvol privat per a dades crítiques i serveis interns, i el núvol públic per a càrregues de treball que requereixen escalabilitat.</li>
+</ul>
+<h3 id="315-on-semmagatzemen-les-dades"><strong>3.1.5. On s’emmagatzemen les dades?</strong></h3>
+<p>Les dades es guarden en <strong>centres de dades</strong> distribuïts globalment, amb sistemes de redundància i altes mesures de seguretat (física i lògica). Els proveïdors de núvol apliquen certificacions i estàndards internacionals per garantir la protecció i la disponibilitat de la informació.</p>
+<hr />
+<h2 id="32-possibilitats-de-treball-al-nuvol"><strong>3.2. Possibilitats de treball al núvol</strong></h2>
+<h3 id="321-treballar-al-nuvol-el-nou-paradigma-laboral"><strong>3.2.1. Treballar al núvol, el nou paradigma laboral</strong></h3>
+<p>El treball al núvol permet accedir a documents i aplicacions des de qualsevol lloc amb connexió a Internet. Això facilita:
+- <strong>Col·laboració en temps real</strong>: Diversos usuaris poden editar i revisar continguts simultàniament.<br />
+- <strong>Teletreball</strong>: Reducció de costos d’infraestructura i flexibilitat horària.<br />
+- <strong>Integració contínua</strong>: El programari s’actualitza automàticament i de forma centralitzada.</p>
+<hr />
+<h2 id="33-edge-computing-i-la-seva-relacio-amb-el-nuvol"><strong>3.3. Edge computing i la seva relació amb el núvol</strong></h2>
+<p>L’<em>edge computing</em> consisteix a processar les dades el més a prop possible de la seva font d’origen, en lloc d’enviar-ho tot al núvol. Aquest enfocament redueix la latència i l’ample de banda necessari, però els processos de gran escala encara poden delegar-se al núvol.</p>
+<h3 id="331-situacions-reals-on-implementar-la-edge-computing"><strong>3.3.1. Situacions reals on implementar la edge computing</strong></h3>
+<ul>
+<li><strong>Internet de les Coses (IoT)</strong>: Els dispositius poden analitzar i filtrar dades localment abans d’enviar-les a la plataforma central.  </li>
+<li><strong>Vehicles autònoms</strong>: Necessiten processar grans volums de dades (visió, sensors) en temps real.  </li>
+<li><strong>Aplicacions mèdiques</strong>: L’anàlisi local i immediata de les dades dels pacients pot ser clau per a diagnòstics urgents.</li>
+</ul>
+<hr />
+<h2 id="34-fog-i-mist-relacio-amb-el-nuvol"><strong>3.4. Fog i mist. Relació amb el núvol</strong></h2>
+<h3 id="fog-computing"><strong>Fog computing</strong></h3>
+<p>És un nivell intermedi entre l’<em>edge</em> i el núvol. Permet processar dades en passarel·les o nodes distribuïts abans d’enviar-les a un servidor central. Això millora l’escalabilitat i la capacitat de resposta, sense renunciar als avantatges del núvol.</p>
+<h3 id="mist-computing"><strong>Mist computing</strong></h3>
+<p>Reforça l’idea de l’<em>edge</em>, portant el processament encara més a prop dels dispositius finals. S’executa en microcontroladors o sistemes molt propers a l’origen de les dades, i s’utilitza en entorns on la latència i la immediatesa són crucials.</p>
+<h4 id="341-casos-daplicacio-de-la-fog-computing"><strong>3.4.1. Casos d’aplicació de la fog computing</strong></h4>
+<ul>
+<li><strong>Indústria 4.0</strong>: Producció intel·ligent i control de processos en temps real.  </li>
+<li><strong>Smart cities</strong>: Anàlisi de dades de trànsit o de serveis públics en servidors intermedis.</li>
+</ul>
+<h4 id="342-casos-daplicacio-de-la-mist-computing"><strong>3.4.2. Casos d’aplicació de la mist computing</strong></h4>
+<ul>
+<li><strong>Robòtica i drons</strong>: Necessiten respostes immediates sense dependre d’una connexió estable al núvol.  </li>
+<li><strong>Wearables mèdics</strong>: Mesuren constants vitals i processen dades en temps real abans de connectar-se a sistemes centrals.</li>
+</ul>
+<hr />
+<h2 id="35-avantatges-i-desavantatges-de-lus-dels-recursos-del-nuvol"><strong>3.5. Avantatges i desavantatges de l’ús dels recursos del núvol</strong></h2>
+<ul>
+<li><strong>Avantatges</strong>:  </li>
+<li>Reducció de costos en maquinari i manteniment.  </li>
+<li>Escalabilitat sota demanda.  </li>
+<li>Actualitzacions automàtiques i seguretat gestionada per proveïdors especialitzats.  </li>
+<li>Major col·laboració i accés ubiqüe.</li>
+</ul>
+<h3 id="351-desavantatges-de-lus-del-nuvol"><strong>3.5.1. Desavantatges de l’ús del núvol</strong></h3>
+<ul>
+<li>Dependència de la connexió a Internet.  </li>
+<li>Menys control sobre la ubicació física de les dades en el núvol públic.  </li>
+<li>Possible increment de costos a llarg termini depenent del volum d’ús.  </li>
+<li>Riscos de privacitat i ciberseguretat si no s’implementen bones pràctiques.</li>
+</ul>
+<hr />
+<h2 id="36-us-del-nuvol-i-la-rendibilitat-de-lempresa"><strong>3.6. Ús del núvol i la rendibilitat de l’empresa</strong></h2>
+<h3 id="361-plataformes-al-nuvol-per-a-empreses"><strong>3.6.1. Plataformes al núvol per a empreses</strong></h3>
+<ul>
+<li><strong>ERP al núvol</strong>: SAP, Oracle, Microsoft Dynamics 365.  </li>
+<li><strong>CRM al núvol</strong>: Salesforce, HubSpot, Zoho.  </li>
+<li><strong>Analítiques i Big Data</strong>: AWS, Azure, Google Cloud, Snowflake.  </li>
+<li><strong>Col·laboració</strong>: Google Workspace, Microsoft 365, Slack, Trello.</li>
+</ul>
+<p>Aquests serveis milloren l’eficiència i la competitivitat de les empreses, permetent escalar ràpidament i reduint temps de llançament de nous productes i serveis.</p>
+<hr />
+<h2 id="37-cloud-computing-com-a-tecnologia-que-impulsa-la-sostenibilitat"><strong>3.7. Cloud computing com a tecnologia que impulsa la sostenibilitat</strong></h2>
+<p>L’ús del núvol pot afavorir la sostenibilitat, ja que els grans centres de dades tendeixen a ser més eficients en l’ús de l’energia que diverses infraestructures disseminades.</p>
+<h3 id="371-nuvol-verd"><strong>3.7.1. Núvol verd</strong></h3>
+<ul>
+<li><strong>Ubicació estratègica</strong>: Centres de dades prop de fonts d’energia neta.  </li>
+<li><strong>Reducció de la petjada de carboni</strong>: Dissenys de refrigeració més eficients, ús d’energies renovables, etc.</li>
+</ul>
+<hr />
+<h2 id="38-incidents-de-ciberseguretat"><strong>3.8. Incidents de ciberseguretat</strong></h2>
+<p>La migració al núvol no està exempta de riscos. Els atacs cibernètics poden comprometre serveis empresarials crítics.</p>
+<h3 id="381-que-es-un-atac-al-nuvol"><strong>3.8.1. Què és un atac al núvol?</strong></h3>
+<p>Un atac que busca accedir il·lícitament a dades o serveis allotjats en una plataforma de <em>cloud computing</em>. Inclouen <strong>DDoS</strong>, <strong>ransomware</strong>, <strong>robatori de credencials</strong>, etc. Són essencials bones pràctiques de configuració, xifratge i monitorització contínua per minimitzar-los.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

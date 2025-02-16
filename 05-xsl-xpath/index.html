@@ -760,13 +760,13 @@
 <p><img src="assets/img/5-4xlst-processor-diagram.png" height="438" width="231"></p>
 <p>El seu ús implica necessàriament els següents passos:</p>
 <ol>
-<li>Tenir un document XML ben definit (sintàcticament).</li>
+<li>Tenir un document XML ben definit (sintàcticament). </li>
 <li>Validar el document mitjançant DTD o XML Schema (XSD).</li>
-<li>Crear un full d'estil XSL ben format (ha de seguir les regles XML).</li>
-<li>Vincular el document XML amb el full d'estil XSL.</li>
+<li>Crear un full d'estil XSL ben format (ha de seguir les regles XML). (veure apartat 5.4.1)</li>
+<li>Vincular el document XML amb el full d'estil XSL. (veure apartat 5.4.2)</li>
 <li>Executar la tranformació amb el processador XSLT.</li>
 </ol>
-<p>El processador XSLT va llegint el document XML, processant node a node el XML i aplicant les transformacions necessàries definidas en las <strong>templates rules</strong> del full XSLT. Los templates son un conjunto de reglas que se aplican cuando se encuentra alguno de los nodos especificados.</p>
+<p>El processador XSLT va llegint el document XML, processant node a node el XML i aplicant les transformacions necessàries definidas a les <strong>templates rules</strong> del full XSLT. Els <strong>templates</strong> són un conjunt de regles que s'apliquen quan es troben els nodes especificats. El llenguatge que s'utilitza per navegar pels nodes del document XML és XPath.</p>
 <p>Podem treballar amb processadors off-line amb editors com <strong>XML Copy Editor</strong>, <strong>Visual Studio Code</strong> (requereix d'un programa extern apart d'una extensió) processadors en línia com.</p>
 <p><strong>Processadors XSLT on-line:</strong></p>
 <ul>
@@ -829,13 +829,13 @@
 <span class="w">  </span><span class="nt">&lt;/persona&gt;</span>
 <span class="nt">&lt;/persones&gt;</span>
 </code></pre></div>
-<p>Dintre del document XSL afegirem un template o regles de plantilla per indicar quina salida volem a partir de l'entrada seleccionada. L'element <strong>xsl:template</strong> té dues parts:</p>
+<p>Dintre del document XSL afegirem un template o regles de plantilla per indicar quina sortida volem a partir de l'entrada seleccionada. L'element <strong>xsl:template</strong> té dues parts:</p>
 <ul>
 <li>
-<p>Un atribut match que conté un patró que coincideix amb un o més nodes del document XML. Aquest patró está especificat en el llenguatge XPath. En aquest cas el símbol "/" indica l'arrel del document XML. Fixeu-vos que la sintaxi s'assembla deliveradament amb les rutes d'arxius del sistema operatiu Unix/Linux.</p>
+<p>L'atribut <strong>match</strong> que conté un patró que coincideix amb un o més nodes del document XML. Aquest patró está especificat en el llenguatge XPath. En aquest cas el símbol "/" indica l'arrel del document XML. Fixeu-vos que la sintaxi s'assembla deliveradament amb les rutes d'arxius del sistema operatiu Unix/Linux.</p>
 </li>
 <li>
-<p>També conté una plantilla que s'executa quan coincideix el patró. Aquesta plantilla pot contenir part d'un document html, xml o caràcters de texte.</p>
+<p>Tot el contingut que escrivim dintre del template es transmet a la sortirda. Aquesta plantilla pot contenir part d'un document html, xml o caràcters de texte. Dintre d'aquest contingut també inclourem els elements xsl que permetran obtenir informació dels nodes XML i incoporar-la al contingut existent en la plantilla.</p>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=“1.0” encoding=“UTF-8”?&gt;</span>

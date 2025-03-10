@@ -16,7 +16,7 @@
     
     
       
-        <title>Tema 6. XQuery - M4 Llenguatges de marques</title>
+        <title>Tema 6. Xpath i XQuery - M4 Llenguatges de marques</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tema-6-xquery" class="md-skip">
+        <a href="#tema-6-xpath-i-xquery" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tema 6. XQuery
+              Tema 6. Xpath i XQuery
             
           </span>
         </div>
@@ -436,32 +436,68 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#61-introduccio" class="md-nav__link">
+  <a href="#61-xpath" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1. Introducció
+      6.1 XPath
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6.1. Introducció">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#611-predicats" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.1 Predicats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#612-funcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.2 Funcions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#613-altres-exemples-avancats" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.3 Altres exemples avançats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#621-introduccio-a-les-bases-de-dades-i-xquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.1 Introducció a les Bases de dades i XQuery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2.1 Introducció a les Bases de dades i XQuery">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#611-base-de-dades" class="md-nav__link">
+  <a href="#621-base-de-dades" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1.1. Base de dades
+      6.2.1. Base de dades
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#612-tipus-de-bbdd" class="md-nav__link">
+  <a href="#622-tipus-de-bbdd" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1.2. Tipus de BBDD
+      6.2.2. Tipus de BBDD
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6.1.2. Tipus de BBDD">
+    <nav class="md-nav" aria-label="6.2.2. Tipus de BBDD">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -483,15 +519,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bbdd-transaccional" class="md-nav__link">
-    <span class="md-ellipsis">
-      BBDD transaccional
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#bbdd-nosql" class="md-nav__link">
     <span class="md-ellipsis">
       BBDD noSQL
@@ -506,9 +533,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#612-sgdb" class="md-nav__link">
+  <a href="#623-sgdb" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1.2. SGDB
+      6.2.3. SGDB
     </span>
   </a>
   
@@ -529,23 +556,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#62-bases-de-dades-xml" class="md-nav__link">
+  <a href="#63-bases-de-dades-xml" class="md-nav__link">
     <span class="md-ellipsis">
-      6.2. Bases de dades XML
+      6.3. Bases de dades XML
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6.2. Bases de dades XML">
+    <nav class="md-nav" aria-label="6.3. Bases de dades XML">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#621-sistemes-demmagatzematge-de-la-informacio-mitjancant-xml" class="md-nav__link">
+  <a href="#631-sistemes-demmagatzematge-de-la-informacio-mitjancant-xml" class="md-nav__link">
     <span class="md-ellipsis">
-      6.2.1. Sistemes d'emmagatzematge de la informació mitjançant XML
+      6.3.1. Sistemes d'emmagatzematge de la informació mitjançant XML
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6.2.1. Sistemes d'emmagatzematge de la informació mitjançant XML">
+    <nav class="md-nav" aria-label="6.3.1. Sistemes d'emmagatzematge de la informació mitjançant XML">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -586,27 +613,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#63-sql-i-xquery" class="md-nav__link">
+  <a href="#64-sql-i-xquery" class="md-nav__link">
     <span class="md-ellipsis">
-      6.3. SQL i XQuery
+      6.4. SQL i XQuery
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#64-xquery" class="md-nav__link">
+  <a href="#65-xquery" class="md-nav__link">
     <span class="md-ellipsis">
-      6.4. XQuery
+      6.5. XQuery
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#65-expressions-flwor" class="md-nav__link">
+  <a href="#66-expressions-flwor" class="md-nav__link">
     <span class="md-ellipsis">
-      6.5. Expressions FLWOR
+      6.6. Expressions FLWOR
     </span>
   </a>
   
@@ -622,55 +649,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#66-actualitzacio-de-dades-amb-xquery" class="md-nav__link">
+  <a href="#67-actualitzacio-de-dades-amb-xquery" class="md-nav__link">
     <span class="md-ellipsis">
-      6.6. Actualització de dades amb XQuery
+      6.7. Actualització de dades amb XQuery
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6.6. Actualització de dades amb XQuery">
+    <nav class="md-nav" aria-label="6.7. Actualització de dades amb XQuery">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-insercio-dun-element" class="md-nav__link">
+  <a href="#671-insercio-dun-element" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1 Insercio d'un element
+      6.7.1 Insercio d'un element
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#62-esborrat-dun-element" class="md-nav__link">
+  <a href="#672-esborrat-dun-element" class="md-nav__link">
     <span class="md-ellipsis">
-      6.2 Esborrat d'un element
+      6.7.2 Esborrat d'un element
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#63-modificar-un-element" class="md-nav__link">
+  <a href="#673-modificar-un-element" class="md-nav__link">
     <span class="md-ellipsis">
-      6.3 Modificar un element
+      6.7.3 Modificar un element
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#64-restriccions-per-a-la-modificacio-massiva" class="md-nav__link">
+  <a href="#674-restriccions-per-a-la-modificacio-massiva" class="md-nav__link">
     <span class="md-ellipsis">
-      6.4 Restriccions per a la modificació massiva.
+      6.7.4 Restriccions per a la modificació massiva.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#65-enllacos-dinteres" class="md-nav__link">
+  <a href="#68-enllacos-dinteres" class="md-nav__link">
     <span class="md-ellipsis">
-      6.5 Enllaços d'interés
+      6.8 Enllaços d'interés
     </span>
   </a>
   
@@ -700,25 +727,183 @@
                   
 
 
-<h1 id="tema-6-xquery">Tema 6. XQuery</h1>
-<h2 id="61-introduccio">6.1. Introducció</h2>
-<h3 id="611-base-de-dades"><strong>6.1.1. Base de dades</strong></h3>
+<h1 id="tema-6-xpath-i-xquery">Tema 6. Xpath i XQuery</h1>
+<h2 id="61-xpath">6.1 XPath</h2>
+<p>XPath és un llenguatge no XML que permet recórrer i seleccionar els nodes d'un document XML.
+On s'utilitza XPath? 
+ - XPath es fa servir a XSLT dintre de l'atribut <strong>select</strong> de les plantilles XSL
+ - És un subconjunt de XQuery. XQuery inclou XPath i afegeix algunes sentències semblants a les d'alguns llenguatges de programació: let, for...</p>
+<p>Farem servir el següent exemple per indicar els nodes seleccionats amb XPath:</p>
+<p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1250&quot;?&gt;</span>
+<span class="nt">&lt;classe&gt;</span>
+<span class="w">  </span><span class="nt">&lt;estudiant</span><span class="w"> </span><span class="na">id =</span><span class="w"> </span><span class="s">&quot;393&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;nom&gt;</span>Xavier<span class="nt">&lt;/nom&gt;</span>
+<span class="w">  </span><span class="nt">&lt;cognoms&gt;</span>Pi<span class="w"> </span>Fuster<span class="nt">&lt;/cognoms&gt;</span>
+<span class="w">  </span><span class="nt">&lt;nota&gt;</span>85<span class="nt">&lt;/nota&gt;</span>
+<span class="w">  </span><span class="nt">&lt;aficions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficio&gt;</span>Lectura<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aficio&gt;</span>Cinema<span class="nt">&lt;/aficio&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/aficions&gt;</span>
+<span class="w">  </span><span class="nt">&lt;naixement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dia&gt;</span>3<span class="nt">&lt;/dia&gt;</span>
+<span class="w">    </span><span class="nt">&lt;mes&gt;</span>5<span class="nt">&lt;/mes&gt;</span>
+<span class="w">    </span><span class="nt">&lt;any&gt;</span>1990<span class="nt">&lt;/any&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/naixement&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/estudiant&gt;</span>
+<span class="w">  </span><span class="cm">&lt;!-- Més estudiants --&gt;</span>
+<span class="nt">&lt;/classe&gt;</span>
+</code></pre></div>
+* <a href="/assets/xml%20samples/estudiants.xml">Descarregar estudiants.xml</a></p>
+<p>A XPath hi ha 7 tipus de nodes:</p>
+<ul>
+<li>
+<p>El <strong>node document</strong> o <strong>node arrel</strong> (un per document). A XPath el node arrel conté tot el document, no només l'arrel del document XML. El node arrel conté almenys un fill, l'arrel del document XML. També conté els comentaris del document XML, les instruccions de processament (PI)-comencen per &lt;?-. El node arrel s'especifica mitjantçant el simbol /.</p>
+</li>
+<li>
+<p>Els <strong>nodes element</strong>. Tots els elements del document XML es poden seleccionar amb XPath. Per seleccionar el contingut dels elements &lt;nom&gt;. a xslt fem servir <xsl:value-of select="nom">. El valor de l'element és la concatenació del texte de tots els elements nom que hi ha al document i tots els seus fills.</p>
+</li>
+<li>
+<p><strong>nodes atribut</strong>. Tot element atribut té un element pare, però no succeeix a l'inrevés. Els elements fills d'un node son el texte, els subelements i els comentaris però no els atributs. Per seleccionar un atribut, fem servir l'operador @. Per exemple, per seleccionar l'atribut id de l'element estudiant, l'expressió XPath seria /classe/estudiant/@id</p>
+</li>
+<li>
+<p><strong>nodes de text</strong>. Contenen el texte d'un element XML. Les entitats es resolen abans d'enviar el node a XPath.</p>
+</li>
+<li>
+<p><strong>nodes comentaris</strong>. Contenen tot el texte entre els caracters &lt;!-- i --&gt;.</p>
+</li>
+<li>
+<p><strong>nodes de processament d'instruccions (PI)</strong>. Contenen tot el texte entre els caracters &lt;? ?&gt; (sense incloure ?&gt;).</p>
+</li>
+<li>
+<p><strong>nodes espai de noms</strong>. No es fan servir gairebé mai als fulls XSLT. Existeixen per a benefici del processador XLST.</p>
+</li>
+</ul>
+<p>Un dels usos més comuns de XPath és crear rutes de localització. Per exemple, el patró <strong>/classe/estudiant/aficions</strong> descriu l'ubicació dintre del XML que volem processar.</p>
+<p>Les rutes poden ser absolutes o relatives (si ja hem seleccionat una prèviament). Les rutes absolutes comencen pel simbol /.</p>
+<h2 id="611-predicats">6.1.1 Predicats</h2>
+<p>Els predicats són filtres que restringeixen els nodes seleccionats per una expressió XPath. Les condicions s'expressen amb claudàtors. Alguns exemples:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Expressió</th>
+<th style="text-align: left;">Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nom="Daniel"]</td>
+<td style="text-align: left;">Retorna totes les dades de l’estudiant de nom Daniel en format XML.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nom="Daniel"]/naixement</td>
+<td style="text-align: left;">Retorna la data de naixement de l’estudiant de nom Daniel en format XML.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[@id&lt;500]</td>
+<td style="text-align: left;">Retorna les dades en format XML de tots els estudiants amb id més petit que 500.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[aficions/aficio="Lectura"]/nom</td>
+<td style="text-align: left;">Retorna en format XML els noms de tots els estudiants aficionats a la lectura.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[aficions/aficio="Lectura"]/nom/string()</td>
+<td style="text-align: left;">Retorna els noms (sense el format XML) de tots els estudiants aficionats a la lectura.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nota&gt;90 or @id&lt;400]/nom/string()</td>
+<td style="text-align: left;">Retorna el nom (sense format XML) de tots els alumnes amb una nota major a 90 o un identificador inferior a 400.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[nom="Daniel" or nota&gt;90]/nom/string()</td>
+<td style="text-align: left;">Retorna el nom (sense format XML) de tots els alumnes anomenats Daniel o amb una nota superior a 90.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant[naixement/mes=5 and naixement/any&lt;1990]/nom/string()</td>
+<td style="text-align: left;">Retorna el nom (sense format XML) de tots els alumnes nascuts el mes de maig i abans de 1990</td>
+</tr>
+</tbody>
+</table>
+<h2 id="612-funcions">6.1.2 Funcions</h2>
+<p>Conjuntament amb els predicats es poden utilitzar funcions. Per exemple:</p>
+<ul>
+<li>
+<p>count(x): compta el nombre d’elements d’x; x és un camí XPath absolut o relatiu. En el segon cas, sol indicar un element o un atribut d’un node.</p>
+</li>
+<li>
+<p>string(): passen a cadena de caràcters l’element o atribut; es posa a continuació de l’últim element de l’expressió XPath.</p>
+</li>
+</ul>
+<p>Exemples d’utilització d’aquestes funcions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Expressió</th>
+<th style="text-align: left;">Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">count(/classe/estudiant)</td>
+<td style="text-align: left;">A l’exemple, retorna 3, ja que només hi ha 3 estudiants.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant/aficions/count(aficio)</td>
+<td style="text-align: left;">A l’exemple retorna 2 3 2, que és el nombre d’aficions de cadascun dels estudiants.</td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant/nom/string()</td>
+<td style="text-align: left;">A l’exemple retorna Daniel Vanessa Xavier que són els noms de cadascun dels estudiants (sense /string() retornava el mateix, però cada nom anava delimitat per <nom>... </nom></td>
+</tr>
+<tr>
+<td style="text-align: left;">/classe/estudiant/@id/string()</td>
+<td style="text-align: left;">A l’exemple retorna 393 493 593, que són els identificadors de cadascun dels estudiants (sense /string() retornava el mateix, però entre comets i precedit del text id= )</td>
+</tr>
+</tbody>
+</table>
+<h2 id="613-altres-exemples-avancats">6.1.3 Altres exemples avançats</h2>
+<p>XPath permet navegar per l'arbre del document XML (per exemple a partir d'un node podem obtenir l'element superior) i seleccionar múltiples elements a la vegada. Aquí tenim alguns exemples d'operadors especials que es poden utilitzar a XPath.</p>
+<ul>
+<li>Doble barra (//)</li>
+</ul>
+<p>Selecciona nodes que coincideixen independentment de la seva posició en el document XML. La següent expressió selecciona tots els nodes <code>&lt;aficio&gt;</code> del document:</p>
+<p><code>//aficio</code></p>
+<ul>
+<li>Asterisc (*)</li>
+</ul>
+<p>Selecciona qualsevol element. Per exemple, per selecciona tots els fills directes de l'element estudiant, ho indicariem amb:</p>
+<p><code>/classe/estudiant/*</code></p>
+<ul>
+<li>Punt (.)</li>
+</ul>
+<p>Selecciona el nom dels estudiants amb nota superior a 90, però només si el nom és exactament "Xavier".</p>
+<p><code>/classe/estudiant[nota&gt;90]/nom[.="Xavier"]</code></p>
+<ul>
+<li>Dos punts (..):</li>
+</ul>
+<p>Selecciona els nodes avis (estudiant) de totes les aficions que són "Cinema".</p>
+<p><code>//aficio[.="Cinema"]/../..</code></p>
+<ul>
+<li>Combinació avançada amb @*:</li>
+</ul>
+<p>Selecciona tots els atributs d'un node.</p>
+<p><code>/classe/estudiant[@*]</code></p>
+<h2 id="621-introduccio-a-les-bases-de-dades-i-xquery">6.2.1 Introducció a les Bases de dades i XQuery</h2>
+<h3 id="621-base-de-dades"><strong>6.2.1. Base de dades</strong></h3>
 <p>Una base de dades (BBDD) és una eina que permet organitzar les dades que tenen algun tipus de relació entre sí, típicament emmagatzemada a un ordinador. Una base de dades és controla normalment mitjantçant un sistema gestor de base de dades (SGDB) o DBMS en anglés.</p>
-<h3 id="612-tipus-de-bbdd"><strong>6.1.2. Tipus de BBDD</strong></h3>
+<h3 id="622-tipus-de-bbdd"><strong>6.2.2. Tipus de BBDD</strong></h3>
 <p>Hi ha molts tipus de BBDD segons el model lògic on es descriuen les dades. </p>
 <h4 id="bbdd-jerarquica"><strong>BBDD jeràrquica</strong></h4>
 <p>Utilitza una estructura en forma d'arbre (arrel, nodes pares/fills, nodes fulla). Són eficients per a la cerca de dades, però la seva estructura és més dificil de modificar. Permet la redundància de les dades</p>
 <h4 id="bbdd-relacional"><strong>BBDD relacional</strong></h4>
 <p>En aquest model no existeix jerarquia, les dades s'emmagatzemen en tuples (una fila) que formen taules (conjunt de tuples). Cada taula representa un objecte del mon real que es vol representar en un ordinador (contenen dades amb la mateixa informació semàntica). Les taules es poden relacionar entre sí amb taules intermèdies (claus primàries i claus forànees), solucionant el problema de la redundància. Fan servir el llenguatge SQL per a fer consultes.</p>
 <p>Alguns exemples de BBDD relacionals a nivell comercial són Oracle (primer SBDG comercial) o Microsoft SQL Server. En l'àmbit Open Source tenim postgreSQL o mariaDB/mySQL.</p>
-<h4 id="bbdd-transaccional"><strong>BBDD transaccional</strong></h4>
-<p>Poc comuns. Es fan servir a les entitats bancàries per a la transferència de diners. Permeten enviar informació a gran velocitat.</p>
 <h4 id="bbdd-nosql"><strong>BBDD noSQL</strong></h4>
 <p>Són bases de dades no relacionals. Algunes característiques:</p>
 <ul>
 <li>No fan servir el lleguatge SQL, les dades s'emmagatzemen en parells clau-valor. Els registres s'emmagatzemen com a documents (típicament JSON). Un exemple seria el sistema mongoDB.</li>
 </ul>
-<h3 id="612-sgdb"><strong>6.1.2. SGDB</strong></h3>
+<h3 id="623-sgdb"><strong>6.2.3. SGDB</strong></h3>
 <p>L'ús dels SGBD és molt comú i té alguns avantatges respecte a l'ús de fitxers:</p>
 <ul>
 <li>Evita la redundància de dades.</li>
@@ -741,11 +926,11 @@
 <p>La majoria de BBDD actuals estan basades en el model de dades E-R i totes les empreses disponen d'alguna BBDD on emmagatzemen informació del seu negoci. </p>
 <p>Anomenem B2B (Bussiness to Bussiness) a les transaccions comercials entre empreses (proveïdors, distribuidors), que implica la compartició d'informació entre elles. Aquesta compartició de dades suposa un probleme doncs cada empresa utilitza SGBD diferents. XML permet definir una representació d'informació que les empreses desitjen compartir. El SGDB haurà d'incorporar la possibilitat d'exportar o importar dades amb XML.</p>
 <p>Per exemple, les empreses amb ERPs com SAP fan servir el document IDoc (Intermediate Document) que permet tranferir informació entre bases de dades. Un IDoc pot representar una factura, una comanda de vendes, una entrada al magatzem, una entrega, etc.</p>
-<h2 id="62-bases-de-dades-xml">6.2. Bases de dades XML</h2>
+<h2 id="63-bases-de-dades-xml">6.3. Bases de dades XML</h2>
 <p>Un document XML és pot considerar una base de dades (BBDD), doncs la informació està guardada de manera estructurada, és a dir organitzada o ordenada dintre del document. Podem dir que una base de dades XML (document) permet emmagatzemar dades en format XML (format estructurat).</p>
 <p>Les operacions que normalment es poden fer amb una BBDD com inserir, modificar o esborrar -<a href="https://es.wikipedia.org/wiki/CRUD" title="Crud">operacions CRUD</a>- es realitzen amb els llenguatges XPath i XQuery.</p>
 <p>Les bases de dades XML són una bona solució si la informació està estructurada de forma jeràrquica i necessitem un accés lleuger a la BBDD. Per actualitzar una columna a XML hem d'actualitzar tot el document XML. Per tant, si les dades són actualitzades molt freqüentment i els documents XML tenen moltes files (o registres) pot ser més eficients guardar les dades en una BBDD relacional. Per altra banda, si actualitzem documents petits i pocs documents al mateix temps, XML també pot ser eficient.</p>
-<h3 id="621-sistemes-demmagatzematge-de-la-informacio-mitjancant-xml">6.2.1. Sistemes d'emmagatzematge de la informació mitjançant XML</h3>
+<h3 id="631-sistemes-demmagatzematge-de-la-informacio-mitjancant-xml">6.3.1. Sistemes d'emmagatzematge de la informació mitjançant XML</h3>
 <p>Existeixen tres formes d'emmagatzemament de la informació mitjançant XML:</p>
 <ul>
 <li>Fitxers de text</li>
@@ -824,7 +1009,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="63-sql-i-xquery">6.3. SQL i XQuery</h2>
+<h2 id="64-sql-i-xquery">6.4. SQL i XQuery</h2>
 <p>SQL (Structured Query Language) és un llenguatge declaratiu. A diferència dels llenguatges imperatius, li indiquem les dades que volem, no com obtenir-les físicament del disc. SQL serveix per accedir i manipular BBDD relacionals:</p>
 <p>Concretament, les operacions CRUD són:</p>
 <ul>
@@ -863,7 +1048,7 @@
 <li>XQuery recorre dades jeràrquiques i SQL dades relacionals.</li>
 <li>SQL permet eliminar i modificar dades, XQuery té dificultat a l'hora d'esborrar o editar dades.</li>
 </ul>
-<h2 id="64-xquery">6.4. XQuery</h2>
+<h2 id="65-xquery">6.5. XQuery</h2>
 <p>Algunes consideracions inicials:</p>
 <ul>
 <li>És sensible a majúscules i minúscules com XML.</li>
@@ -903,7 +1088,7 @@ Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">[./</span><span class="nt">artist</span><span class="w"> </span><span class="ow">eq</span><span class="w"> </span><span class="s2">&quot;Bob Dylan&quot;</span><span class="p">]</span>
 </code></pre></div>
 <p><a href="https://www.w3schools.com/xml/xpath_operators.asp">Operadors XPath (w3schools)</a></p>
-<h2 id="65-expressions-flwor">6.5. Expressions FLWOR</h2>
+<h2 id="66-expressions-flwor">6.6. Expressions FLWOR</h2>
 <p>FLWOR és un acronim de "For, Let, Where, Order by, Return". És una més potent que les vistes amb XPath per seleccionar nodes.</p>
 <ul>
 <li><strong>For</strong> - selecciona una seqüència de nodes, guardant-los en una variable.</li>
@@ -1015,10 +1200,10 @@ o
 posem</p>
 <div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nt">&lt;li&gt;</span><span class="p">{</span><span class="nf">data</span><span class="p">(</span><span class="nv">$</span><span class="n">x</span><span class="p">)}</span><span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
-<h2 id="66-actualitzacio-de-dades-amb-xquery">6.6. Actualització de dades amb XQuery</h2>
+<h2 id="67-actualitzacio-de-dades-amb-xquery">6.7. Actualització de dades amb XQuery</h2>
 <p>Encara que XQuery permet seleccionar dades, la versió XQuery 1.0 no té funcions per insertar, esborrar o actualitzar dades d'un XML. Patrick Lehti va desenvolupar un sistema per possibilitar aquestes funcions, encara que el consorci W3C, posteriorment, va proposar l'extensió XQUF (XQuery Update Facilites) que ja està implementada a partir de la versió 7.1 de BaseX. La versió que farem servir de BaseX és la 9.0.1 (2022), així que farem servir la implementació XQUF.</p>
 <p>En els exemples que mostrarem a continuació <strong>element</strong> és un fragment XML i <strong>ubicació</strong> és una expressió XPath.</p>
-<h3 id="61-insercio-dun-element">6.1 Insercio d'un element</h3>
+<h3 id="671-insercio-dun-element">6.7.1 Insercio d'un element</h3>
 <p>La sintaxi general amb XQUF és:</p>
 <p><strong>insert node</strong> element {<strong>into</strong> | <strong>as first into</strong> | <strong>as last into</strong> | <strong>before</strong> | <strong>after</strong>} ubicació</p>
 <p>S'ha d'especificar un dels elements que van dintre de les claus:</p>
@@ -1032,7 +1217,7 @@ posem</p>
 <p><div class="highlight"><pre><span></span><code><span class="nt">insert</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="o">&lt;</span><span class="nt">aficio</span><span class="o">&gt;</span><span class="nt">Gastronomia</span><span class="o">&lt;</span><span class="p">/</span><span class="nt">aficio</span><span class="o">&gt;</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="err">last</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">aficions</span>
 </code></pre></div>
 L'atribut id pot anar o sense cometes</p>
-<h3 id="62-esborrat-dun-element">6.2 Esborrat d'un element</h3>
+<h3 id="672-esborrat-dun-element">6.7.2 Esborrat d'un element</h3>
 <p>La sintaxi amb XQUF és:</p>
 <p><strong>delete node</strong> ubicacio</p>
 <p>Exemple:</p>
@@ -1045,7 +1230,7 @@ El punt fa referència al node actual, és a dir a una afició.</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">aficions</span><span class="p">/</span><span class="nt">aficio</span><span class="p">[.</span><span class="o">=</span><span class="s2">&quot;Lectura&quot;</span><span class="p">]</span><span class="w"> </span>
 <span class="k">return</span><span class="w"> </span><span class="nt">delete</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span>
 </code></pre></div>
-<h3 id="63-modificar-un-element">6.3 Modificar un element</h3>
+<h3 id="673-modificar-un-element">6.7.3 Modificar un element</h3>
 <p>En el cas de modificació, podem modificar l'element sencer o el contingut de l'element especificat.</p>
 <p>La sintaxi amb XQUF per modificar l'element:</p>
 <p><strong>replace node</strong> ubicació <strong>with</strong> element</p>
@@ -1061,7 +1246,7 @@ Per altra banda, la sintaxi per modificar el valor de l'element:</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">/</span><span class="nt">classe</span><span class="p">/</span><span class="nt">estudiant</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s2">&quot;393&quot;</span><span class="p">]/</span><span class="nt">nom</span><span class="w"> </span>
 <span class="k">return</span><span class="w"> </span><span class="nt">replace</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nt">&lt;nom&gt;</span><span class="l">Dani</span><span class="nt">&lt;/nom&gt;</span>
 </code></pre></div>
-<h3 id="64-restriccions-per-a-la-modificacio-massiva">6.4 Restriccions per a la modificació massiva.</h3>
+<h3 id="674-restriccions-per-a-la-modificacio-massiva">6.7.4 Restriccions per a la modificació massiva.</h3>
 <p>Als apartats anteriors, el paràmetre ubicacio no sempre pot fer referència a més d'un element. A continuació es mostren les restriccions per a cada sentencia.</p>
 <table>
 <thead>
@@ -1093,7 +1278,7 @@ Per altra banda, la sintaxi per modificar el valor de l'element:</p>
 <p>Exemple: Substituir l'afició "Esport" per "Basquet" a tots els alumnes:</p>
 <p>for $a in /classe/estudiant/aficions/aficio[.="Esport"] 
 return replace node $a with <aficio>Basquet</aficio></p>
-<h3 id="65-enllacos-dinteres">6.5 Enllaços d'interés</h3>
+<h3 id="68-enllacos-dinteres">6.8 Enllaços d'interés</h3>
 <p><a href="https://docs.basex.org/wiki/XQuery_Update">XQuery Update - BaseX Documentation</a></p>
 <p>Aquest document està llicenciat sota els termes de la <a href="../LICENSE/">Licencia Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
 

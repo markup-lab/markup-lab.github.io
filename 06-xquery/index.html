@@ -731,8 +731,8 @@
 <h2 id="61-xpath">6.1 XPath</h2>
 <p>XPath és un llenguatge no XML que permet recórrer i seleccionar els nodes d'un document XML.
 On s'utilitza XPath? 
- - XPath es fa servir a XSLT dintre de l'atribut <strong>select</strong> de les plantilles XSL
- - És un subconjunt de XQuery. XQuery inclou XPath i afegeix algunes sentències semblants a les d'alguns llenguatges de programació: let, for...</p>
+- A XSLT, dintre de l'atribut <strong>select</strong> de les plantilles XSL.
+- XQuery inclou XPath i afegeix algunes sentències semblants a les d'alguns llenguatges de programació: let, for...</p>
 <p>Farem servir el següent exemple per indicar els nodes seleccionats amb XPath:</p>
 <p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1250&quot;?&gt;</span>
 <span class="nt">&lt;classe&gt;</span>
@@ -754,7 +754,7 @@ On s'utilitza XPath?
 <span class="nt">&lt;/classe&gt;</span>
 </code></pre></div>
 * <a href="/assets/xml%20samples/estudiants.xml">Descarregar estudiants.xml</a></p>
-<p>A XPath hi ha 7 tipus de nodes:</p>
+<p>XPath fa la següent classificació de 7 tipus de nodes:</p>
 <ul>
 <li>
 <p>El <strong>node document</strong> o <strong>node arrel</strong> (un per document). A XPath el node arrel conté tot el document, no només l'arrel del document XML. El node arrel conté almenys un fill, l'arrel del document XML. També conté els comentaris del document XML, les instruccions de processament (PI)-comencen per &lt;?-. El node arrel s'especifica mitjantçant el simbol /.</p>
@@ -779,7 +779,7 @@ On s'utilitza XPath?
 </li>
 </ul>
 <p>Un dels usos més comuns de XPath és crear rutes de localització. Per exemple, el patró <strong>/classe/estudiant/aficions</strong> descriu l'ubicació dintre del XML que volem processar.</p>
-<p>Les rutes poden ser absolutes o relatives (si ja hem seleccionat una prèviament). Les rutes absolutes comencen pel simbol /.</p>
+<p>Les rutes poden ser absolutes o relatives (si ja hem seleccionat un node prèviament). Les rutes absolutes comencen pel simbol /.</p>
 <h2 id="611-predicats">6.1.1 Predicats</h2>
 <p>Els predicats són filtres que restringeixen els nodes seleccionats per una expressió XPath. Les condicions s'expressen amb claudàtors. Alguns exemples:</p>
 <table>
@@ -827,12 +827,8 @@ On s'utilitza XPath?
 <h2 id="612-funcions">6.1.2 Funcions</h2>
 <p>Conjuntament amb els predicats es poden utilitzar funcions. Per exemple:</p>
 <ul>
-<li>
-<p>count(x): compta el nombre d’elements d’x; x és un camí XPath absolut o relatiu. En el segon cas, sol indicar un element o un atribut d’un node.</p>
-</li>
-<li>
-<p>string(): passen a cadena de caràcters l’element o atribut; es posa a continuació de l’últim element de l’expressió XPath.</p>
-</li>
+<li>count(x): compta el nombre d’elements d’x; x és un camí XPath absolut o relatiu. En el segon cas, sol indicar un element o un atribut d’un node.</li>
+<li>string(): passen a cadena de caràcters l’element o atribut; es posa a continuació de l’últim element de l’expressió XPath.</li>
 </ul>
 <p>Exemples d’utilització d’aquestes funcions:</p>
 <table>
@@ -862,7 +858,7 @@ On s'utilitza XPath?
 </tbody>
 </table>
 <h2 id="613-altres-exemples-avancats">6.1.3 Altres exemples avançats</h2>
-<p>XPath permet navegar per l'arbre del document XML (per exemple a partir d'un node podem obtenir l'element superior) i seleccionar múltiples elements a la vegada. Aquí tenim alguns exemples d'operadors especials que es poden utilitzar a XPath.</p>
+<p>XPath permet navegar per l'arbre del document XML. De la mateixa manera que podem navegar pels directoris del sistema d'arxius de Linux, també podem, a partir d'un node, obtenir l'element superior. XPath també seleccionar múltiples elements a la vegada (*). Exemples d'operadors especials que es poden utilitzar a XPath:</p>
 <ul>
 <li>Doble barra (//)</li>
 </ul>
@@ -1059,7 +1055,7 @@ On s'utilitza XPath?
 </ul>
 <p><strong>Extracció de dades</strong>:</p>
 <ul>
-<li>Per extreure totes les dades d'un document: </li>
+<li>Per extreure totes les dades d'un document utilitzarem la funció <strong>doc()</strong>: </li>
 </ul>
 <p>Local:
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;ruta_a_l’arxiu/nom_arxiu.xml&quot;</span><span class="p">)</span>
@@ -1076,29 +1072,31 @@ URL:
 Exemple: per accedir a TOTS els cd’s del document catalog.xml:
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)/</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span>
 </code></pre></div></p>
-<p><strong>Comparació</strong></p>
-<p>Mitjançant operadors de comparació en els elements i els
-arguments d’un arbre. Utilitzem XPath.</p>
+<p><strong>Filtres</strong></p>
+<p>Mitjançant operadors de comparació podem aplicar filtres a la ruta XPath.</p>
 <p><div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;document.xml&quot;</span><span class="p">)//</span><span class="nt">element_de_cerca</span><span class="p">[</span><span class="nt">element_filtre</span><span class="o">=</span><span class="s2">&quot;argument&quot;</span><span class="p">]</span>
 </code></pre></div>
 Exemple:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="w"> </span><span class="p">[</span><span class="nt">price</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">]</span>
 </code></pre></div>
-<p><strong>Comparació de strings</strong></p>
+<p><strong>Comparació de cadenes</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">[./</span><span class="nt">artist</span><span class="w"> </span><span class="ow">eq</span><span class="w"> </span><span class="s2">&quot;Bob Dylan&quot;</span><span class="p">]</span>
 </code></pre></div>
 <p><a href="https://www.w3schools.com/xml/xpath_operators.asp">Operadors XPath (w3schools)</a></p>
 <h2 id="66-expressions-flwor">6.6. Expressions FLWOR</h2>
-<p>FLWOR és un acronim de "For, Let, Where, Order by, Return". És una més potent que les vistes amb XPath per seleccionar nodes.</p>
+<p>FLWOR és un acronim de "For, Let, Where, Order by, Return". És una eina més potent que XPath per seleccionar nodes i processar-los.</p>
 <ul>
 <li><strong>For</strong> - selecciona una seqüència de nodes, guardant-los en una variable.</li>
 <li><strong>Let</strong> - Uneix una seqüència a una variable, és opcional.</li>
-<li><strong>Where</strong> - Filtra els nodes guardats a la variable del <em>for</em> o del <em>let</em></li>
-<li><strong>Order by</strong> - Ordena els nodes</li>
-<li><strong>Return</strong> - Que retorna (s'evalua una vegada per cada node)</li>
+<li><strong>Where</strong> - Filtra els nodes guardats a la variable del <em>for</em> o del <em>let</em>.</li>
+<li><strong>Order by</strong> - Ordena els nodes guardats a la variable del <em>for</em> o del <em>let</em>.</li>
+<li><strong>Return</strong> - Que retorna (s'evalua una vegada per cada node).</li>
 </ul>
-<p>Utilitza variables amb el simbol dòlar ($).</p>
-<p>Aquestes dues expressions XPath i FLWOR són equivalents:</p>
+<p>Algunes consideracions:</p>
+<ul>
+<li>XQuery no té la capacitat nativa per actualitzar dades (només consulta). Per actualitzar dades (insert, update i delete) s'utilitza l'extensió XQUF que ja està incorporada a Basex i veurem més endavant.</li>
+<li>Les expressions XPath es poden convertir a XQuery. Aquestes dues expressions XPath i FLWOR són equivalents:</li>
+</ul>
 <p>XPath</p>
 <p><div class="highlight"><pre><span></span><code><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">]/</span><span class="nt">artist</span>
 </code></pre></div>
@@ -1107,6 +1105,10 @@ FLWOR</p>
 <span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">price</span><span class="o">&lt;=</span><span class="mi">10</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span>
 </code></pre></div>
+<ul>
+<li>Amb Xquery es declaren variables amb el simbol dòlar ($).</li>
+<li>Es pot fer una traducció d'una sentència Xquery a SQL. Exemple:</li>
+</ul>
 <p>Comparació SQL i FLWOR</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="p">...</span><span class="n">columnes</span><span class="p">...</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="p">...</span><span class="n">taules</span><span class="p">...</span><span class="w">                 </span><span class="o">===&gt;</span>
@@ -1121,21 +1123,35 @@ FLWOR</p>
 <span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="p">..</span><span class="o">.</span><span class="err">condició_nodes</span><span class="w"> </span><span class="err">(amb</span><span class="w"> </span><span class="nv">$</span><span class="n">var</span><span class="p">)</span><span class="o">...</span>
 </code></pre></div>
 <p><strong>FOR</strong></p>
-<p>En aquest cas es mostra els artistes que tenen un cd amb un preu
-superior a 10 i més petit a 15.</p>
+<p>La sentència for va iterant per cada un dels nodes seleccionats amb l'expressió XPath i els guarda a la variable definida ($cd). En aquest cas es mostra els artistes que tenen un cd amb un preu superior a 10 i més petit a 15.</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">”</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span>
 <span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&lt;</span><span class="mi">15</span><span class="p">]</span><span class="err">“</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span>
 </code></pre></div>
 <p><strong>LET</strong></p>
-<p>Podem assignar una nova variable, per mostrar els resultats.</p>
+<p>Let permet crear una variable per assignar valors que es poden utilitzar en una altra consulta. </p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">”</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span>
 <span class="k">let</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span><span class="o">:=</span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span>
 <span class="k">where</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">price</span><span class="o">&lt;</span><span class="mi">10</span>
 <span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">n</span>
 </code></pre></div>
+<p><strong>WHERE</strong></p>
+<p>Where permet filtrar els resultats abans de mostrar-los amb la sentència return. És equivalent al filtre que s'utilitza dintre dels claudàtors a les expressions XPath. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="p">..</span><span class="o">.</span>
+<span class="k">where</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">[</span><span class="nt">price</span><span class="o">&lt;</span><span class="mi">15</span><span class="p">]</span>
+<span class="o">....</span>
+</code></pre></div>
+<p>El filtre representa una expressió booleana que ha de donar com a resultat un valor booleà (vertader o fals). És a dir, tota l'expressió s'ha d'avaluar i si es compleix la condició (vertader), aquest resultat es mostra amb la sentència <strong>return</strong>.</p>
+<p><strong>ORDER BY</strong></p>
+<p>És equivalent a la sentència ORDER BY a SQL. Permet ordenar els resultats una vegada filtrats amb la sentència <strong>where</strong>. En el següent exemple ordenem els artistes per nom.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">order</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="nv">$</span><span class="n">variable</span><span class="w"> </span><span class="p">[</span><span class="nt">ascending</span><span class="p">,</span><span class="w"> </span><span class="nt">descending</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">/</span><span class="nt">artist</span>
+<span class="w">  </span><span class="k">order by</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="k">descending</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span>
+</code></pre></div>
 <p><strong>RETURN</strong>
-Si volem tornar més d’un valor podem fer:</p>
+Return mostra les dades per pantalla. Per defecte només podem retornar un valor. Si volem tornar més d’un valor podem posar el valors entre parèntesi:</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">cd</span><span class="p">/(</span><span class="nt">artist</span><span class="p">/</span><span class="nt">name</span><span class="p">,</span><span class="w"> </span><span class="nt">Title</span><span class="p">)</span>
 </code></pre></div>
 o
@@ -1144,18 +1160,10 @@ o
 <span class="k">let</span><span class="w"> </span><span class="nv">$</span><span class="n">codigo</span><span class="o">:=</span><span class="nv">$</span><span class="n">cd</span><span class="p">/</span><span class="nt">artist</span><span class="p">/</span><span class="nt">cod_Artist</span>
 <span class="k">return</span><span class="w"> </span><span class="nf">concat</span><span class="p">(</span><span class="nv">$</span><span class="n">Titulo</span><span class="p">,</span><span class="w"> </span><span class="err">“</span><span class="w"> </span><span class="err">“</span><span class="p">,</span><span class="w"> </span><span class="nv">$</span><span class="n">nomArtis</span><span class="p">,</span><span class="err">”</span><span class="w"> </span><span class="err">“</span><span class="p">,</span><span class="nv">$</span><span class="n">codigo</span><span class="p">)</span>
 </code></pre></div></p>
-<p><strong>ORDER</strong></p>
-<p>En aquest cas ordenem els artistes per nom.
-<div class="highlight"><pre><span></span><code><span class="nt">order</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="nv">$</span><span class="n">variable</span><span class="w"> </span><span class="p">[</span><span class="nt">ascending</span><span class="p">,</span><span class="w"> </span><span class="nt">descending</span><span class="p">]</span>
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="s2">&quot;catalog.xml&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">/</span><span class="nt">artist</span>
-<span class="w">  </span><span class="k">order by</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span><span class="w"> </span><span class="k">descending</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">$</span><span class="n">a</span>
-</code></pre></div>
 <h2 id="de-flwor-a-html">De FLWOR a HTML</h2>
 <p>Podem realitzar consultes i guardar els resultats en format HTML. Ho podem fer tant amb expressions XQuery com clàusules FLWOR.</p>
 <p>Indicarem la part del codi FLWOR entre claus “{“ “}”.</p>
-<p>Si volem afegir, per exemple, codi CSS utilitzarem {{ i }}, en la declaració CSS, en compte d’una sola { i }.</p>
+<p>Si volem afegir codi CSS utilitzarem {{ i }}, en la declaració CSS, en compte d’una sola { i }.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;ul&gt;</span>
 <span class="p">{</span>
 <span class="k">for</span><span class="w"> </span><span class="nv">$</span><span class="n">x</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">doc</span><span class="p">(</span><span class="err">“</span><span class="nt">catalog.xml</span><span class="err">&quot;</span><span class="p">)//</span><span class="nt">catalog</span><span class="p">/</span><span class="nt">cd</span><span class="p">/</span><span class="nt">artist</span>
@@ -1201,7 +1209,7 @@ posem</p>
 <div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nt">&lt;li&gt;</span><span class="p">{</span><span class="nf">data</span><span class="p">(</span><span class="nv">$</span><span class="n">x</span><span class="p">)}</span><span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 <h2 id="67-actualitzacio-de-dades-amb-xquery">6.7. Actualització de dades amb XQuery</h2>
-<p>Encara que XQuery permet seleccionar dades, la versió XQuery 1.0 no té funcions per insertar, esborrar o actualitzar dades d'un XML. Patrick Lehti va desenvolupar un sistema per possibilitar aquestes funcions, encara que el consorci W3C, posteriorment, va proposar l'extensió XQUF (XQuery Update Facilites) que ja està implementada a partir de la versió 7.1 de BaseX. La versió que farem servir de BaseX és la 9.0.1 (2022), així que farem servir la implementació XQUF.</p>
+<p>Encara que XQuery permet seleccionar dades, la versió XQuery 1.0 no té funcions per insertar, esborrar o actualitzar dades d'un XML. Patrick Lehti va desenvolupar un sistema per possibilitar aquestes funcions, encara que el consorci W3C, posteriorment, va proposar l'extensió XQUF (XQuery Update Facilites) que ja està implementada a BaseX. La versió que farem servir de BaseX és la 9.0.1 (2022), així que farem servir la implementació XQUF.</p>
 <p>En els exemples que mostrarem a continuació <strong>element</strong> és un fragment XML i <strong>ubicació</strong> és una expressió XPath.</p>
 <h3 id="671-insercio-dun-element">6.7.1 Insercio d'un element</h3>
 <p>La sintaxi general amb XQUF és:</p>
